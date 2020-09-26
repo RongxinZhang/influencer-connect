@@ -61,7 +61,7 @@ CREATE TABLE campaign_details (
 CREATE TABLE campaigns (
   id SERIAL PRIMARY KEY NOT NULL,
   influencer_id INTEGER REFERENCES influencers(id) ON DELETE CASCADE,
-  campaign_details_id INTEGER REFERENCES campaign_details_id(id) ON DELETE CASCADE,
+  campaign_details_id INTEGER REFERENCES campaign_details(id) ON DELETE CASCADE,
   status VARCHAR(255)
 );
 
