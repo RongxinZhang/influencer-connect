@@ -73,7 +73,7 @@ CREATE TABLE tasks (
   description VARCHAR(255) NOT NULL,
   start_date DATE NOT NULL
 );
-
+ 
 CREATE TABLE messages (
   id SERIAL PRIMARY KEY NOT NULL,
   content VARCHAR(255) NOT NULL,
