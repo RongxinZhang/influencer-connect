@@ -25,4 +25,4 @@ VALUE
 INSERT INTO categories
   (name, description)
 VALUE
-  ('Make-up', 'Brands that are related to skin-care. You can see them in this category.');
+  ('Entertainment', 'Brands that are related to entertainment. You can see them in this category.');
