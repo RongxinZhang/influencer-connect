@@ -4,6 +4,9 @@ DROP TABLE IF EXISTS brand_managers CASCADE;
 DROP TABLE IF EXISTS influencers CASCADE;
 DROP TABLE IF EXISTS campaign_details CASCADE;
 DROP TABLE IF EXISTS campaigns CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+DROP TABLE IF EXISTS influencers_categories CASCADE;
+DROP TABLE IF EXISTS campaign_detail_categories CASCADE;
 DROP TABLE IF EXISTS tasks CASCADE;
 DROP TABLE IF EXISTS messages CASCADE;
 
@@ -13,7 +16,7 @@ CREATE TABLE users (
   last_name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  phone int
+  phone VARCHAR
 );
 
 CREATE TABLE brands (
@@ -32,7 +35,7 @@ CREATE TABLE brands (
 
 CREATE TABLE brand_managers (
   id SERIAL PRIMARY KEY NOT NULL,
-  isAdmin BOOLEAN NOT NULL,
+  is_admin BOOLEAN NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   brand_id INTEGER REFERENCES brands(id) ON DELETE CASCADE
 );
@@ -55,14 +58,44 @@ CREATE TABLE influencers (
 CREATE TABLE campaign_details (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
-  brand_id INTEGER REFERENCES brands(id) ON DELETE CASCADE
+  brand_id INTEGER REFERENCES brands(id) ON DELETE CASCADE,
+  product_description VARCHAR(255) NOT NULL,
+  product_value INTEGER,
+  commission_amount INTEGER,
+  images_url VARCHAR(255) NOT NULL,
+  affiliate_website VARCHAR,
+  example_posts VARCHAR,
+  post_requirements VARCHAR,
+  category VARCHAR,
+  city VARCHAR(255) NOT NULL,
+  country VARCHAR(255) NOT NULL,
+  target_age_range INTEGER,
+  target_genders VARCHAR
 );
 
 CREATE TABLE campaigns (
   id SERIAL PRIMARY KEY NOT NULL,
   influencer_id INTEGER REFERENCES influencers(id) ON DELETE CASCADE,
-  campaign_details_id INTEGER REFERENCES campaign_details_id(id) ON DELETE CASCADE,
+  campaign_detail_id INTEGER REFERENCES campaign_details(id) ON DELETE CASCADE,
   status VARCHAR(255)
+);
+
+CREATE TABLE categories (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  description VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE influencers_categories (
+  id SERIAL PRIMARY KEY NOT NULL,
+  influencer_id INTEGER REFERENCES influencers(id) ON DELETE CASCADE,
+  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
+);
+
+CREATE TABLE campaign_detail_categories (
+  id SERIAL PRIMARY KEY NOT NULL,
+  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
+  campaign_detail_id INTEGER REFERENCES campaign_details(id) ON DELETE CASCADE
 );
 
 CREATE TABLE tasks (
