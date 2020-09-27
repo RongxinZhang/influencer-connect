@@ -4,7 +4,8 @@
   "description": "A platform to help brands and influencers manage each other",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:reset": "psql -d influencer_connect_dev < ./lib/db/schema/01_schema.sql && psql -d influencer_connect_dev < ./lib/db/seeds/all.sql"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/RongxinZhang/influencer-connect/issues"
   },
-  "homepage": "https://github.com/RongxinZhang/influencer-connect#readme"
+  "homepage": "https://github.com/RongxinZhang/influencer-connect#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "pg": "^8.3.3"
+  }
 }
