@@ -6,4 +6,7 @@ INSERT INTO users
   (first_name, last_name, email, password, phone)
 VALUES
   ('Rongxin', 'Zhang', 'RongxinZhang@gmail.com', 'password', 6041231234);
-
+INSERT INTO users
+  (first_name, last_name, email, password, phone)
+VALUES
+  ('Favour', 'Ogboruche', 'fogboruche@yahoo.com', 'password', 4035675678);
