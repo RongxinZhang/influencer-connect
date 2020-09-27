@@ -13,7 +13,7 @@ CREATE TABLE users (
   last_name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  phone int
+  phone VARCHAR
 );
 
 CREATE TABLE brands (
@@ -32,7 +32,7 @@ CREATE TABLE brands (
 
 CREATE TABLE brand_managers (
   id SERIAL PRIMARY KEY NOT NULL,
-  isAdmin BOOLEAN NOT NULL,
+  is_admin BOOLEAN NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   brand_id INTEGER REFERENCES brands(id) ON DELETE CASCADE
 );
