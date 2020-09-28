@@ -8,3 +8,11 @@ INSERT INTO brand_managers
   (user_id, brand_id, is_admin)
 VALUES
   (3, 2, true);
+INSERT INTO brand_managers
+  (user_id, brand_id, is_admin)
+VALUES
+  (4, 3, true);
+INSERT INTO brand_managers
+  (user_id, brand_id, is_admin)
+VALUES
+  (5, 4, true);
