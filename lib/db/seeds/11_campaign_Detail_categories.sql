@@ -5,20 +5,20 @@ VALUES
 INSERT INTO campaign_detail_categories
   (category_id, campaign_detail_id)
 VALUES
-  (1, 1);
+  (2, 2);
 INSERT INTO campaign_detail_categories
   (category_id, campaign_detail_id)
 VALUES
-  (1, 1);
+  (3, 3);
 INSERT INTO campaign_detail_categories
   (category_id, campaign_detail_id)
 VALUES
-  (1, 1);
+  (4, 4);
 INSERT INTO campaign_detail_categories
   (category_id, campaign_detail_id)
 VALUES
-  (1, 1);
+  (5, 5);
 INSERT INTO campaign_detail_categories
   (category_id, campaign_detail_id)
 VALUES
-  (1, 1);
+  (6, 6);
