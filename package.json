@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db:reset": "psql -d influencer_connect_dev < ./lib/db/schema/01_schema.sql && psql -d influencer_connect_dev < ./lib/db/seeds/all.sql"
+    "db:reset": "psql -d influencer_connect_dev < ./lib/db/schema/01_schema.sql && psql -d influencer_connect_dev < ./lib/db/seeds/all.sql",
+    "dev": "nodemon -L server.js"
   },
   "repository": {
     "type": "git",
