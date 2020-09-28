@@ -1,32 +1,37 @@
 const ENV = require('./lib/environment');
 const db = require("./lib/db");
 
-const getInfluencersSQL = `select influencers.first_name, influencers.last_name, campaigns.id as campaign_id from influencers
-inner join campaigns on influencers.id = campaigns.influencer_id
-inner join campaign_details on campaign_details.id = campaigns.campaign_detail_id
-inner join brands on brands.id = campaign_details.brand_id
-inner join brand_managers on brand_managers.brand_id = brands.id
-inner join users on users.id = brand_managers.user_id
-where users.id=$1`
+const express = require("express");
+const app = express();
 
-const getInfluencersSQLValue = ['2']
+//Separate Routes for each Resource
+const campaignsRoutes = require("./lib/routes/campaigns");
+const campaignUsersRoutes = require("./lib/routes/campaignUsers");
+const campaignTasks = require("./lib/routes/campaignTasks");
+const createTask = require("./lib/routes/createTask");
+const updateStatusOfTask = require("./lib/routes/updateStatusOfTask");
+const campaignMessages = require("./lib/routes/campaignMessages");
+const createMessage = require("./lib/routes/createMessage");
 
-db.query(getInfluencersSQL, getInfluencersSQLValue)
-  .then(res => {
-    console.log("getInfluencersSQL")
-    console.log(res.rows)
-  })
-  .catch(err => console.error(err.stack))
 
-const getTasksSQL = `select * from tasks
-  inner join campaigns on campaigns.id = tasks.campaign_id
-  where campaigns.id = $1 AND tasks.user_type = $2`
+const port = process.env.PORT || 3000;
 
-const getTasksSQLValues = ['2', 'influencer']
 
-db.query(getTasksSQL, getTasksSQLValues)
-  .then(res => {
-    console.log("getTasksSQL")
-    console.log(res.rows)
-  })
-  .catch(err => console.error(err.stack))
+// Replaces body parser
+app.use(express.json());
+
+
+//Mounting all resource routes
+app.use("/campaigns", campaignsRoutes.getAllUsers(db));
+// app.use("/campaigns", campaignUsersRoutes.getAllUsers(db));
+app.use("/campaignTasks", campaignTasks.getAllTasks(db));
+app.use("/createTask", createTask.createTask(db));
+app.use("/updateStatusOfTask", updateStatusOfTask.updateStatusOfTask(db));
+app.use("/campaignMessages", campaignMessages.getCampaignMessages(db));
+app.use("/createMessage", createMessage.createMessage(db));
+
+
+
+app.listen(port, () => {
+  console.log(`Listening at http://localhost:${port}`);
+});
