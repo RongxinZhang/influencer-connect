@@ -103,12 +103,12 @@ VALUES
 
 /*Nike Campaign*/
 INSERT INTO campaign_details
-  (name, brand_id)
+  (name, brand_id, product_description, product_value, commission_amount, images_url, affiliate_website, example_posts, post_requirements, category, city, country, target_age_range, target_genders)
 VALUES
-  ('Nike Athlete', 1);
+  ('Nike Athlete', 1, 'product_description', 10, 2, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 10, 'target_genders');
 /*Coca-Cola Campaign*/
 INSERT INTO campaign_details
-  (name, brand_id)
+  (name, brand_id, product_description, product_value, commission_amount, images_url, affiliate_website, example_posts, post_requirements, category, city, country, target_age_range, target_genders)
 VALUES
   ('Coca-Cola Sponsor', 2);
 INSERT INTO campaign_details
@@ -178,7 +178,7 @@ VALUES
 INSERT INTO tasks
   (campaign_id, user_type, status, description, start_date)
 VALUES
-  (6, 'influencer', 'on going', 'Coca-Cola Task Description', '2020-09-27');
+  (6, 'influencer', 'on going', 'Neutrogena Task Description', '2020-09-27');
 
 
 

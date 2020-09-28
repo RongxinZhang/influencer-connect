@@ -21,6 +21,6 @@ VALUES
 INSERT INTO tasks
   (campaign_id, user_type, status, description, start_date)
 VALUES
-  (6, 'influencer', 'on going', 'Coca-Cola Task Description', '2020-09-27');
+  (6, 'influencer', 'on going', 'Neutrogena Task Description', '2020-09-27');
 
 
