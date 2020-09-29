@@ -35,7 +35,7 @@ db.query(getTasksSQL, getTasksSQLValues)
 
 //started here//////////////////////////////////////////////////////////////////////////////////////////////////
 
-const deleteInfluencerFromCampaign = function(compaign_id, inflencers_id) {
+const deleteInfluencerCampaign = function(compaign_id, inflencers_id) {
   const querryString =
     (`
       DELETE FROM campaigns
@@ -49,8 +49,69 @@ const deleteInfluencerFromCampaign = function(compaign_id, inflencers_id) {
       console.log('Error:', err.stack)
     });
 };
-exports.deleteInfluencerFromCampaign = deleteInfluencerFromCampaign;
+exports.deleteInfluencerCampaign = deleteInfluencerCampaign;
 
+
+// delete Campaign by the brand rep
+
+const deleteCampaign = function(compaign_id) {
+  const querryString =
+    (`
+      DELETE FROM campaigns
+      WHERE campaigns.id = $1;
+    `)
+    return pool.query(querryString, [compaign_id])
+    .then (res => {
+      return res.rows;
+    })
+    .catch(err => {
+      console.log('Error:', err.stack)
+    });
+};
+exports.deleteCampaign = deleteCampaign;
+
+// Update campaign details
+
+const updateCampaignDetailsbyBrandName =  function() {
+  const querryString =
+  (`
+  UPDATE campaign_details
+    JOIN brands ON brand_id = brands.id
+  SET name = $1, brand_id = $2, product_description = $3, product_value = $4, commission_amount = $5, images_url = $6, affiliate_website = $7, example_posts = $8, post_requirements = $9, category = $10, city = $11, country = $12, target_age_range = $13, target_genders = $14
+  WHERE brands.id = $15;
+  `)
+
+  return pool.query(querryString)
+    .then (res => {
+      return res.rows;
+    })
+    .catch(err => {
+      console.log('Error:', err.stack)
+    });
+};
+exports.updateCampaignDetailsbyBrandName = updateCampaignDetailsbyBrandName;
+
+// Create Campaign details
+
+const createCampaign =  function() {
+  const querryString =
+  (`
+  INSERT INTO campaign_details (name, brand_id, product_description, product_value, commission_amount, images_url, affiliate_website, example_posts, post_requirements, category, city, country, target_age_range, target_genders)
+  VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
+  RETURNING *;
+  `)
+
+  return pool.query(querryString)
+    .then (res => {
+      return res.rows;
+    })
+    .catch(err => {
+      console.log('Error:', err.stack)
+    });
+};
+exports.createCampaign = createCampaign;
+
+// Update Tasks
 
 const updateTask =  function(status, start_date, description, id) {
     const querryString =
@@ -70,8 +131,26 @@ const updateTask =  function(status, start_date, description, id) {
   };
 exports.updateTask = updateTask;
 
+// Delete Tasks
+const deleteTask =  function(id) {
+  const querryString =
+  (`
+  DELETE tasks
+  WHERE tasks.id = $1;
+  `)
 
-const createAtask =  function(campaign_id, user_type, status, description, start_date) {
+  return pool.query(querryString, [id])
+    .then (res => {
+      return res.rows;
+    })
+    .catch(err => {
+      console.log('Error:', err.stack)
+    });
+};
+exports.deleteTask = deleteTask;
+
+// Create Tasks
+const createTask =  function(campaign_id, user_type, status, description, start_date) {
   const querryString =
   (`
     INSERT INTO tasks (campaign_id, user_type, status, description, start_date)
@@ -87,11 +166,10 @@ const createAtask =  function(campaign_id, user_type, status, description, start
       console.log('Error:', err.stack)
     });
 };
-exports.createAtask = createAtask;
+exports.createTask = createTask;
 
 
-const getMessagesForEachCampaign = function(id) {
-
+const getCampaignMessages = function(id) {
   let querryString =
   (`
     SELECT *
@@ -109,11 +187,10 @@ const getMessagesForEachCampaign = function(id) {
     });
 };
 
-exports.getMessagesForEachCampaign = getMessagesForEachCampaign;
+exports.getCampaignMessages = getCampaignMessages;
 
 
-const createAMessageForEachCampaign = function(content, sender_id, receiver_id, campaign_id, status, created_at) {
-
+const createCampaignMessage = function(content, sender_id, receiver_id, campaign_id, status, created_at) {
   let querryString =
   (`
     INSERT INTO messages (content, sender_id, receiver_id, campaign_id, status, created_at)
@@ -130,4 +207,46 @@ const createAMessageForEachCampaign = function(content, sender_id, receiver_id, 
     });
 };
 
-exports.createAMessageForEachCampaign = createAMessageForEachCampaign;
+exports.createCampaignMessage = createCampaignMessage;
+
+
+const getUsers = function(email, password) {
+  let querryString =
+  (`
+    SELECT *
+    FROM users
+    WHERE users.email = $1 AND users.password = $2;
+  `)
+
+  return pool.query(querryString, [email, password])
+    .then(res => {
+      return res.rows;
+    })
+    .catch (err => {
+      console.log('Error:', err.stack)
+    });
+};
+
+exports.getUsers = getUsers;
+
+
+const getbrandManagersById = function(email, password) {
+  let querryString =
+  (`
+    SELECT *
+    FROM brand_managers
+      JOIN users ON user_id = users.id
+      JOIN brands ON brand_id = brands.id
+    WHERE users.email = $1 AND users.password = $2
+    ORDER BY brand_managers.id;
+  `)
+
+  return pool.query(querryString, [email, password])
+    .then(res => {
+      return res.rows;
+    })
+    .catch (err => {
+      console.log('Error:', err.stack)
+    });
+};
+exports.getbrandManagersById = getbrandManagersById;
