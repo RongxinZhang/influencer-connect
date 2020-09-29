@@ -44,6 +44,7 @@ CREATE TABLE influencers (
   id SERIAL PRIMARY KEY NOT NULL,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   description VARCHAR(255) NOT NULL,
   profile_url VARCHAR(255) NOT NULL,
   street VARCHAR,
