@@ -21,7 +21,6 @@ VALUES
   ('Square Enix America', 'The Square Enix Holdings Company, Ltd. is a Japanese video game holding company, best known for its Final Fantasy, Dragon Quest, and Kingdom Hearts role-playing video game franchises.', 'logo image', 'El Segundo', 'California', 'United States of America', 'https://square-enix-games.com/en_US/home2', 'https://www.instagram.com/squareenixusa/?hl=en', 'https://www.facebook.com/SquareEnixProductsNA/', 'https://www.youtube.com/channel/UCA5SLTAVA6unn1M-6lbo1NA'),
   ('Neutrogena', 'Neutrogena is an American brand of skin care, hair care and cosmetics which is headquartered in Los Angeles, California.', 'logo image', 'Los Angeles', 'California', 'United States of America', 'https://www.neutrogena.ca/', 'https://www.instagram.com/neutrogena/?hl=en', 'https://www.facebook.com/neutrogena/', 'https://www.youtube.com/channel/UCNGr_3LSXp3KL55jZW7Pvhg');
 
-
 /*Rongxin is the brand manager of Nike*/
 INSERT INTO brand_managers
   (user_id, brand_id, is_admin)
@@ -41,14 +40,18 @@ VALUES
   ('Dwayne', 'Johnson', 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'profile url', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 'https://www.facebook.com/DwayneJohnson/', 'https://www.youtube.com/user/therock'),
   ('Dwayne', 'Johnson', 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'profile url', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 'https://www.facebook.com/DwayneJohnson/', 'https://www.youtube.com/user/therock');
 
-
 /*Nike Campaign*/
 INSERT INTO campaign_details
   (name, brand_id, product_description, product_value, commission_amount, images_url, affiliate_website, example_posts, post_requirements, category, city, country, target_age_range, target_genders)
 VALUES
   ('Nike Athlete', 1, 'product_description', 10, 2, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 10, 'target_genders'),
   /*Coca-Cola Campaign*/
-  ('Coca-Cola Sponsor', 2, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 50, 'target_genders');
+  ('Coca-Cola Sponsor', 2, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 30, 'target_genders'),
+  ('Mcdonalds Sponsor', 3, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 20, 'target_genders'),
+  ('OVO Sound Sponsor', 4, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 22, 'target_genders'),
+  ('Square Enix Sponsor', 5, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 18, 'target_genders'),
+  ('Neutrogena', 6, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 20, 'target_genders');
+
 
 
 /*Ronaldo accepts Nike Campaign*/
@@ -57,7 +60,27 @@ INSERT INTO campaigns
 VALUES
   (2, 1, 'Accepted'),
   /*Dwayne accepts Coca-Cola Campaign*/
-  (3, 2, 'Accepted');
+  (3, 2, 'Accepted'),
+  (4, 3, 'Accepted'),
+  (5, 4, 'Accepted'),
+  (6, 5, 'Accepted');
+
+INSERT INTO tasks
+  (campaign_id, user_type, status, description, start_date)
+VALUES
+  (1, 'influencer', 'on going', 'Nike Task Description', '2020-09-26'),
+  (2, 'influencer', 'on going', 'Coca-Cola Task Description', '2020-09-26'),
+  (3, 'influencer', 'on going', 'Mcdonalds Task Description', '2020-09-27'),
+  (4, 'influencer', 'on going', 'OVO Sound Task Description', '2020-09-27'),
+  (5, 'influencer', 'on going', 'Square Enix Task Description', '2020-09-27');
+
+
+
+INSERT INTO messages
+  (content, sender_id, receiver_id, campaign_id, status, created_at)
+VALUES 
+  ('message content', 2, 2, 2, 'accepted', '2020-09-26');
+
 
 
 INSERT INTO categories
@@ -81,7 +104,7 @@ VALUES
 
 
 INSERT INTO campaign_detail_categories
- (campaign_detail_id, category_id)
+  (category_id, campaign_detail_id)
 VALUES
   (2, 6),
   (1, 4);
