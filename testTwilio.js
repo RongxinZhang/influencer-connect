@@ -1,5 +1,5 @@
 const accountSid = 'AC8e32f8c9d4c29e04c671da29dbfbf13c';
-const authToken = 'balky_authorization_token';
+const authToken = 'balky_authorization_token'; //Remember to put twilio token here
 const client = require('twilio')(accountSid, authToken);
 
 client.messages
