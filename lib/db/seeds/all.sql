@@ -81,9 +81,9 @@ VALUES
 
 
 INSERT INTO messages
-  (content, sender_id, receiver_id, campaign_id, status, created_at)
+  (content, sender_id, receiver_id, campaign_id, status)
 VALUES 
-  ('message content', 2, 2, 2, 'accepted', '2020-09-26');
+  ('message content', 2, 2, 2, 'accepted');
 
 
 
@@ -122,6 +122,6 @@ VALUES
 
 
 INSERT INTO messages
-  (content, sender_id, receiver_id, campaign_id, status, created_at)
+  (content, sender_id, receiver_id, campaign_id, status)
 VALUES 
-  ('message content', 2, 2, 1, 'accepted', '2020-09-26');
+  ('message content', 2, 2, 1, 'accepted');
