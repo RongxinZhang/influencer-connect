@@ -113,6 +113,5 @@ CREATE TABLE messages (
   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   campaign_id INTEGER REFERENCES campaigns(id) ON DELETE CASCADE,
-  status VARCHAR(255) NOT NULL,
-  created_at DATE NOT NULL
+  status VARCHAR(255) NOT NULL
 );
