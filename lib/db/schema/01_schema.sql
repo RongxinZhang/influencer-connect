@@ -23,14 +23,14 @@ CREATE TABLE brands (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
-  logo VARCHAR(255) NOT NULL,
+  logo_url VARCHAR(255) NOT NULL,
   city VARCHAR(255) NOT NULL,
   province VARCHAR(255),
   country VARCHAR(255) NOT NULL,
-  website VARCHAR(255) NOT NULL, 
-  instagram VARCHAR(255),
-  facebook VARCHAR(255),
-  youtube VARCHAR(255)
+  website_url VARCHAR(255) NOT NULL, 
+  instagram_url VARCHAR(255),
+  facebook_url VARCHAR(255),
+  youtube_url VARCHAR(255)
 );
 
 CREATE TABLE brand_managers (
@@ -44,6 +44,7 @@ CREATE TABLE influencers (
   id SERIAL PRIMARY KEY NOT NULL,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   description VARCHAR(255) NOT NULL,
   profile_url VARCHAR(255) NOT NULL,
   street VARCHAR,
