@@ -1,10 +1,11 @@
 import axios from "axios";
 
-const URL = "localhost:3000";
+// NOTE: must add "http" in front of URL
+const BASE_URL = "http://localhost:3000";
 
 const getCampaignsAllUsers = function (campaignId) {
   return axios
-    .get(`${URL}/campaigns/allUsers`)
+    .get(`${BASE_URL}/campaigns/allUsers`)
     .then((data) => {
       // NOTE: PRE processing here
       return data;
@@ -17,7 +18,7 @@ const getCampaignsAllUsers = function (campaignId) {
 
 const getCampaignsTasks = function (campaignId) {
   return axios
-    .get(`${URL}/campaigns/${campaignId}/tasks`)
+    .get(`${BASE_URL}/campaigns/${campaignId}/tasks`)
     .then((data) => {
       // NOTE: Do processing here
       return data;
