@@ -27,25 +27,24 @@ INSERT INTO brand_managers
 VALUES
   (2, 1, true),
   /*Favour is the brand manager of Coca-Cola*/
-  (3, 2, true);
-
+  (3, 2, true),
+  (4, 3, true),
+  (5, 4, true);
 
 INSERT INTO influencers
   (first_name, last_name, user_id, description, profile_url, street, city, province, country, instagram_url, youtube_url, facebook_url)
 VALUES 
   ('Balky', 'Jaswal', 1, 'Balkys description', 'profile url', 'haha street', 'calgary', 'alberta', 'canada', 'https://www.instagram.com/balkaranj/?hl=en', 'facebook url', 'youtube url'),
-  ('Cristiano', 'Ronaldo', 2, 'Cristiano Ronaldo dos Santos Aveiro GOIH ComM is a Portuguese professional footballer who plays as a forward for Serie A club Juventus and captains the Portugal national team.', 'https://www.cristianoronaldo.com/#cr7', 'haha street', 'Hospital Dr. Nelio Mendonca', 'Funchal', 'Portugal', 'https://www.instagram.com/cristiano/?hl=en', 'https://www.facebook.com/Cristiano', 'https://www.youtube.com/user/CristianoRonaldo'),
-  ('Dwayne', 'Johnson', 3, 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'profile url', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 'https://www.facebook.com/DwayneJohnson/', 'https://www.youtube.com/user/therock'),
-  ('Will', 'Johnson', 4, 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'profile url', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 'https://www.facebook.com/DwayneJohnson/', 'https://www.youtube.com/user/therock'),
-  ('Dwayne', 'Johnson', 5, 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'profile url', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 'https://www.facebook.com/DwayneJohnson/', 'https://www.youtube.com/user/therock'),
-  ('Dwayne', 'Johnson', 6, 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'profile url', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 'https://www.facebook.com/DwayneJohnson/', 'https://www.youtube.com/user/therock');
+  ('Cristiano', 'Ronaldo', 2,'Cristiano Ronaldo dos Santos Aveiro GOIH ComM is a Portuguese professional footballer who plays as a forward for Serie A club Juventus and captains the Portugal national team.', 'https://www.cristianoronaldo.com/#cr7', 'haha street', 'Hospital Dr. Nelio Mendonca', 'Funchal', 'Portugal', 'https://www.instagram.com/cristiano/?hl=en', 'https://www.facebook.com/Cristiano', 'https://www.youtube.com/user/CristianoRonaldo'),
+  ('Dwayne', 'Johnson', 3,'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'profile url', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 'https://www.facebook.com/DwayneJohnson/', 'https://www.youtube.com/user/therock'),
+  ('Will', 'Smith', 4,'Willard Carroll Smith Jr. is an American actor, producer and rapper.', 'profile url', 'haha street', 'Philadelphia', 'Pennsylvania', 'United States of America', 'https://www.instagram.com/willsmith/?hl=en', 'https://www.facebook.com/Will-Smith-92304305160/', 'https://www.youtube.com/c/WillSmith'),
+  ('Kenny', 'Beats', 5,'Kenneth Charles Blume III, known professionally as Kenny Beats, is an American record producer and songwriter.', 'profile url', 'haha street', 'Greenwich', 'Connecticut', 'United States of America', 'https://www.instagram.com/kennybeats/?hl=en', 'No facebook link provided', 'https://www.youtube.com/channel/UCApPPpJ4d3ueW38lArwiWoA'),
+  ('Ashton', 'Kutcher', 6,'Christopher Ashton Kutcher is an American actor, producer, and entrepreneur.', 'profile url', 'haha street', 'Manhattan', 'New York', 'United States of America', 'https://www.instagram.com/aplusk/?hl=en', 'https://www.facebook.com/Ashton/', 'No youtube link provided');
 
-/*Nike Campaign*/
 INSERT INTO campaign_details
   (name, brand_id, product_description, product_value, commission_amount, images_url, affiliate_website, example_posts, post_requirements, category, city, country, target_age_range, target_genders)
 VALUES
   ('Nike Athlete', 1, 'product_description', 10, 2, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 10, 'target_genders'),
-  /*Coca-Cola Campaign*/
   ('Coca-Cola Sponsor', 2, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 30, 'target_genders'),
   ('Mcdonalds Sponsor', 3, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 20, 'target_genders'),
   ('OVO Sound Sponsor', 4, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 22, 'target_genders'),
@@ -69,23 +68,20 @@ INSERT INTO tasks
   (campaign_id, user_type, status, description, start_date)
 VALUES
   (1, 'influencer', 'on going', 'Nike Task Description', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Coca-Cola Task Description', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Mcdonalds Task Description', '2020-09-27'),
-
-  (1, 'brand', 'on going', 'Coca-Cola Task Description', '2020-09-26'),
-  (1, 'brand', 'on going', 'Mcdonalds Task Description', '2020-09-27'),
-  
-  (2, 'influencer', 'on going', 'OVO Sound Task Description', '2020-09-27'),
-  (2, 'influencer', 'on going', 'Square Enix Task Description', '2020-09-27');
-
-
+  (2, 'influencer', 'on going', 'Coca-Cola Task Description', '2020-09-26'),
+  (3, 'influencer', 'on going', 'Mcdonalds Task Description', '2020-09-27'),
+  (4, 'influencer', 'on going', 'OVO Sound Task Description', '2020-09-27'),
+  (5, 'influencer', 'on going', 'Square Enix Task Description', '2020-09-27');
 
 INSERT INTO messages
   (content, sender_id, receiver_id, campaign_id, status)
 VALUES 
-  ('message content', 2, 2, 2, 'accepted');
-
-
+  ('First Test Message', 1, 2, 1, 'accepted'),
+  ('Second Seed Test Message', 3, 4, 2, 'accepted'),
+  ('Third Seed Test Message', 5, 6, 3, 'accepted'),
+  ('Fourth Seed Test Message', 1, 2, 4, 'accepted'),
+  ('Fifth Seed Test Message', 3, 4, 5, 'accepted'),
+  ('Sixth Seed Test Message', 2, 3, 5, 'accepted');
 
 INSERT INTO categories
   (name, description)
@@ -96,32 +92,22 @@ VALUES
   ('Music', 'Brands that are related to music. You can see them in this category.'),
   ('Gaming', 'Brands that are related to gaming. You can see them in this category.'),
   ('Skin-care', 'Brands that are related to skin-care. You can see them in this category.'),
-  ('Make-up', 'Brands that are related to skin-care. You can see them in this category.');
-
+  ('Entertainment', 'Brands that are related to entertainment. You can see them in this category.');
 
 INSERT INTO influencers_categories 
   (influencer_id, category_id)
 VALUES
   (2, 1),
-  (3, 2),
-  (4, 6);
-
+  (3, 7),
+  (4, 7),
+  (5, 4);
 
 INSERT INTO campaign_detail_categories
   (category_id, campaign_detail_id)
 VALUES
-  (2, 6),
-  (1, 4);
-
-
-INSERT INTO tasks
-  (campaign_id, user_type, status, description, start_date)
-VALUES
-  (2, 'influencer', 'on going', 'Nike Task Description', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Coca-Cola Task Description', '2020-09-26');
-
-
-INSERT INTO messages
-  (content, sender_id, receiver_id, campaign_id, status)
-VALUES 
-  ('message content', 2, 2, 1, 'accepted');
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 4),
+  (5, 5),
+  (6, 6);

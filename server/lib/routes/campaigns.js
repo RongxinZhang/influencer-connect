@@ -120,7 +120,6 @@ router.delete("/:campaignId/tasks/:taskId", (req, res) => {
 router.get("/:campaignId/messages", (req, res) => {
   const campaignId = Number(req.params.campaignId);
 
-  console.log("TEST");
   const messagesObj = { campaignId };
 
   campaignController
