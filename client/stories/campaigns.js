@@ -5,6 +5,8 @@ import { action } from "@storybook/addon-actions";
 
 import CampaignItem from "components/Tasks/CampaignList/CampaignItem";
 
+import "index.scss";
+
 const campaign = {
   campaignId: 1,
   name: "Sylvia Palmer",
@@ -14,7 +16,7 @@ const campaign = {
   campaignName: "Submitting content",
 };
 
-storiesOf("InterviewerListItem", module)
+storiesOf("CampaignItem", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }],
   })

@@ -16,7 +16,8 @@ CREATE TABLE users (
   last_name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  phone VARCHAR
+  phone VARCHAR,
+  created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE brands (
@@ -30,14 +31,16 @@ CREATE TABLE brands (
   website_url VARCHAR(255) NOT NULL, 
   instagram_url VARCHAR(255),
   facebook_url VARCHAR(255),
-  youtube_url VARCHAR(255)
+  youtube_url VARCHAR(255),
+  created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE brand_managers (
   id SERIAL PRIMARY KEY NOT NULL,
   is_admin BOOLEAN NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  brand_id INTEGER REFERENCES brands(id) ON DELETE CASCADE
+  brand_id INTEGER REFERENCES brands(id) ON DELETE CASCADE,
+  created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE influencers (
@@ -53,7 +56,8 @@ CREATE TABLE influencers (
   country VARCHAR(255) NOT NULL,
   instagram_url VARCHAR(255),
   facebook_url VARCHAR(255),
-  youtube_url VARCHAR(255)
+  youtube_url VARCHAR(255),
+  created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE campaign_details (
@@ -71,32 +75,37 @@ CREATE TABLE campaign_details (
   city VARCHAR(255) NOT NULL,
   country VARCHAR(255) NOT NULL,
   target_age_range INTEGER,
-  target_genders VARCHAR
+  target_genders VARCHAR,
+  created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE campaigns (
   id SERIAL PRIMARY KEY NOT NULL,
   influencer_id INTEGER REFERENCES influencers(id) ON DELETE CASCADE,
   campaign_detail_id INTEGER REFERENCES campaign_details(id) ON DELETE CASCADE,
-  status VARCHAR(255)
+  status VARCHAR(255),
+  created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE categories (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
-  description VARCHAR(255) NOT NULL
+  description VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE influencers_categories (
   id SERIAL PRIMARY KEY NOT NULL,
   influencer_id INTEGER REFERENCES influencers(id) ON DELETE CASCADE,
-  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE
+  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
+  created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE campaign_detail_categories (
   id SERIAL PRIMARY KEY NOT NULL,
   category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
-  campaign_detail_id INTEGER REFERENCES campaign_details(id) ON DELETE CASCADE
+  campaign_detail_id INTEGER REFERENCES campaign_details(id) ON DELETE CASCADE,
+  created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE tasks (
@@ -105,7 +114,8 @@ CREATE TABLE tasks (
   user_type VARCHAR(255) NOT NULL,
   status VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
-  start_date DATE NOT NULL
+  start_date DATE NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW()
 );
  
 CREATE TABLE messages (
@@ -114,5 +124,6 @@ CREATE TABLE messages (
   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   campaign_id INTEGER REFERENCES campaigns(id) ON DELETE CASCADE,
-  status VARCHAR(255) NOT NULL
+  status VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT NOW()
 );

@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
 import Tasks from "./components/Tasks";
 import UpdateTasks from "./components/UpdateTasks";
