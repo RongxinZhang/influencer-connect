@@ -1,9 +1,34 @@
 import React from "react";
+// import checklistHelper from "../../helper"
 
-import "components/checklists/CheckListItem.scss";
-import FlipMove from "react-flip-move"
+
+// import "components/checklists/CheckListItem.scss";
+// import FlipMove from "react-flip-move"
 
 import classNames from "classnames";
+
+const tasks =  
+[{
+  id: 1,
+  check: true,
+  text: 'Reply to the Email'
+}, {
+  id: 2,
+  text: 'Send Adress Information'
+}, {
+  id: 3,
+  check: true,
+  text: "Send Shipping info"
+}, {
+  id: 4,
+  text: 'Update my page'
+}, {
+  id: 5,
+  text: 'Confirm product received'
+}, {
+  id: 6,
+  text: 'Complete Product review'
+}]
 
 
 
@@ -22,9 +47,9 @@ export default function CheckListItem(props) {
     })
   return (
     <div>
-      <FlipMove easing="ease-in-out" duration={200}>
+      {/* <FlipMove easing="ease-in-out" duration={200}> */}
       {listItems}
-      </FlipMove>
+      {/* </FlipMove> */}
     </div>
   )
 

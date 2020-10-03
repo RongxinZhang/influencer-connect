@@ -4,10 +4,8 @@ import "./App.scss";
 import Tasks from "./components/Tasks";
 import UpdateTasks from "./components/UpdateTasks";
 import Login from "./components/Login";
-import Checklist from "./components/checklists/ChecklistItem2";
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ChecklistItem from "./components/checklists/ChecklistItem2";
+import CheckListItem from "./components/checklists/CheckListItem";
 
 function App() {
   return (
@@ -18,6 +16,7 @@ function App() {
       </Route>
       <Route path="/tasks">
         <Tasks />
+        <CheckListItem/>
       </Route>
       <Route path="/login">
         <Login />
