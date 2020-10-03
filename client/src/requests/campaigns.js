@@ -25,4 +25,15 @@ const getCampaignsTasks = function (campaignId) {
     .catch((err) => {});
 };
 
-export { getCampaignsAllUsers, getCampaignsTasks };
+const getCampaignMessages = function (campaginId) {
+  return axios
+    .get(`${BASE_URL}/campaigns/${campaignId}/messages`)
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
+export { getCampaignsAllUsers, getCampaignsTasks, getCampaignMessages };
