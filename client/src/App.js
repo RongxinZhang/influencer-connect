@@ -18,8 +18,6 @@ function App() {
       </Route>
       <Route path="/tasks">
         <Tasks />
-        <ChecklistItem />
-
       </Route>
       <Route path="/login">
         <Login />

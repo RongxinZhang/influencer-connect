@@ -43,13 +43,6 @@
     "@storybook/addon-actions": "^6.0.22",
     "@storybook/addon-essentials": "^6.0.22",
     "@storybook/addon-links": "^6.0.22",
-<<<<<<< HEAD
-    "@storybook/node-logger": "^6.0.22",
-    "@storybook/preset-create-react-app": "^3.1.4",
-    "@storybook/react": "^6.0.22",
-    "babel-loader": "^8.1.0",
-    "react-is": "^16.13.1"
-=======
     "@storybook/addons": "^6.0.22",
     "@storybook/node-logger": "^6.0.22",
     "@storybook/preset-create-react-app": "^3.1.4",
@@ -60,6 +53,5 @@
     "react-is": "^16.13.1",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1"
->>>>>>> 7b5aa1c76f58dc973e7ad10225b2706566f05192
   }
 }

@@ -4,7 +4,31 @@ import CheckListItem from "components/CheckListItem";
 
 import "components/checklists/CheckListItem.scss";
 
+
 import classNames from "classnames";
+
+// const data =  
+// [{
+//   id: 1,
+//   check: true,
+//   text: 'Reply to the Email'
+// }, {
+//   id: 2,
+//   text: 'Send Adress Information'
+// }, {
+//   id: 3,
+//   check: true,
+//   text: "Send Shipping info"
+// }, {
+//   id: 4,
+//   text: 'Update my page'
+// }, {
+//   id: 5,
+//   text: 'Confirm product received'
+// }, {
+//   id: 6,
+//   text: 'Complete Product review'
+// }]
 
 
 
