@@ -7,8 +7,7 @@ const getCampaignsAllUsers = function (campaignId) {
   return axios
     .get(`${BASE_URL}/campaigns/allUsers`)
     .then((data) => {
-      // NOTE: PRE processing here
-      return data;
+      return data.data;
     })
     .catch((err) => {
       // Always show popup component or loading compoenent here
