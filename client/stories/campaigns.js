@@ -12,8 +12,8 @@ const campaign = {
   name: "Sylvia Palmer",
   profilePicture: "https://i.imgur.com/LpaY82x.png",
   followerCount: "2.2K",
-  campaignName: "New Campaign",
-  campaignName: "Submitting content",
+  currentCampaign: "Nike Fakes",
+  // currentTask: "Submitting content",
 };
 
 storiesOf("CampaignItem", module)

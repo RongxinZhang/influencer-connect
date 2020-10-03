@@ -18,8 +18,8 @@ const CampaignItem = function (props) {
           <span className="">{props.name}</span>
           <span>{props.followerCount}</span>
         </div>
-        <div>{props.campaignName}</div>
-        <div>{props.currentTask}</div>
+        <div>{props.currentCampaign}</div>
+        {/* <div>{props.currentTask}</div> */}
       </section>
     </li>
   );

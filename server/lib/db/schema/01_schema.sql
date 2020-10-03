@@ -55,8 +55,11 @@ CREATE TABLE influencers (
   province VARCHAR(255),
   country VARCHAR(255) NOT NULL,
   instagram_url VARCHAR(255),
+  instagram_followers INTEGER DEFAULT 0,
   facebook_url VARCHAR(255),
+  facebook_followers INTEGER DEFAULT 0,
   youtube_url VARCHAR(255),
+  youtube_followers INTEGER DEFAULT 0,
   created_at TIMESTAMP DEFAULT NOW()
 );
 
