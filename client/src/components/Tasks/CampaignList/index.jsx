@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCampaignsAllUsers } from "../../../requests/campaigns";
+import CampaignItem from "./CampaignItem";
 
 export default function Tasks(props) {
   const [campaigns, setCampaigns] = useState([]);
@@ -12,17 +13,14 @@ export default function Tasks(props) {
     });
   }, []);
 
-  // const campaigns = campaigns
-  // const createCampaignsTemplates =
+  const campaignsList = campaigns.map((campaign) => {
+    if (campaign) {
+      const inputProps = {
+        name: `${campaign.first_name} ${campaign.last_name}`,
+      };
+      return <CampaignItem key={campaign.campaign_id} {...inputProps} />;
+    }
+  });
 
-  return (
-    <ul>
-      {}
-      <li>User 1</li>
-      <li>User 2</li>
-      <li>User 3</li>
-      <li>User 4</li>
-      <li>User 5</li>
-    </ul>
-  );
+  return <ul>{campaignsList}</ul>;
 }

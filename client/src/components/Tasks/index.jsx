@@ -20,9 +20,9 @@ export default function Tasks(props) {
     <Fragment>
       <div>HEADER</div>
       <CampaignList handleClickCurrentCampaign />
-      <CheckList currentCampaign={currentCampaign} />
+      {/* <CheckList currentCampaign={currentCampaign} /> */}
       {/* <Chats campaigns={campaigns} /> */}
-      <div>HEADER</div>
+      {/* <div>HEADER</div> */}
     </Fragment>
   );
 }
