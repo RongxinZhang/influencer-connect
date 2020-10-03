@@ -16,9 +16,10 @@ export default function Tasks(props) {
   const campaignsList = campaigns.map((campaign) => {
     if (campaign) {
       const inputProps = {
+        campaignId: campaign.campaign_id,
         name: `${campaign.first_name} ${campaign.last_name}`,
       };
-      return <CampaignItem key={campaign.campaign_id} {...inputProps} />;
+      return <CampaignItem onClick={(id) => console.log("id in campaignList:", id) || props.onClick(id)} key={campaign.campaign_id} {...inputProps} />;
     }
   });
 

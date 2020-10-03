@@ -25,11 +25,11 @@ const getCampaignsTasks = function (campaignId) {
     .catch((err) => {});
 };
 
-const getCampaignMessages = function (campaginId) {
+const getCampaignMessages = function (campaignId) {
   return axios
     .get(`${BASE_URL}/campaigns/${campaignId}/messages`)
     .then((data) => {
-      return data;
+      return data.data.data;
     })
     .catch((err) => {
       return err;

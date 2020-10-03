@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { getCampaignMessages } from "../../../requests/campaigns";
+import MessageItem from "./MessageItem";
 
 export default function Messages(props) {
   const [messages, setMessage] = useState([]);
 
+  console.log(messages);
+
   useEffect(() => {
-    getCampaignsMessages().then((data) => {
-      setMessage(() => {
-        return data.data;
-      });
+    getCampaignMessages(props.campaignId).then((data) => {
+      setMessage(data);
     });
   }, []);
 
-  const messageList = messages.map(message => {
+  const messageList = messages.map((message) => {
     return (
-      <Message
+      <MessageItem
+        key={message.id}
         name={message.name}
-        content={tweet.content}
-        date={tweet.date}
+        content={message.content}
+        date={message.date}
       />
     );
   });
