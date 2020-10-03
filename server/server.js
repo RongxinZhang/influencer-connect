@@ -12,6 +12,7 @@ const usersRoutes = require("./lib/routes/users");
 const port = process.env.PORT || 3000;
 
 // Replaces body parser
+app.use(cors());
 app.use(express.json());
 //Mounting all resource routes
 app.use("/users", usersRoutes);

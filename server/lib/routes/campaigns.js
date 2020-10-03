@@ -7,7 +7,6 @@ const campaignController = require("../controllers/campaignsController");
 router.get("/allUsers", (req, res) => {
   // NOTE: This should be replaced with the req.user object from the request
   const userObj = { userId: 2 };
-
   campaignController
     .getAllUsers(userObj)
     .then((data) => {
