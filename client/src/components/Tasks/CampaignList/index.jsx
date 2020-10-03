@@ -8,17 +8,14 @@ export default function Tasks(props) {
   useEffect(() => {
     getCampaignsAllUsers().then((data) => {
       setCampaigns(() => {
-        return data.data;
+        return data;
       });
     });
   }, []);
 
-  const campaignsList = campaigns.map((campaign) => {
-    if (campaign) {
-      const inputProps = {
-        name: `${campaign.first_name} ${campaign.last_name}`,
-      };
-      return <CampaignItem key={campaign.campaign_id} {...inputProps} />;
+  const campaignsList = campaigns.map((el) => {
+    if (el) {
+      return <CampaignItem key={el.campaign_id} {...el} />;
     }
   });
 

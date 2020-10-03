@@ -4,14 +4,23 @@ import "./CampaignItem.scss";
 const CampaignItem = function (props) {
   return (
     <li className="campaign-list-item" data-campaign-id={props.campaignId}>
-      <div
-        className="profile-picture"
-        style={{ backgroundImage: "url(" + props.profilePicture + ")" }}
-      ></div>
-      <div>{props.name}</div>
-      <div>{props.followerCount}</div>
-      <div>{props.campaignName}</div>
-      <div>{props.currentTask}</div>
+      <section
+        className="picture"
+        style={{
+          backgroundImage: "url(" + props.profilePicture + ")",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></section>
+      <section className="user">
+        <div className="user-name">
+          <span className="">{props.name}</span>
+          <span>{props.followerCount}</span>
+        </div>
+        <div>{props.currentCampaign}</div>
+        {/* <div>{props.currentTask}</div> */}
+      </section>
     </li>
   );
 };

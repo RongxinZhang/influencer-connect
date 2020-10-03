@@ -2,21 +2,25 @@ const db = require("../db");
 
 const getAllUsers = function (userObj) {
   const getInfluencersSQL = `
-  select influencers.first_name, influencers.last_name, campaigns.id as campaign_id from influencers
-    inner join campaigns on influencers.id = campaigns.influencer_id
-    inner join campaign_details on campaign_details.id = campaigns.campaign_detail_id
-    inner join brands on brands.id = campaign_details.brand_id
-    inner join brand_managers on brand_managers.brand_id = brands.id
-    inner join users on users.id = brand_managers.user_id
-  where users.id=$1`;
+  SELECT 
+    influencers.*, 
+    campaigns.id AS campaign_id, 
+    campaign_details.name AS campaign_name
+  FROM influencers
+    INNER JOIN campaigns ON influencers.id = campaigns.influencer_id
+    INNER JOIN campaign_details ON campaign_details.id = campaigns.campaign_detail_id
+    INNER JOIN brands ON brands.id = campaign_details.brand_id
+    INNER JOIN brand_managers ON brand_managers.brand_id = brands.id
+    INNER JOIN users ON users.id = brand_managers.user_id
+  WHERE users.id=$1`;
 
   return db.query(getInfluencersSQL, [userObj.userId]);
 };
 
 const getTasks = function (taskObj) {
   const getTasksSQL = `select * from tasks
-  inner join campaigns on campaigns.id = tasks.campaign_id
-  where campaigns.id = $1 AND tasks.user_type = $2`;
+  INNER JOIN campaigns ON campaigns.id = tasks.campaign_id
+  WHERE campaigns.id = $1 AND tasks.user_type = $2`;
 
   console.log(taskObj);
   console.log(typeof taskObj.userType, typeof taskObj.campaignId);
