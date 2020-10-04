@@ -27,6 +27,7 @@ export default function Tasks(props) {
         />
       );
     }
+    return {};
   });
 
   return (

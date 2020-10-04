@@ -7,8 +7,7 @@ import Login from "./components/Login";
 import Chat from "./components/Chat/Chat";
 import Join from "./components/Join/Join";
 
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (

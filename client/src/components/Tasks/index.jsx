@@ -1,6 +1,5 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useState } from "react";
 import CampaignList from "./CampaignList";
-import CheckList from "./CheckList";
 import MessageList from "./MessageList";
 
 import "./Tasks.scss";
