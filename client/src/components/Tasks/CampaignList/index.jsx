@@ -12,19 +12,14 @@ export default function Tasks(props) {
       setCampaigns(() => {
         return data;
       });
+      props.onClick(data[0].campaignId);
     });
   }, []);
 
   const campaignsList = campaigns.map((el) => {
     if (el) {
       return (
-        <CampaignItem
-          onClick={(id) =>
-            console.log("id in campaignList:", id) || props.onClick(id)
-          }
-          key={el.campaignId}
-          {...el}
-        />
+        <CampaignItem onClick={props.onClick} key={el.campaignId} {...el} />
       );
     }
     return {};

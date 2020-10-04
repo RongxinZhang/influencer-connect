@@ -2,7 +2,7 @@ import React from "react";
 import "./CampaignItem.scss";
 
 const CampaignItem = function (props) {
-  console.log("this is CI.js props: ", props);
+  // console.log("this is CI.js props: ", props);
   return (
     <li
       className="campaign-list-item"
