@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getCampaignsAllUsers } from "../../../requests/campaigns";
 import CampaignItem from "./CampaignItem";
 
+import "./CampaignList.scss";
+
 export default function Tasks(props) {
   const [campaigns, setCampaigns] = useState([]);
 
@@ -15,9 +17,21 @@ export default function Tasks(props) {
 
   const campaignsList = campaigns.map((el) => {
     if (el) {
-      return <CampaignItem key={el.campaignId} {...el} />;
+      return (
+        <CampaignItem
+          onClick={(id) =>
+            console.log("id in campaignList:", id) || props.onClick(id)
+          }
+          key={el.campaignId}
+          {...el}
+        />
+      );
     }
   });
 
-  return <ul>{campaignsList}</ul>;
+  return (
+    <section id="campaign-list">
+      <ul>{campaignsList}</ul>
+    </section>
+  );
 }

@@ -2,8 +2,13 @@ import React from "react";
 import "./CampaignItem.scss";
 
 const CampaignItem = function (props) {
+  console.log("this is CI.js props: ", props);
   return (
-    <li className="campaign-list-item" data-campaign-id={props.campaignId}>
+    <li
+      className="campaign-list-item"
+      onClick={() => props.onClick(props.campaignId)}
+      data-campaign-id={props.campaignId}
+    >
       <section
         className="picture"
         style={{
