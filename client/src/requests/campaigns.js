@@ -17,6 +17,7 @@ const getCampaignsAllUsers = function (campaignId) {
               Number(el.youtube_followers)
           ),
           profilePicture: el.profile_url,
+          campaignId: el.campaign_id,
           currentCampaign: el.campaign_name,
         };
       });

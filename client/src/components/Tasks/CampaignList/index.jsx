@@ -15,7 +15,7 @@ export default function Tasks(props) {
 
   const campaignsList = campaigns.map((el) => {
     if (el) {
-      return <CampaignItem key={el.campaign_id} {...el} />;
+      return <CampaignItem key={el.campaignId} {...el} />;
     }
   });
 
