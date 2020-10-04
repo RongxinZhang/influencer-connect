@@ -22,7 +22,7 @@ const getTasks = function (taskObj) {
   INNER JOIN campaigns ON campaigns.id = tasks.campaign_id
   WHERE campaigns.id = $1 AND tasks.user_type = $2`;
 
-  console.log(taskObj);
+  console.log("URL tasks", taskObj);
   console.log(typeof taskObj.userType, typeof taskObj.campaignId);
   const getTasksSQLValues = [taskObj.campaignId, taskObj.userType];
 

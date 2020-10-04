@@ -117,8 +117,8 @@ CREATE TABLE tasks (
   user_type VARCHAR(255) NOT NULL,
   status VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
-  start_date DATE NOT NULL,
-  created_at TIMESTAMP DEFAULT NOW()
+  due_date DATE NOT NULL,
+  created_date TIMESTAMP DEFAULT NOW()
 );
  
 CREATE TABLE messages (
