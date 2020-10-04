@@ -7,12 +7,16 @@ import "./CampaignList.scss";
 export default function Tasks(props) {
   const [campaigns, setCampaigns] = useState([]);
 
+  const test = props.onClick;
+
   useEffect(() => {
     getCampaignsAllUsers().then((data) => {
       setCampaigns(() => {
         return data;
       });
-      props.onClick(data[0].campaignId);
+
+      // Set first campaign as default campaign
+      test(data[0].campaignId);
     });
   }, []);
 

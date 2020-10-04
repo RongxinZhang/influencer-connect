@@ -6,7 +6,7 @@ import "./Tasks.scss";
 
 export default function Tasks(props) {
   const [currentCampaign, setcurrentCampaign] = useState(null);
-  console.log("current campaign: ", currentCampaign);
+  // console.log("current campaign: ", currentCampaign);
 
   // all state is kept here.
   // Module: styled-componenets inside the componenet file.
@@ -19,7 +19,7 @@ export default function Tasks(props) {
   // const tasks = [...props.days]
   return (
     <section id="campaign-tasks">
-      <CampaignList onClick={handleClickCurrentCampaign} />
+      <CampaignList onClick={handleClickCurrentCampaign} setcurrentCampaign />
       {currentCampaign && <MessageList campaignId={currentCampaign} />}
     </section>
   );
