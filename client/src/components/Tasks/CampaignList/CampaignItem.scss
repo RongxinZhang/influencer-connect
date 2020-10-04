@@ -2,7 +2,7 @@
   list-style: none;
   margin-bottom: 10px;
 
-  .picture {
+  .campaign-list-picture {
     height: 50px;
     width: 50px;
     display: inline-block;
@@ -10,9 +10,9 @@
     margin-right: 10px;
   }
 
-  .user {
+  .campaign-list-user {
     display: inline-block;
-    .user-name {
+    .campaign-list-user-name {
       display: flex;
       span {
         margin-right: 5px;

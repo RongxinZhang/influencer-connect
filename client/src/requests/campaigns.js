@@ -29,12 +29,15 @@ const getCampaignsAllUsers = function (campaignId) {
     });
 };
 
-const getCampaignsTasks = function (campaignId) {
+const getCampaignsTasks = function (obj) {
   return axios
-    .get(`${BASE_URL}/campaigns/${campaignId}/tasks`)
-    .then((data) => {
+    .get(`${BASE_URL}/campaigns/${obj.campaignId}/tasks`, {
+      userType: obj.userType,
+    })
+    .then((res) => {
+      console.log("RES", res);
       // NOTE: Do processing here
-      return data;
+      return res.data;
     })
     .catch((err) => {});
 };
@@ -42,8 +45,8 @@ const getCampaignsTasks = function (campaignId) {
 const getCampaignMessages = function (campaignId) {
   return axios
     .get(`${BASE_URL}/campaigns/${campaignId}/messages`)
-    .then((data) => {
-      return data.data.data;
+    .then((res) => {
+      return res.data.data;
     })
     .catch((err) => {
       return err;

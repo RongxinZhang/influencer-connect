@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CampaignList from "./CampaignList";
 import MessageList from "./MessageList";
+import CheckList from "./CheckList";
 
 import "./Tasks.scss";
 
@@ -19,7 +20,8 @@ export default function Tasks(props) {
   // const tasks = [...props.days]
   return (
     <section id="campaign-tasks">
-      <CampaignList onClick={handleClickCurrentCampaign} setcurrentCampaign />
+      <CampaignList onClick={handleClickCurrentCampaign} />
+      {currentCampaign && <CheckList currentCampaignId={currentCampaign} />}
       {currentCampaign && <MessageList campaignId={currentCampaign} />}
     </section>
   );

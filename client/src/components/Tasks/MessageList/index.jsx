@@ -7,11 +7,13 @@ import "./MessageList.scss";
 export default function Messages(props) {
   const [messages, setMessage] = useState([]);
 
-  console.log(messages);
-
   useEffect(() => {
     getCampaignMessages(props.campaignId).then((data) => {
-      setMessage(data);
+      if (data) {
+        setMessage(() => {
+          return data;
+        });
+      }
     });
   }, [props.campaignId]);
 

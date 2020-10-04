@@ -10,7 +10,7 @@ const CampaignItem = function (props) {
       data-campaign-id={props.campaignId}
     >
       <section
-        className="picture"
+        className="campaign-list-picture"
         style={{
           backgroundImage: "url(" + props.profilePicture + ")",
           backgroundSize: "cover",
@@ -18,9 +18,9 @@ const CampaignItem = function (props) {
           backgroundRepeat: "no-repeat",
         }}
       ></section>
-      <section className="user">
-        <div className="user-name">
-          <span className="">{props.name}</span>
+      <section className="campaign-list-user">
+        <div className="campaign-list-user-name">
+          <span>{props.name}</span>
           <span>{props.followerCount}</span>
         </div>
         <div>{props.currentCampaign}</div>
