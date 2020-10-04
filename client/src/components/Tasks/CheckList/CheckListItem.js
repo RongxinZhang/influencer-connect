@@ -1,23 +1,21 @@
 import React from "react";
-import "./CampaignItem.scss";
 
 const CheckListItem = function (props) {
-  // handle complete
+  const handleTaskComplete = function () {
+    props.handleTaskUpdate({ taskId: props.taskId, status: "complete" });
+  };
 
   return (
-    <li
-      className="campaign-list-item"
-      onClick={() => props.onClick(props.campaignId)}
-      data-campaign-id={props.campaignId}
-    >
+    <li className="campaign-list-item" data-task-id={props.taskId}>
       <section>
         <div className="checkList-description">{props.description}</div>
-        <div className="checkList-due-date">{props.dueDate}</div>
+        <div className="checkList-due-date">{props.daysLeft} days left</div>
       </section>
+
       <section className="checklist-buttons">
         <button
           className="checklist-complete-button"
-          onClick={props.handleCompleteTask}
+          onClick={handleTaskComplete}
         >
           Complete
         </button>
@@ -25,4 +23,5 @@ const CheckListItem = function (props) {
     </li>
   );
 };
+
 export default CheckListItem;
