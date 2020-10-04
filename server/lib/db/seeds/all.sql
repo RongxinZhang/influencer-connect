@@ -70,13 +70,13 @@ VALUES
 INSERT INTO tasks
   (campaign_id, user_type, status, description, due_date, created_date)
 VALUES
-  (1, 'influencer', 'on going', 'Nike Task Description', '2020-10-28', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Nike Task Description', '2020-10-28', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Coca-Cola need to build something new', '2020-10-28', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Task 2: Need to do something great', '2020-10-28', '2020-09-26'),
-  (3, 'influencer', 'on going', 'Mcdonalds Task Description', '2020-10-28', '2020-09-27'),
-  (4, 'influencer', 'on going', 'OVO Sound Task Description', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'on going', 'Square Enix Task Description', '2020-10-28', '2020-09-27');
+  (1, 'brand', 'on going', 'Campaign 1: Nike Task Description', '2020-10-28', '2020-09-26'),
+  (1, 'influencer', 'on going', 'Campaign 1: Nike Task Description', '2020-10-28', '2020-09-26'),
+  (2, 'brand', 'on going', 'Campaign 2: Coca-Cola need to build something new', '2020-10-28', '2020-09-26'),
+  (2, 'influencer', 'on going', 'Campaign 2:: Need to do something great', '2020-10-28', '2020-09-26'),
+  (3, 'influencer', 'on going', 'Campaign 3: Mcdonalds Task Description', '2020-10-28', '2020-09-27'),
+  (4, 'influencer', 'on going', 'Campaign 4: OVO Sound Task Description', '2020-10-28', '2020-09-27'),
+  (5, 'influencer', 'on going', 'Campaign 5: Square Enix Task Description', '2020-10-28', '2020-09-27');
 
 INSERT INTO messages
   (content, sender_id, receiver_id, campaign_id, status)

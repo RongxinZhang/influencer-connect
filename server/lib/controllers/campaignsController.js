@@ -18,12 +18,10 @@ const getAllUsers = function (userObj) {
 };
 
 const getTasks = function (taskObj) {
-  const getTasksSQL = `select * from tasks
+  const getTasksSQL = `select tasks.* from tasks
   INNER JOIN campaigns ON campaigns.id = tasks.campaign_id
   WHERE campaigns.id = $1`;
 
-  // console.log("URL tasks", taskObj);
-  // console.log(typeof taskObj.userType, typeof taskObj.campaignId);
   const getTasksSQLValues = [taskObj.campaignId];
 
   return db.query(getTasksSQL, getTasksSQLValues);

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { nFormatter } from "../helpers/formatters";
+import { nFormatter, getDaysDifference } from "../helpers/formatters";
 
 // NOTE: must add "http" in front of URL
 const BASE_URL = "http://localhost:3000";
@@ -33,9 +33,17 @@ const getCampaignsTasks = function (campaignId) {
   return axios
     .get(`${BASE_URL}/campaigns/${campaignId}/tasks`)
     .then((res) => {
-      console.log("RES", res);
       // NOTE: Do processing here
-      return res.data;
+      console.log("res.data.data", res.data.data);
+      const resObj = res.data.data.map((el) => {
+        return {
+          description: el.description,
+          taskId: el.id,
+          daysLeft: getDaysDifference(el.due_date),
+        };
+      });
+
+      return resObj;
     })
     .catch((err) => {});
 };
