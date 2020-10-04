@@ -7,10 +7,7 @@ export default function CheckList(props) {
 
   useEffect(() => {
     console.log("tasks", props.currentCampaignId);
-    getCampaignsTasks({
-      campaingId: props.currentCampaignId,
-      userType: "influener",
-    }).then((tasks) => {
+    getCampaignsTasks(props.currentCampaignId).then((tasks) => {
       console.log("tasks", tasks);
       setTasks(() => {
         return tasks;

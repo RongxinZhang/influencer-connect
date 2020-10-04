@@ -29,11 +29,9 @@ const getCampaignsAllUsers = function (campaignId) {
     });
 };
 
-const getCampaignsTasks = function (obj) {
+const getCampaignsTasks = function (campaignId) {
   return axios
-    .get(`${BASE_URL}/campaigns/${obj.campaignId}/tasks`, {
-      userType: obj.userType,
-    })
+    .get(`${BASE_URL}/campaigns/${campaignId}/tasks`)
     .then((res) => {
       console.log("RES", res);
       // NOTE: Do processing here
