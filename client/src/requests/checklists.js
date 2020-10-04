@@ -40,6 +40,7 @@ const getCampaignsTasks = function (campaignId) {
 
 
 const getTasks = function (taskId) {
+  getCampaignsTasks(campaignId)
   return axios
     .get(`${BASE_URL}/campaigns/${campaignId}/tasks/${taskId}`)
     .then((data) => {

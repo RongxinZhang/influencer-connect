@@ -1,9 +1,9 @@
 import React from "react";
+import { getTasks, getCampaignsTasks } from "../../../requests/checklists";
 // import checklistHelper from "../../helper"
 
 
-// import "components/checklists/CheckListItem.scss";
-// import FlipMove from "react-flip-move"
+// import "components/checklists/CheckListItem.scss"
 
 import classNames from "classnames";
 
@@ -31,7 +31,8 @@ const tasks =
 }]
 
 
-
+const props =  getTasks(tasks.id)
+console.log(props, "//////////////////////////////////////////xxxxxxxxxxxxxxxxxxxxxxxxxxx")
 export default function CheckListItem(props) {
   const tasks = props.tasks;
   const listItems = tasks.map(task => {
@@ -47,9 +48,7 @@ export default function CheckListItem(props) {
     })
   return (
     <div>
-      {/* <FlipMove easing="ease-in-out" duration={200}> */}
       {listItems}
-      {/* </FlipMove> */}
     </div>
   )
 

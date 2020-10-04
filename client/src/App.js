@@ -5,7 +5,7 @@ import Tasks from "./components/Tasks";
 import UpdateTasks from "./components/UpdateTasks";
 import Login from "./components/Login";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import CheckListItem from "./components/checklists/CheckListItem";
+import CheckListItem from "./components/Tasks/checklists/CheckListItem";
 
 function App() {
   return (
