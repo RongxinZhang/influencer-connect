@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getCampaignMessages } from "../../../requests/campaigns";
 import MessageItem from "./MessageItem";
 
+import "./MessageList.scss";
+
 export default function Messages(props) {
   const [messages, setMessage] = useState([]);
 
@@ -11,7 +13,7 @@ export default function Messages(props) {
     getCampaignMessages(props.campaignId).then((data) => {
       setMessage(data);
     });
-  }, []);
+  }, [props.campaignId]);
 
   const messageList = messages.map((message) => {
     return (
@@ -24,5 +26,9 @@ export default function Messages(props) {
     );
   });
 
-  return <ul>{messageList}</ul>;
-};
+  return (
+    <section id="message-list">
+      <ul>{messageList}</ul>
+    </section>
+  );
+}

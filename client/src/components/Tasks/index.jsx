@@ -3,6 +3,8 @@ import CampaignList from "./CampaignList";
 import CheckList from "./CheckList";
 import MessageList from "./MessageList";
 
+import "./Tasks.scss";
+
 export default function Tasks(props) {
   const [currentCampaign, setcurrentCampaign] = useState(null);
   console.log("current campaign: ", currentCampaign);
@@ -17,13 +19,9 @@ export default function Tasks(props) {
 
   // const tasks = [...props.days]
   return (
-    <Fragment>
-      <div>HEADER</div>
+    <section id="campaign-tasks">
       <CampaignList onClick={(id) => handleClickCurrentCampaign(id)} />
-      {/* <CheckList currentCampaign={currentCampaign} /> */}
-      {/* <Chats campaigns={campaigns} /> */}
-      {/* <div>HEADER</div> */}
       {currentCampaign && <MessageList campaignId={currentCampaign} />}
-    </Fragment>
+    </section>
   );
 }
