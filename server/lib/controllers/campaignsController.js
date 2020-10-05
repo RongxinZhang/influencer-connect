@@ -134,7 +134,7 @@ const deleteTask = function (taskObj) {
 // Create Tasks
 const createTask = function (userObject) {
   const querryString = `
-    INSERT INTO tasks (campaign_id, user_type, status, description, start_date)
+    INSERT INTO tasks (campaign_id, user_type, status, description, due_date)
     VALUES ($1, $2, $3, $4, $5)
     RETURNING *;
   `;
@@ -144,7 +144,7 @@ const createTask = function (userObject) {
     userObject.userType,
     userObject.status,
     userObject.description,
-    userObject.startDate,
+    userObject.dueDate,
   ]);
 };
 

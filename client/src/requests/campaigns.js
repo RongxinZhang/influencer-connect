@@ -34,10 +34,32 @@ const getCampaignsTasks = function (campaignId) {
     .get(`${BASE_URL}/campaigns/${campaignId}/tasks`)
     .then((res) => {
       // NOTE: Do processing here
-      console.log("res.data.data", res.data.data);
       const resObj = res.data.data.map((el) => {
         return {
           description: el.description,
+          status: el.status,
+          taskId: el.id,
+          daysLeft: getDaysDifference(el.due_date),
+        };
+      });
+
+      return resObj;
+    })
+    .catch((err) => {});
+};
+
+const updateCampaignTask = function (inputObj) {
+  return axios
+    .post(
+      `${BASE_URL}/campaigns/${inputObj.campaignId}/tasks/${inputObj.taskId}`,
+      { status: inputObj.status }
+    )
+    .then((res) => {
+      // NOTE: Do processing here
+      const resObj = res.data.data.map((el) => {
+        return {
+          description: el.description,
+          status: el.status,
           taskId: el.id,
           daysLeft: getDaysDifference(el.due_date),
         };
@@ -59,4 +81,9 @@ const getCampaignMessages = function (campaignId) {
     });
 };
 
-export { getCampaignsAllUsers, getCampaignsTasks, getCampaignMessages };
+export {
+  getCampaignsAllUsers,
+  getCampaignsTasks,
+  updateCampaignTask,
+  getCampaignMessages,
+};
