@@ -1,5 +1,5 @@
 import axios from "axios";
-import { nFormatter } from "../helpers/formatters";
+import { nFormatter, getDaysDifference } from "../helpers/formatters";
 
 // NOTE: must add "http" in front of URL
 const BASE_URL = "http://localhost:3000";
@@ -17,6 +17,7 @@ const getCampaignsAllUsers = function (campaignId) {
               Number(el.youtube_followers)
           ),
           profilePicture: el.profile_url,
+          campaignId: el.campaign_id,
           currentCampaign: el.campaign_name,
         };
       });
@@ -31,11 +32,58 @@ const getCampaignsAllUsers = function (campaignId) {
 const getCampaignsTasks = function (campaignId) {
   return axios
     .get(`${BASE_URL}/campaigns/${campaignId}/tasks`)
-    .then((data) => {
+    .then((res) => {
       // NOTE: Do processing here
-      return data;
+      const resObj = res.data.data.map((el) => {
+        return {
+          description: el.description,
+          status: el.status,
+          taskId: el.id,
+          daysLeft: getDaysDifference(el.due_date),
+        };
+      });
+
+      return resObj;
     })
     .catch((err) => {});
 };
 
-export { getCampaignsAllUsers, getCampaignsTasks };
+const updateCampaignTask = function (inputObj) {
+  return axios
+    .post(
+      `${BASE_URL}/campaigns/${inputObj.campaignId}/tasks/${inputObj.taskId}`,
+      { status: inputObj.status }
+    )
+    .then((res) => {
+      // NOTE: Do processing here
+      const resObj = res.data.data.map((el) => {
+        return {
+          description: el.description,
+          status: el.status,
+          taskId: el.id,
+          daysLeft: getDaysDifference(el.due_date),
+        };
+      });
+
+      return resObj;
+    })
+    .catch((err) => {});
+};
+
+const getCampaignMessages = function (campaignId) {
+  return axios
+    .get(`${BASE_URL}/campaigns/${campaignId}/messages`)
+    .then((res) => {
+      return res.data.data;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
+export {
+  getCampaignsAllUsers,
+  getCampaignsTasks,
+  updateCampaignTask,
+  getCampaignMessages,
+};

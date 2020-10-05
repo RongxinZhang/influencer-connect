@@ -1,19 +1,63 @@
+// @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900");
+
+// @import "styles/reset.scss";
+
+// * {
+//   box-sizing: border-box;
+// }
+
+// html,
+// body {
+//   height: 100%;
+// }
+
+// body {
+//   margin: 0;
+//   font-family: "Source Sans Pro", sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+//     monospace;
+// }
+
+
+
+
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900");
 
+@import "styles/variables.scss";
 @import "styles/reset.scss";
+
+@import "styles/typography.scss";
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-family;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 960px) {
+  html {
+    font-size: 12px;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 10px;
+  }
 }

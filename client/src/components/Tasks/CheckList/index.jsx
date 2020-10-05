@@ -1,21 +1,57 @@
 import React, { useEffect, useState } from "react";
+import {
+  getCampaignsTasks,
+  updateCampaignTask,
+} from "../../../requests/campaigns";
+import CheckListItem from "./CheckListItem";
+import "./CheckList.scss";
 
 export default function CheckList(props) {
-  useEffect(() => {
-    console.log("CHECKLIST: Updated", props.currentCampaign);
-  }, [props.currentCampaign]);
-  // const handleClick = function (input) {
-  //   createCampaignTasks();
-  // };
+  const [tasks, setTasks] = useState([]);
 
-  // const tasks = [...props.days]
+  useEffect(() => {
+    getCampaignsTasks(props.currentCampaignId).then((data) => {
+      if (data) {
+        setTasks(() => {
+          return data;
+        });
+      }
+    });
+  }, [props.currentCampaignId]);
+
+  const handleTaskUpdate = function (taskId, newStatus) {
+    updateCampaignTask({
+      campaignId: props.currentCampaignId,
+      taskId: taskId,
+      status: newStatus,
+    }).then((res) => {
+      if (res.length > 0) {
+        // UPDATE: previous task with returned and updated task
+        setTasks((prev) => {
+          return prev.map((el) => {
+            if (el.taskId === res[0].taskId) {
+              return res[0];
+            }
+            return el;
+          });
+        });
+      }
+    });
+  };
+
+  const taskList = tasks.map((el) => {
+    return (
+      <CheckListItem
+        {...el}
+        handleTaskUpdate={handleTaskUpdate}
+        key={el.taskId}
+      />
+    );
+  });
+
   return (
-    <ul className="campaign-list">
-      <li>Checklist 1</li>
-      <li>Checklist 2</li>
-      <li>Checklist 3</li>
-      <li>Checklist 4</li>
-      <li>Checklist 5</li>
-    </ul>
+    <section id="checklist-list">
+      <ul>{taskList}</ul>
+    </section>
   );
 }

@@ -18,13 +18,11 @@ const getAllUsers = function (userObj) {
 };
 
 const getTasks = function (taskObj) {
-  const getTasksSQL = `select * from tasks
+  const getTasksSQL = `select tasks.* from tasks
   INNER JOIN campaigns ON campaigns.id = tasks.campaign_id
-  WHERE campaigns.id = $1 AND tasks.user_type = $2`;
+  WHERE campaigns.id = $1`;
 
-  console.log(taskObj);
-  console.log(typeof taskObj.userType, typeof taskObj.campaignId);
-  const getTasksSQLValues = [taskObj.campaignId, taskObj.userType];
+  const getTasksSQLValues = [taskObj.campaignId];
 
   return db.query(getTasksSQL, getTasksSQLValues);
 };
@@ -136,7 +134,7 @@ const deleteTask = function (taskObj) {
 // Create Tasks
 const createTask = function (userObject) {
   const querryString = `
-    INSERT INTO tasks (campaign_id, user_type, status, description, start_date)
+    INSERT INTO tasks (campaign_id, user_type, status, description, due_date)
     VALUES ($1, $2, $3, $4, $5)
     RETURNING *;
   `;
@@ -146,7 +144,7 @@ const createTask = function (userObject) {
     userObject.userType,
     userObject.status,
     userObject.description,
-    userObject.startDate,
+    userObject.dueDate,
   ]);
 };
 

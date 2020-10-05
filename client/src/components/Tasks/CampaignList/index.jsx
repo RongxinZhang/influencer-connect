@@ -2,22 +2,34 @@ import React, { useEffect, useState } from "react";
 import { getCampaignsAllUsers } from "../../../requests/campaigns";
 import CampaignItem from "./CampaignItem";
 
+import "./CampaignList.scss";
+
 export default function Tasks(props) {
   const [campaigns, setCampaigns] = useState([]);
 
   useEffect(() => {
-    getCampaignsAllUsers().then((data) => {
+    getCampaignsAllUsers().then((campaigns) => {
       setCampaigns(() => {
-        return data;
+        return campaigns;
       });
+      if (campaigns) {
+        props.onClick(campaigns[0].campaignId);
+      }
     });
   }, []);
 
   const campaignsList = campaigns.map((el) => {
     if (el) {
-      return <CampaignItem key={el.campaign_id} {...el} />;
+      return (
+        <CampaignItem onClick={props.onClick} key={el.campaignId} {...el} />
+      );
     }
+    return {};
   });
 
-  return <ul>{campaignsList}</ul>;
+  return (
+    <section id="campaign-list">
+      <ul>{campaignsList}</ul>
+    </section>
+  );
 }

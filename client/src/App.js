@@ -4,8 +4,10 @@ import "./App.scss";
 import Tasks from "./components/Tasks";
 import UpdateTasks from "./components/UpdateTasks";
 import Login from "./components/Login";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import CheckListItem from "./components/Tasks/checklists/CheckListItem";
+import Chat from "./components/Chat/Chat";
+import Join from "./components/Join/Join";
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -16,10 +18,15 @@ function App() {
       </Route>
       <Route path="/tasks">
         <Tasks />
-        <CheckListItem/>
-      </Route>
+        </Route>
       <Route path="/login">
         <Login />
+      </Route>
+      <Route path="/chat">
+        <Chat />
+      </Route>
+      <Route path="/join">
+        <Join />
       </Route>
       {/* FOOTER */}
     </Router>

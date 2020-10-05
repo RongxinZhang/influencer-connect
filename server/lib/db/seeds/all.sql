@@ -27,8 +27,9 @@ INSERT INTO brand_managers
 VALUES
   (2, 1, true),
   /*Favour is the brand manager of Coca-Cola*/
-  (3, 2, true);
-
+  (3, 2, true),
+  (4, 3, true),
+  (5, 4, true);
 
 INSERT INTO influencers
   (first_name, last_name, user_id, description, profile_url, street, city, province, country, 
@@ -41,12 +42,10 @@ VALUES
   ('Dwayne', 'Johnson', 5, 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ec593cc431fb70007482137%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1321%26cropX2%3D3300%26cropY1%3D114%26cropY2%3D2093', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en',120000000, 'https://www.facebook.com/DwayneJohnson/',10, 'https://www.youtube.com/user/therock', 0),
   ('Dwayne', 'Johnson', 6, 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ec593cc431fb70007482137%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1321%26cropX2%3D3300%26cropY1%3D114%26cropY2%3D2093', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en',120000000, 'https://www.facebook.com/DwayneJohnson/', 10,'https://www.youtube.com/user/therock', 0);
 
-/*Nike Campaign*/
 INSERT INTO campaign_details
   (name, brand_id, product_description, product_value, commission_amount, images_url, affiliate_website, example_posts, post_requirements, category, city, country, target_age_range, target_genders)
 VALUES
   ('Nike Athlete', 1, 'product_description', 10, 2, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 10, 'target_genders'),
-  /*Coca-Cola Campaign*/
   ('Coca-Cola Sponsor', 2, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 30, 'target_genders'),
   ('Mcdonalds Sponsor', 3, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 20, 'target_genders'),
   ('OVO Sound Sponsor', 4, 'product_description', 20, 3, 'images_url', 'affiliate_website', 'example_posts', 'post_requirements', 'category', 'city', 'country', 22, 'target_genders'),
@@ -69,26 +68,25 @@ VALUES
   (6, 5, 'Accepted');
 
 INSERT INTO tasks
-  (campaign_id, user_type, status, description, start_date)
+  (campaign_id, user_type, status, description, due_date, created_date)
 VALUES
-  (1, 'influencer', 'on going', 'Nike Task Description', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Coca-Cola Task Description', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Mcdonalds Task Description', '2020-09-27'),
-
-  (1, 'brand', 'on going', 'Coca-Cola Task Description', '2020-09-26'),
-  (1, 'brand', 'on going', 'Mcdonalds Task Description', '2020-09-27'),
-  
-  (2, 'influencer', 'on going', 'OVO Sound Task Description', '2020-09-27'),
-  (2, 'influencer', 'on going', 'Square Enix Task Description', '2020-09-27');
-
-
+  (1, 'brand', 'on going', 'Campaign 1: Nike Task Description', '2020-10-28', '2020-09-26'),
+  (1, 'influencer', 'on going', 'Campaign 1: Nike Task Description', '2020-10-28', '2020-09-26'),
+  (2, 'brand', 'on going', 'Campaign 2: Coca-Cola need to build something new', '2020-10-28', '2020-09-26'),
+  (2, 'influencer', 'on going', 'Campaign 2:: Need to do something great', '2020-10-28', '2020-09-26'),
+  (3, 'influencer', 'on going', 'Campaign 3: Mcdonalds Task Description', '2020-10-28', '2020-09-27'),
+  (4, 'influencer', 'on going', 'Campaign 4: OVO Sound Task Description', '2020-10-28', '2020-09-27'),
+  (5, 'influencer', 'on going', 'Campaign 5: Square Enix Task Description', '2020-10-28', '2020-09-27');
 
 INSERT INTO messages
   (content, sender_id, receiver_id, campaign_id, status)
 VALUES 
-  ('message content', 2, 2, 2, 'accepted');
-
-
+  ('First Test Message', 1, 2, 1, 'accepted'),
+  ('Second Seed Test Message', 3, 4, 2, 'accepted'),
+  ('Third Seed Test Message', 5, 6, 3, 'accepted'),
+  ('Fourth Seed Test Message', 1, 2, 4, 'accepted'),
+  ('Fifth Seed Test Message', 3, 4, 5, 'accepted'),
+  ('Sixth Seed Test Message', 2, 3, 5, 'accepted');
 
 INSERT INTO categories
   (name, description)
@@ -99,32 +97,22 @@ VALUES
   ('Music', 'Brands that are related to music. You can see them in this category.'),
   ('Gaming', 'Brands that are related to gaming. You can see them in this category.'),
   ('Skin-care', 'Brands that are related to skin-care. You can see them in this category.'),
-  ('Make-up', 'Brands that are related to skin-care. You can see them in this category.');
-
+  ('Entertainment', 'Brands that are related to entertainment. You can see them in this category.');
 
 INSERT INTO influencers_categories 
   (influencer_id, category_id)
 VALUES
   (2, 1),
-  (3, 2),
-  (4, 6);
-
+  (3, 7),
+  (4, 7),
+  (5, 4);
 
 INSERT INTO campaign_detail_categories
   (category_id, campaign_detail_id)
 VALUES
-  (2, 6),
-  (1, 4);
-
-
-INSERT INTO tasks
-  (campaign_id, user_type, status, description, start_date)
-VALUES
-  (2, 'influencer', 'on going', 'Nike Task Description', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Coca-Cola Task Description', '2020-09-26');
-
-
-INSERT INTO messages
-  (content, sender_id, receiver_id, campaign_id, status)
-VALUES 
-  ('message content', 2, 2, 1, 'accepted');
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 4),
+  (5, 5),
+  (6, 6);

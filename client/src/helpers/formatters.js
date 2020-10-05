@@ -18,4 +18,15 @@ const nFormatter = function (num, digits) {
   return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
 };
 
-export { nFormatter };
+const getDaysDifference = function (dueDate) {
+  if (dueDate) {
+    const date1 = new Date();
+    const date2 = new Date(dueDate);
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+  }
+  return "ERROR";
+};
+
+export { nFormatter, getDaysDifference };
