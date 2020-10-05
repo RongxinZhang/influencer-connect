@@ -6,7 +6,9 @@ import CheckList from "./CheckList";
 import "./Tasks.scss";
 
 export default function Tasks(props) {
+  const [name, setName] = useState("");
   const [currentCampaign, setcurrentCampaign] = useState(null);
+  console.log("this is currentCampaign: ", currentCampaign);
   // console.log("current campaign: ", currentCampaign);
 
   // all state is kept here.
@@ -20,9 +22,9 @@ export default function Tasks(props) {
   // const tasks = [...props.days]
   return (
     <section id="campaign-tasks">
-      <CampaignList onClick={handleClickCurrentCampaign} />
+      <CampaignList onClick={handleClickCurrentCampaign} setName={setName} />
       {currentCampaign && <CheckList currentCampaignId={currentCampaign} />}
-      {currentCampaign && <MessageList campaignId={currentCampaign} />}
+      {currentCampaign && <MessageList campaignId={currentCampaign} name={name} />}
     </section>
   );
 }
