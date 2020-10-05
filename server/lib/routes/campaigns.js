@@ -88,7 +88,6 @@ router.post("/:campaignId/tasks/:taskId", (req, res) => {
   campaignController
     .updateTask(taskObj)
     .then((data) => {
-      console.log(data);
       res.json({ success: 200, data: data.rows });
     })
     .catch((err) => {

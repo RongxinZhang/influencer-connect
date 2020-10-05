@@ -1,23 +1,53 @@
+@import "../../../styles/mixins.scss";
+
 .campaign-list-item {
+  @include border-radius(2px);
   list-style: none;
   margin-bottom: 10px;
+  padding: 10px 10px;
+  // border-bottom: 1px dotted rgb(199, 199, 199);
+  border-left: 3px solid #f1f1f1;
+  display: flex;
+  cursor: pointer;
+
+  &:hover {
+    background: white;
+    border-left: 3px solid white;
+  }
 
   .campaign-list-picture {
-    height: 50px;
-    width: 50px;
-    display: inline-block;
-    vertical-align: top;
     margin-right: 10px;
+    flex-basis: 50px;
+    min-width: 50px;
+    // border: 1px solid black;
+    div {
+      height: 50px;
+      @include border-radius(50%);
+    }
   }
 
   .campaign-list-user {
-    display: inline-block;
+    // border: 1px solid black;
+    width: 100%;
     .campaign-list-user-name {
       display: flex;
+      margin-right: 10px;
+      font-weight: 600;
+      justify-content: space-between;
       span {
-        margin-right: 5px;
-        font-weight: 600;
+        float: right;
+        font-weight: 300;
+        font-size: 0.8em;
       }
     }
+
+    .campaign-list-campagin-name {
+      font-size: 0.8em;
+    }
   }
+}
+
+.campaign-list-item--selected {
+  background: white;
+  border-left: 3px solid white;
 }

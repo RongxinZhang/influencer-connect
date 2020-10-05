@@ -18,10 +18,19 @@ export default function Tasks(props) {
     });
   }, []);
 
+  const handleClick = function (campaignId) {
+    props.onClick(campaignId);
+  };
+
   const campaignsList = campaigns.map((el) => {
     if (el) {
       return (
-        <CampaignItem onClick={props.onClick} key={el.campaignId} {...el} />
+        <CampaignItem
+          onClick={handleClick}
+          selected={props.currentCampaignId === el.campaignId}
+          key={el.campaignId}
+          {...el}
+        />
       );
     }
     return {};
