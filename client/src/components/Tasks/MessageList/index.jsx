@@ -8,7 +8,6 @@ export default function Messages(props) {
 
   const [text, setText] = useState("");
   const [error, setError] = useState("");
-
   const [messages, setMessage] = useState([]);
 
   useEffect(() => {
@@ -21,9 +20,7 @@ export default function Messages(props) {
     });
   }, [props.campaignId]);
 
-  //I THINK MIC WENT OFF ONE SECOND
-  // Im going to leave call and be right back just unplugged mic
-
+  //Send Button Function
   const send = function () {
     if (text === "") {
       setError("Text cannot be blank");
@@ -58,13 +55,17 @@ export default function Messages(props) {
           </section>
 
           <section>
-          <input
-          type="text"
-          placeholder="Enter Text Here"
-          value={text}
-          onChange={(event) => setText(event.target.value)}
-          />
-        </section>
+            {error}
+          </section>
+
+          <section>
+            <input
+            type="text"
+            placeholder="Enter Text Here"
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+            />
+          </section>
 
         <section className="message-buttons">
             <button
@@ -74,9 +75,7 @@ export default function Messages(props) {
             Send
           </button>
         </section>
-        <section>
-          {error}
-        </section>
+
         </div>
   );
 }
