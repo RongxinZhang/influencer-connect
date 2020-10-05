@@ -77,7 +77,28 @@ router.post("/:campaignId/tasks", (req, res) => {
     });
 });
 
+// Get task information for a specific user
+
+router.get("/:campaignId/tasks/:taskId", (req, res) => {
+  const taskId = Number(req.params.taskId);
+
+  const taskObj = {
+    ...req.body,
+    taskId,
+  };
+  campaignController
+    .getTasks(taskObj)
+    .then((data) => {
+      console.log(data);
+      res.json({ success: 200, data: data.rows });
+    })
+    .catch((err) => {
+      res.status(500).json({ status: 500, error: err.message });
+    });
+});
+
 /* Update Tasks Information */
+
 router.post("/:campaignId/tasks/:taskId", (req, res) => {
   const taskId = Number(req.params.taskId);
 
@@ -97,6 +118,7 @@ router.post("/:campaignId/tasks/:taskId", (req, res) => {
 });
 
 /* Delete Campaign Tasks */
+
 router.delete("/:campaignId/tasks/:taskId", (req, res) => {
   const taskId = Number(req.params.taskId);
 
@@ -117,6 +139,7 @@ router.delete("/:campaignId/tasks/:taskId", (req, res) => {
 });
 
 /* Get List of all Messages for a campaign */
+
 router.get("/:campaignId/messages", (req, res) => {
   const campaignId = Number(req.params.campaignId);
 
