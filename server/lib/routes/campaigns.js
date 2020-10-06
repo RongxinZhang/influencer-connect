@@ -4,6 +4,19 @@ const router = express.Router();
 const campaignController = require("../controllers/campaignsController");
 
 /* Get all users for all campaigns */
+router.get("/", (req, res) => {
+  // NOTE: This should be replaced with the req.user object from the request
+  const userObj = { userId: 2 };
+  campaignController
+    .getCampaigns(userObj)
+    .then((data) => {
+      res.json({ success: 200, data: data.rows });
+    })
+    .catch((err) => {
+      res.status(500).json({ status: 500, error: err.message });
+    });
+});
+
 router.get("/allUsers", (req, res) => {
   // NOTE: This should be replaced with the req.user object from the request
   const userObj = { userId: 2 };
@@ -88,7 +101,6 @@ router.post("/:campaignId/tasks/:taskId", (req, res) => {
   campaignController
     .updateTask(taskObj)
     .then((data) => {
-      console.log(data);
       res.json({ success: 200, data: data.rows });
     })
     .catch((err) => {

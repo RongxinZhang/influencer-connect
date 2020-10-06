@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getCampaignsAllUsers } from "../../../requests/campaigns";
 import CampaignItem from "./CampaignItem";
+import CampaignFilter from "./CampaignFilter";
 
 import "./CampaignList.scss";
 
@@ -18,11 +19,19 @@ export default function Tasks(props) {
     });
   }, []);
 
-  console.log("this is campaigns: ", campaigns);
+  const handleClick = function (campaignId) {
+    props.onClick(campaignId);
+  };
+
   const campaignsList = campaigns.map((el) => {
     if (el) {
       return (
-        <CampaignItem onClick={props.onClick} key={el.campaignId} {...el} />
+        <CampaignItem
+          onClick={handleClick}
+          selected={props.currentCampaignId === el.campaignId}
+          key={el.campaignId}
+          {...el}
+        />
       );
     }
     return {};
@@ -30,6 +39,7 @@ export default function Tasks(props) {
 
   return (
     <section id="campaign-list">
+      <CampaignFilter />
       <ul>{campaignsList}</ul>
     </section>
   );

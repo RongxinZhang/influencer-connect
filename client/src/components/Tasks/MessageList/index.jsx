@@ -93,8 +93,8 @@ export default function Messages({messages, setMessages, campaignId, name, date}
           placeholder="Enter Text Here"
           value={text}
           onChange={(event) => setText(event.target.value)}
-          />
-        </section>
+        />
+      </section>
 
       <section className="message-buttons">
           <button

@@ -51,8 +51,10 @@ export default function CheckList(props) {
 
   return (
     <section id="checklist-list">
-      <h3>Tasks you need to do for this campaign:</h3>
-      <ul>{taskList}</ul>
+      <h3>Tasks you need to complete:</h3>
+      <div className="check-list-container">
+        <ul>{taskList}</ul>
+      </div>
     </section>
   );
 }

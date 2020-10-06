@@ -1,5 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import "./CheckListItem.scss";
 
@@ -16,18 +18,26 @@ const CheckListItem = function (props) {
     <li className={checklistItem} data-task-id={props.taskId}>
       <section>
         <div className="checkList-description">{props.description}</div>
-        <div className="checkList-status">{props.status}</div>
-        <div className="checkList-due-date">{props.daysLeft} days left</div>
+        <div className="checkList-due-date">
+          {props.status === "completed" ? (
+            "COMPLETED"
+          ) : (
+            <div>
+              {props.daysLeft} <span> days left</span>
+            </div>
+          )}
+        </div>
       </section>
-
-      <section className="checklist-buttons">
+      {props.status === "completed" ? (
+        <FontAwesomeIcon icon={faCheckCircle} />
+      ) : (
         <button
           className="checklist-complete-button"
           onClick={handleTaskComplete}
         >
           Complete
         </button>
-      </section>
+      )}
     </li>
   );
 };
