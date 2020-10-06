@@ -66,39 +66,30 @@ export default function Messages(props) {
   });
       
 
-    return (
-      <div>
-
-        <section id="message-list">
-          <h3>Chat:</h3>
-        </section>
-
-        <section id="message-list">
-          <ul>{messageList}</ul>
-        </section>
-
-        <section>
-          {error}
-        </section>
-
-        <section>
-          <input
-          type="text"
-          placeholder="Enter Text Here"
-          value={text}
-          onChange={(event) => setText(event.target.value)}
-        />
+  return (
+    <div id="message_list_container">
+      <h3>Messages:</h3>
+      <section id="message-list">
+        <ul>{messageList}</ul>
       </section>
 
-      <section className="message-buttons">
-          <button
-          className="message-send-button"
-          onClick={() => send()}
-          >
-          Send
-        </button>
-      </section>
+      <div className="message_list_input">
+        <section>
+          <textarea
+            type="text"
+            placeholder="Enter Text Here"
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+          ></textarea>
+        </section>
 
+        <section className="message-buttons">
+          <button className="message-send-button" onClick={() => send()}>
+            Send
+          </button>
+        </section>
+        <section>{error}</section>
       </div>
+    </div>
   );
 }

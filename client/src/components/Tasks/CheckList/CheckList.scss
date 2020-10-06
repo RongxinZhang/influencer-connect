@@ -1,8 +1,10 @@
 @import "../../../styles/mixins.scss";
 #checklist-list {
   background: rgb(246, 248, 249);
-  flex-grow: 5;
+  flex-grow: 1;
+  flex-basis: 0;
   padding: 15px;
+  overflow: hidden;
 
   h3 {
     margin-bottom: 15px;

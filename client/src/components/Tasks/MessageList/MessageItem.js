@@ -6,11 +6,11 @@ const MessageItem = function (props) {
   return (
     <main>
       <li className="message-list-item" data-message-id={props.campaignId}>
-        <section className="message">
+        <div className="message_list_item_header">
           <div>{props.name}</div>
           <div>{props.content}</div>
-          <div>{Date(Date.now(props.date))}</div>
-        </section>
+          <div className="message_list_item_date">{Date(Date.now(props.date))}</div>
+          </div>
       </li>
     </main>
   );
