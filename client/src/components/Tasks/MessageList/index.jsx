@@ -46,6 +46,7 @@ export default function Messages({messages, setMessages, campaignId, name, date}
     let currentCampaignMessages = messageLog[campaignId];
     currentCampaignMessages.push(newMessage);
     messageLog[campaignId] = currentCampaignMessages;
+    console.log("this is messages: ", messages);
     setMessages(messageLog);
 
     console.log("HERE ", currentCampaignMessages)
