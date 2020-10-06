@@ -39,6 +39,19 @@ export default function Messages(props) {
     setError("");
   };
 
+  // let count = 0;
+  // let messageList = new Array();
+  // while (count < 20) {
+  //   messageList.push(
+  //     <MessageItem
+  //       key={count}
+  //       name="rongxin"
+  //       content="Testing something very cool"
+  //       date="Jan 2012"
+  //     />
+  //   );
+  //   count++;
+  // }
   const messageList = messages.map((message) => {
     return (
       <MessageItem
@@ -51,26 +64,29 @@ export default function Messages(props) {
   });
 
   return (
-    <div>
+    <div id="message_list_container">
+      <h3>Messages:</h3>
       <section id="message-list">
         <ul>{messageList}</ul>
       </section>
 
-      <section>
-        <input
-          type="text"
-          placeholder="Enter Text Here"
-          value={text}
-          onChange={(event) => setText(event.target.value)}
-        />
-      </section>
+      <div className="message_list_input">
+        <section>
+          <textarea
+            type="text"
+            placeholder="Enter Text Here"
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+          ></textarea>
+        </section>
 
-      <section className="message-buttons">
-        <button className="message-send-button" onClick={() => send()}>
-          Send
-        </button>
-      </section>
-      <section>{error}</section>
+        <section className="message-buttons">
+          <button className="message-send-button" onClick={() => send()}>
+            Send
+          </button>
+        </section>
+        <section>{error}</section>
+      </div>
     </div>
   );
 }
