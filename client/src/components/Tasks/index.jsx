@@ -62,12 +62,15 @@ export default function Tasks(props) {
 
 
       <section className="middlebar">
+        <p>Last task completed on Date</p>
+        <div className="main-container">
         <hr className="sidebar__separator sidebar--centered" />
           
           {currentCampaign && 
             <CheckList currentCampaignId={currentCampaign} 
             />
           }
+        </div>
       </section>
       <section className="schedule">
       {currentCampaign && <MessageList campaignId={currentCampaign} />}

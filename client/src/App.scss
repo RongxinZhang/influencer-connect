@@ -57,7 +57,17 @@
     justify-content: flex-start;
     margin: 2rem 0;
     padding: 0 $spacing;
-    width: 100%;
+    width: 35%;
+
+    &-main-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      margin-top: 50px;
+      margin-left: 10px;
+      align-content: center;
+    }
 
     &--centered {
       align-self: center;
@@ -75,9 +85,13 @@
       color: darken($white, 5%);
     }
 
-    &__menu {
+    &__Add-task {
       flex: 1;
     }
+    &-menu {
+      display: flex;
+    }
+
   }
 
   .messagebar {

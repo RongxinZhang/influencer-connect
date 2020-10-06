@@ -1,4 +1,37 @@
-#checklist-list {
-  background: white;
-  flex-grow: 5;
+
+.main-container1 {
+  display: flex;
+
+  .description {
+    display: flex;
+  }
+  .status {
+    display: flex;
+  }
+  .due-date {
+    display: flex;
+  }
+  .input {
+    margin: 0;
+    border: none;
+    width: 3%;
+  }
+ 
+}
+
+.checklistItem-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px;
+}
+
+
+
+#main-container3 {
+  display: flex;
+}
+
+#main-container4 {
+  display: flex;
 }
