@@ -17,6 +17,8 @@ export default function Tasks(props) {
   useEffect(() => {
     getCampaignsAllUsers().then((campaigns) => {
 
+      console.log(campaigns);
+
       const messages = {};
       const tempUsers = {}
 
@@ -26,6 +28,7 @@ export default function Tasks(props) {
         tempUsers[person.name] = person.campaignId;
       });
       tempUsers['bulky'] = 99;
+      tempUsers['rongxin'] = 98;
       setMessages(messages);
       setUsers(tempUsers);
     });
