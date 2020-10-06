@@ -11,7 +11,7 @@ export default function Messages(props) {
   const [messages, setMessage] = useState([]);
 
   useEffect(() => {
-    getCampaignMessages(props.campaignId).then((data) => {
+    getCampaignMessages(props.currentCampaignId).then((data) => {
       if (data) {
         setMessage(() => {
           return data;

@@ -1,5 +1,21 @@
 const db = require("../db");
 
+const getCampaigns = function (userObj) {
+  const getCampaignsSQL = `
+  SELECT 
+    campaign_details.*
+  FROM influencers
+    INNER JOIN campaigns ON influencers.id = campaigns.influencer_id
+    INNER JOIN campaign_details ON campaign_details.id = campaigns.campaign_detail_id
+    INNER JOIN brands ON brands.id = campaign_details.brand_id
+    INNER JOIN brand_managers ON brand_managers.brand_id = brands.id
+    INNER JOIN users ON users.id = brand_managers.user_id
+  WHERE users.id=$1
+  GROUP BY campaign_details.id;`;
+
+  return db.query(getCampaignsSQL, [userObj.userId]);
+};
+
 const getAllUsers = function (userObj) {
   const getInfluencersSQL = `
   SELECT 
@@ -240,6 +256,7 @@ const getbrandManagersById = function (userObject) {
 module.exports = {
   getAllUsers,
   deleteInfluencerCampaign,
+  getCampaigns,
   deleteCampaign,
   createCampaign,
   getTasks,

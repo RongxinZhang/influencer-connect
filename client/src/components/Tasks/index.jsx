@@ -22,9 +22,13 @@ export default function Tasks(props) {
   // const tasks = [...props.days]
   return (
     <section id="campaign-tasks">
-      <CampaignList onClick={handleClickCurrentCampaign} setName={setName} />
+      <CampaignList
+        currentCampaignId={currentCampaign}
+        onClick={handleClickCurrentCampaign}
+        setName={setName}
+      />
       {currentCampaign && <CheckList currentCampaignId={currentCampaign} />}
-      {currentCampaign && <MessageList campaignId={currentCampaign} name={name} />}
+      {currentCampaign && <MessageList currentCampaignId={currentCampaign} />}
     </section>
   );
 }
