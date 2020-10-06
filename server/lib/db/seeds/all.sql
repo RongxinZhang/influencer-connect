@@ -80,14 +80,14 @@ VALUES
   (5, 'influencer', 'on going', 'Campaign 5: Square Enix Task Description', '2020-10-28', '2020-09-27');
 
 INSERT INTO messages
-  (content, sender_id, receiver_id, campaign_id, status)
+  (name, content, sender_id, receiver_id, campaign_id, status)
 VALUES 
-  ('First Test Message', 1, 2, 1, 'accepted'),
-  ('Second Seed Test Message', 3, 4, 2, 'accepted'),
-  ('Third Seed Test Message', 5, 6, 3, 'accepted'),
-  ('Fourth Seed Test Message', 1, 2, 4, 'accepted'),
-  ('Fifth Seed Test Message', 3, 4, 5, 'accepted'),
-  ('Sixth Seed Test Message', 2, 3, 5, 'accepted');
+  ('placeholder Name','First Test Message', 1, 2, 1, 'accepted'),
+  ('placeholder Name','Second Seed Test Message', 3, 4, 2, 'accepted'),
+  ('placeholder Name','Third Seed Test Message', 5, 6, 3, 'accepted'),
+  ('placeholder Name','Fourth Seed Test Message', 1, 2, 4, 'accepted'),
+  ('placeholder Name','Fifth Seed Test Message', 3, 4, 5, 'accepted'),
+  ('placeholder Name','Sixth Seed Test Message', 2, 3, 5, 'accepted');
 
 INSERT INTO categories
   (name, description)

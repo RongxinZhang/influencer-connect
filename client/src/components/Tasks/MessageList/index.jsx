@@ -1,35 +1,29 @@
+import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { getCampaignMessages, getCampaignsAllUsers } from "../../../requests/campaigns";
 import MessageItem from "./MessageItem";
 
+
 import "./MessageList.scss";
 
-export default function Messages({messages, setMessages, campaignId, name, date}) {
+export default function Messages(props) {
+
+  console.log("this is campaign id: ", props.campaignId);
+
 
   const [text, setText] = useState("");
   const [error, setError] = useState("");
-  // const [messages, setMessage] = useState([]);
+  const [messageData, setMessageData] = useState([]);
   // const [sample, setSample] = useState([]);
 
   useEffect(() => {
-
-    getCampaignMessages(campaignId).then((data) => {
-      if (data) {
-        const newMessage = {
-          name: "unknown",
-          date: date,
-          content: text
-        }
-        console.log(messages[campaignId]);
-        console.log("end")
-        // setMessage(() => {
-        //   console.log("this is data: ", data);
-        //   return data;
-        // });
-      }
+    getCampaignMessages(props.campaignId).then((data) => {
+      console.log("this is data: ", data);
+      const campaignMessages = data.filter((message) => message.campaign_id === props.campaignId);
+      console.log("this is campaignMessages: ", campaignMessages);
+      setMessageData(campaignMessages);
     });
-    // setMessage(props.messages[props.campaignId]);
-  }, [campaignId]);
+  }, [props.campaignId]);
 
   //Send Button Function
   const send = function () {
@@ -38,35 +32,35 @@ export default function Messages({messages, setMessages, campaignId, name, date}
       return;
     }
     const newMessage = {
-      name: name,
+      name: props.name,
       date: Date(Date.now()),
       content: text
     }
-    let messageLog = messages;
-    let currentCampaignMessages = messageLog[campaignId];
-    currentCampaignMessages.push(newMessage);
-    messageLog[campaignId] = currentCampaignMessages;
-    console.log("this is messages: ", messages);
-    setMessages(messageLog);
-
-    console.log("HERE ", currentCampaignMessages)
     
-    // const newMessages = [...messages, newMessage];
-    // setMessage(newMessages);
-    setText("");
-    setError("");
-
     //Do a post request to messages url localhost:3006/campaigns/:campaignId/messages
-      //TO SAVE THE MESSAGES
+    //TO SAVE THE MESSAGES
+    const url = `/campaigns/${props.campaignId}/messages`;
+    const promise = Axios
+    .post(url, newMessage)
+    .then(() => {
+      setMessageData([...messageData, newMessage]);
+      setText("");
+      setError("");
+      })
+    return promise;
   }
 
-  const messageList = messages[campaignId].map((message) => {
+
+  console.log("this is messageData: ", messageData);
+
+  const messageList = messageData.map((message) => {
+    console.log("map message: ", message);
     return (
       <MessageItem
         key={message.id}
         name={message.name}
         content={message.content}
-        date={message.date}
+        date={message.created_at}
       />
     );
   });

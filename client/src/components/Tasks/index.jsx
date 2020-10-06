@@ -71,7 +71,7 @@ export default function Tasks(props) {
       <section id="campaign-tasks">
         <CampaignList onClick={handleClickCurrentCampaign} setName={setName}/>
         {currentCampaign && <CheckList currentCampaignId={currentCampaign} />}
-        {currentCampaign && messages && <MessageList campaignId={currentCampaign} name={user.name} setMessages={setMessages} messages={messages} />}
+        {currentCampaign && <MessageList campaignId={currentCampaign} name={user.name} setMessages={setMessages} />}
         <button onClick={()=>logout()}>Logout</button>
       </section>
     );

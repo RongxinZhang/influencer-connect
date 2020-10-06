@@ -147,10 +147,10 @@ router.get("/:campaignId/messages", (req, res) => {
 /* Create Message */
 router.post("/:campaignId/messages", (req, res) => {
   const campaignId = Number(req.params.campaignId);
-
   const messageObj = {
     ...req.body,
     campaignId,
+    status: "accepted",
   };
 
   campaignsController

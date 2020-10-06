@@ -168,8 +168,7 @@ const getCampaignMessages = function (messageObj) {
   let querryString = `
     SELECT *
     FROM messages
-    JOIN campaigns ON campaign_id = campaigns.id
-    WHERE campaigns.id = $1
+    WHERE messages.campaign_id = $1
   `;
 
   return db.query(querryString, [messageObj.campaignId]);
@@ -177,12 +176,13 @@ const getCampaignMessages = function (messageObj) {
 
 const createCampaignMessage = function (messageObj) {
   let querryString = `
-    INSERT INTO messages (content, sender_id, receiver_id, campaign_id, status)
-    VALUES ($1, $2, $3, $4, $5)
+    INSERT INTO messages (name, content, sender_id, receiver_id, campaign_id, status)
+    VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *;
   `;
 
   return db.query(querryString, [
+    messageObj.name,
     messageObj.content,
     messageObj.senderId,
     messageObj.receiverId,
