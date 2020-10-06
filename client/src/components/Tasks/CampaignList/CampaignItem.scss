@@ -1,17 +1,19 @@
 @import "../../../styles/mixins.scss";
 
 .campaign-list-item {
+  color: #afafaf;
   @include border-radius(2px);
   list-style: none;
   margin-bottom: 10px;
   padding: 10px 10px;
   // border-bottom: 1px dotted rgb(199, 199, 199);
-  border-left: 3px solid #f1f1f1;
+  border-left: 3px solid rgb(22, 27, 37);
   display: flex;
   cursor: pointer;
 
   &:hover {
-    background: white;
+    color: white;
+    background: rgb(59, 64, 72);
     border-left: 3px solid white;
   }
 
@@ -48,6 +50,7 @@
 }
 
 .campaign-list-item--selected {
-  background: white;
+  color: white;
+  background: rgb(59, 64, 72);
   border-left: 3px solid white;
 }
