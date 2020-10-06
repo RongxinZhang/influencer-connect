@@ -1,4 +1,5 @@
 @import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
 
 #message_list_container {
   background: rgb(246, 248, 249);
@@ -18,7 +19,7 @@
     flex: 1;
 
     background: white;
-    padding: 15px;
+    padding: 5px;
     @include box-shadow(0, 1px, 4px, rgba(21, 27, 38, 0.08));
     @include border-radius(3px);
   }
@@ -28,24 +29,26 @@
   }
 
   .message_list_input {
-    @include box-shadow(0, 1px, 4px, rgba(21, 27, 38, 0.08));
+    @include box-shadow(0, -1px, 3px, rgba(21, 27, 38, 0.15));
     @include border-radius(3px);
 
-    // position: fixed;
-    padding: 15px;
+    // IMPORTANT: Floats the item to the bottom
     margin-top: auto;
-    // width: inherit;
-    // bottom: 0px;
+
     background: #f1f1f1;
+    padding: 15px;
 
     textarea {
       @include border-radius(3px);
       width: 100%;
-      // text-align: top;
       border: 1px solid black;
-      // font-size: 3em;
-      // line-height: 100%;
       padding: 10px;
+      font-family: $font-family;
+    }
+
+    button {
+      display: block;
+      margin-left: auto;
     }
   }
 }

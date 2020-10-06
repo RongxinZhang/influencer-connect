@@ -5,11 +5,13 @@ const MessageItem = function (props) {
   return (
     <main>
       <li className="message-list-item" data-message-id={props.campaignId}>
-        <section className="message">
-          <div>{props.name}</div>
-          <div>{props.content}</div>
-          <div>{props.date}</div>
-        </section>
+        <div className="message_list_item_header">
+          <div>{props.name || "balky"}</div>
+          <div className="message_list_item_date">
+            {props.date || "Sep 20, 2020"}
+          </div>
+        </div>
+        <div>{props.content}</div>
       </li>
     </main>
   );
