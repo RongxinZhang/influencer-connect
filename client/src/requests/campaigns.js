@@ -29,6 +29,25 @@ const getCampaignsAllUsers = function (campaignId) {
     });
 };
 
+const getCampaigns = function () {
+  return axios
+    .get(`${BASE_URL}/campaigns`)
+    .then((res) => {
+      const resObj = res.data.data.map((el) => {
+        console.log("NOW", el);
+        return {
+          name: el.name,
+          id: el.id,
+        };
+      });
+      return resObj;
+    })
+    .catch((err) => {
+      // Always show popup component or loading compoenent here
+      return [];
+    });
+};
+
 const getCampaignsTasks = function (campaignId) {
   return axios
     .get(`${BASE_URL}/campaigns/${campaignId}/tasks`)
@@ -83,6 +102,7 @@ const getCampaignMessages = function (campaignId) {
 
 export {
   getCampaignsAllUsers,
+  getCampaigns,
   getCampaignsTasks,
   updateCampaignTask,
   getCampaignMessages,

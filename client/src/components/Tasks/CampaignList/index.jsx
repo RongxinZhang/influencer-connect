@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getCampaignsAllUsers } from "../../../requests/campaigns";
 import CampaignItem from "./CampaignItem";
+import CampaignFilter from "./CampaignFilter";
 
 import "./CampaignList.scss";
 
@@ -38,6 +39,7 @@ export default function Tasks(props) {
 
   return (
     <section id="campaign-list">
+      <CampaignFilter />
       <ul>{campaignsList}</ul>
     </section>
   );
