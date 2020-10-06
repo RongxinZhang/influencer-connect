@@ -14,9 +14,7 @@ const CampaignFilter = function (props) {
   };
 
   useEffect(() => {
-    console.log("OK", options);
     getCampaigns().then((data) => {
-      console.log("WHERE", data);
       const filterInput = data.map((el) => {
         return { label: el.name, value: el.id };
       });
