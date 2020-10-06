@@ -7,8 +7,8 @@ const CheckListItem = function (props) {
 
   return (
     <div className="checklistItem-container">
-      <input type="checkbox" id={props.taskId} width="5px"/>
-      <li className="main-container1" data-task-id={props.taskId}>
+      <input type="checkbox" id={props.taskId} />
+      <li className="main-container1" >
         <div className="description">{props.description}</div>
         <div className="status">{props.status}</div>
         <div className="due-date">{props.daysLeft} days left</div>
