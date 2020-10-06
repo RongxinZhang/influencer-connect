@@ -5,7 +5,6 @@ import MessageItem from "./MessageItem";
 import "./MessageList.scss";
 
 export default function Messages(props) {
-
   const [text, setText] = useState("");
   const [error, setError] = useState("");
 
@@ -32,13 +31,13 @@ export default function Messages(props) {
     const newMessage = {
       name: props.name,
       date: undefined,
-      content: text
-    }
-    const newMessages = [...messages, newMessage]
+      content: text,
+    };
+    const newMessages = [...messages, newMessage];
     setMessage(newMessages);
     setText("");
     setError("");
-  }
+  };
 
   const messageList = messages.map((message) => {
     return (
@@ -47,36 +46,31 @@ export default function Messages(props) {
         name={message.name}
         content={message.content}
         date={message.date}
-        />
-        );
-      });
-      
-      return (
-        <div>
-          <section id="message-list">
-            <ul>{messageList}</ul>
-          </section>
+      />
+    );
+  });
 
-          <section>
-          <input
+  return (
+    <div>
+      <section id="message-list">
+        <ul>{messageList}</ul>
+      </section>
+
+      <section>
+        <input
           type="text"
           placeholder="Enter Text Here"
           value={text}
           onChange={(event) => setText(event.target.value)}
-          />
-        </section>
+        />
+      </section>
 
-        <section className="message-buttons">
-            <button
-            className="message-send-button"
-            onClick={() => send()}
-            >
-            Send
-          </button>
-        </section>
-        <section>
-          {error}
-        </section>
-        </div>
+      <section className="message-buttons">
+        <button className="message-send-button" onClick={() => send()}>
+          Send
+        </button>
+      </section>
+      <section>{error}</section>
+    </div>
   );
 }
