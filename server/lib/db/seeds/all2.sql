@@ -15,15 +15,15 @@ VALUES
 INSERT INTO brands
   (name, description, logo_url, city, province, country, website_url, instagram_url, facebook_url, youtube_url)
 VALUES
-  ('Morphe', 'A beauty brand created for the creators. For the dreamers. For those looking for killer makeup without killing their wallet. A place where our #MorpheBabe can let their passion and creativity for beauty fly high. We’re more than just a brand; we’re a ride-or-die fam.', 'https://cdn.shopify.com/s/files/1/0016/9282/7706/files/Morphe-Logo_1_500x_fe456857-7234-42c1-b447-5e7f38c636bc_500x.png?v=1595008401', 'California', 'Los Angeles', 'United States of America', 'https://ca.morphe.com/', 'https://www.instagram.com/morphebrushes/', '', ''),
+  ('Morphe', 'A beauty brand created for the creators. For the dreamers. For those looking for killer makeup without killing their wallet. A place where our #MorpheBabe can let their passion and creativity for beauty fly high. ', 'https://cdn.shopify.com/s/files/1/0016/9282/7706/files/Morphe-Logo_1_500x_fe456857-7234-42c1-b447-5e7f38c636bc_500x.png?v=1595008401', 'California', 'Los Angeles', 'United States of America', 'https://ca.morphe.com/', 'https://www.instagram.com/morphebrushes/', '', ''),
 
-  ('Coconut Guide', 'This program and every MA Warrior program is designed to teach you how to be healthy and reach your goals in a sustainable way. This guide has been highly requested for many years as most women want to build glutes that are subjectively rounder, bigger, and tighter, but also a lower half that is toned.', 'https://www.massyarias.com/wp-content/uploads/2018/10/logo.png', 'Atlanta', 'Georgia', 'United States of America', 'https://www.massyarias.com/coconuts/', 'https://www.instagram.com/massy.arias/?utm_source=ig_embed', 'https://www.facebook.com/manko.fit/', 'https://www.youtube.com/channel/UCFar6t6OF-q2Y6rBuoDhpOg?reload=9'),
+  ('Coconut Guide', 'This program and every MA Warrior program is designed to teach you how to be healthy and reach your goals in a sustainable way.', 'https://www.massyarias.com/wp-content/uploads/2018/10/logo.png', 'Atlanta', 'Georgia', 'United States of America', 'https://www.massyarias.com/coconuts/', 'https://www.instagram.com/massy.arias/?utm_source=ig_embed', 'https://www.facebook.com/manko.fit/', 'https://www.youtube.com/channel/UCFar6t6OF-q2Y6rBuoDhpOg?reload=9'),
 
   ('Plated', 'Cooking Kits at your local store, or online with pickup and delivery.', 'https://a.pgtb.me/MLjgSH?utm_source=platedsocial&utm_medium=instagram&utm_campaign=lenoxplatedgiveaway&utm_content=later-3966846', 'San Bernardino', 'California', 'United States of America', 'https://www.plated.com/home.html', 'https://www.instagram.com/plated/?utm_source=ig_embed', '', ''),
 
-  ('Coors Light', ' Coors Light has had some of the cheekiest campaigns lately, including their Clone Machine, which lets users record a 30-second video loop of them looking interested during video-conferences so that they can sneak away to grab a beer', 'https://www.coorslight.com/sites/CoorsLightRD/files/CoorsLight_Logo_nav_3.png', 'Golden', 'Oakland', 'USA'. 'www.instagram.com/coorslight', 'https://www.facebook.com/coorslight', 'www.youtube.com/coorslight'),
+  ('Coors Light', 'Coors Light has had some of the cheekiest campaigns lately, including their Clone Machine, which lets users record a 30-second video loop of them looking interested during video-conferences so that they can sneak away to grab a beer', 'https://www.coorslight.com/sites/CoorsLightRD/files/CoorsLight_Logo_nav_3.png', 'Golden', 'Oakland', 'USA', 'https://www.coorslight.com/','www.instagram.com/coorslight', 'https://www.facebook.com/coorslight', 'www.youtube.com/coorslight'),
 
-  ('Nike', 'Here at Nike, we re dedicated to creating an inclusive and sustainable future through relentless innovation. We aim to inspire every athlete to reach their potential. Check out the resources below to learn more about the business of Nike.', 'https://images.complex.com/complex/images/c_crop,h_500,w_900,x_0,y_197/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/r8v2t0rmuckkqmbsv5q2/the-swoosh-logo', 'Beaverton', 'Oregon', 'United States of America', 'https://www.nike.com/ca/', 'https://www.instagram.com/nike/?hl=en', 'https://www.facebook.com/nike/', 'https://www.youtube.com/user/nike'),
+  ('Nike', 'Here at Nike, we re dedicated to creating an inclusive and sustainable future through relentless innovation. We aim to inspire every athlete to reach their potential.', 'https://images.complex.com/complex/images/c_crop,h_500,w_900,x_0,y_197/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/r8v2t0rmuckkqmbsv5q2/the-swoosh-logo', 'Beaverton', 'Oregon', 'United States of America', 'https://www.nike.com/ca/', 'https://www.instagram.com/nike/?hl=en', 'https://www.facebook.com/nike/', 'https://www.youtube.com/user/nike'),
 
   ('Coca-Cola', '130+ years of refreshing the world, 200+ countries offer our products', 'https://www.coca-cola.com/content/dam/brands/tw/coca-cola/image/coke-logo.png', 'Atlanta', 'Georgia', 'United States of America', 'https://www.coca-cola.com/', 'https://www.instagram.com/cocacola/?hl=en', 'https://www.facebook.com/Coca-Cola/', 'https://www.youtube.com/user/cocacola'),
 
@@ -41,14 +41,14 @@ INSERT INTO brand_managers
   (user_id, brand_id, is_admin)
 VALUES
   (2, 1, true),  /*Jaclyn is the brand manager of Morphe*/ 
-  (3, 3, true),  /*Massy is the brand manager of Coconut-guide*/
+  (3, 3, true);  /*Massy is the brand manager of Coconut-guide*/
   
 
 INSERT INTO influencers
   (first_name, last_name, user_id, description, profile_url, street, city, province, country, 
   instagram_url, instagram_followers, facebook_url, facebook_followers, youtube_url, youtube_followers)
 VALUES 
-  ('James', 'Charles', 1, 'Life is my canvas & I’m painting it how I want 🎨 Created this look in my new video today using the James Charles x @morphebrushes palette which is RESTOCKING THURSDAY MARCH 21ST @ 8AM PST! 🚨 set your alarms & get ready to use code JAMES for 10% off 🥰 who’s ready?', 'https://instagram.fyyc2-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/104679891_2614441378797645_679401854067264455_n.jpg?_nc_ht=instagram.fyyc2-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=MYBw3ggpIBIAX_xiTkb&_nc_tp=15&oh=d5d2254636fcf98729302835a49cd51b&oe=5FA5A0C5', 'haha', 'calgary', 'alberta', 'canada', 'https://www.instagram.com/jamescharles/?utm_source=ig_embed', 266, '', 7000000, 'youtube.com/jamescharles', 22500000),
+  ('James', 'Charles', 1, 'Life is my canvas & I’m painting it how I want. Created this look in my new video today using the James Charles x @morphebrushes palette', 'https://yt3.ggpht.com/a/AATXAJzVNzesJy6AFnHG5-EbOsJlC2SicC9BAM1PMnkPTg=s100-c-k-c0xffffffff-no-rj-mo', 'haha', 'calgary', 'alberta', 'canada', 'https://www.instagram.com/jamescharles/?utm_source=ig_embed', 266, '', 7000000, 'youtube.com/jamescharles', 22500000),
 
   ('Massy', 'Arias', 3, 'Massiel “Massy” Indhira Arias is the exuberant Certified Personal Trainer, formerly known as Mankofit, who is changing lives and inspiring a new generation of trainers.', 'https://www.massyarias.com/wp-content/uploads/2019/11/massy-arias.jpg', 'Atlanta', 'Atlanta', 'Georgia', 'USA', 'https://www.instagram.com/massy.arias/?utm_source=ig_embed', 923, 'https://www.facebook.com/manko.fit/', 673000, 'https://www.youtube.com/channel/UCFar6t6OF-q2Y6rBuoDhpOg' , 27000000),
 
@@ -61,7 +61,7 @@ VALUES
 
   ('Diego', 'Dandy', 7, 'Dress Well, Live Well | Menswear Inspiration', 'https://dandyinthebronx.com/wp-content/uploads/2019/03/F3B41903-B5F7-49B6-B2CF-0E8A761DD770-1024x683.jpeg', 'Block', 'Bronx', 'Bronx', 'USA', 'https://www.instagram.com/dandyinthebronx/?utm_source=ig_embed', 42000, '', 0,'', 0),
 
-  ('Will', 'Johnson', 8, 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ec593cc431fb70007482137%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1321%26cropX2%3D3300%26cropY1%3D114%26cropY2%3D2093', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 120000000, 'https://www.facebook.com/DwayneJohnson/', 10,'https://www.youtube.com/user/therock', 0),
+  ('Will', 'Johnson', 8, 'Dwayne Douglas Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ec593cc431fb70007482137%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D1321%26cropX2%3D3300%26cropY1%3D114%26cropY2%3D2093', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 120000000, 'https://www.facebook.com/DwayneJohnson/', 10,'https://www.youtube.com/user/therock', 0);
 
 
 
@@ -115,7 +115,7 @@ VALUES
   (7, 5, 'Accepted'), /*Diego accepts Nike shoes..........................................................17*/
   (7, 6, 'Accepted'), /*Diego accepts cocacola............................................................18*/
   (7, 7, 'Accepted'), /*Diego accepts Macdonald...........................................................19*/
-  (7, 10, 'Accepted'), /*Diego accepts Neutrogena.........................................................20*/
+  (7, 10, 'Accepted'); /*Diego accepts Neutrogena.........................................................20*/
 
 
 INSERT INTO tasks
