@@ -24,6 +24,7 @@
     // border: 1px solid black;
     div {
       height: 50px;
+      border: 2px solid #333c4e;
       @include border-radius(50%);
     }
   }
@@ -53,4 +54,7 @@
   color: white;
   background: rgb(59, 64, 72);
   border-left: 3px solid white;
+  .campaign-list-picture div {
+    border: 2px solid #405173;
+  }
 }
