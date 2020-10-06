@@ -12,8 +12,6 @@ const CheckListItem = function (props) {
     "checkList-list-item--completed": props.status === "completed",
   });
 
-  console.log("DONE", props.status === "completed");
-
   return (
     <li className={checklistItem} data-task-id={props.taskId}>
       <section>

@@ -18,6 +18,7 @@ export default function Tasks(props) {
     });
   }, []);
 
+  console.log("this is campaigns: ", campaigns);
   const campaignsList = campaigns.map((el) => {
     if (el) {
       return (
