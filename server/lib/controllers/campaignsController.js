@@ -176,16 +176,14 @@ const getCampaignMessages = function (messageObj) {
 
 const createCampaignMessage = function (messageObj) {
   let querryString = `
-    INSERT INTO messages (name, content, sender_id, receiver_id, campaign_id, status)
-    VALUES ($1, $2, $3, $4, $5, $6)
+    INSERT INTO messages (content, sender_id, campaign_id, status)
+    VALUES ($1, $2, $3, $4)
     RETURNING *;
   `;
 
   return db.query(querryString, [
-    messageObj.name,
     messageObj.content,
     messageObj.senderId,
-    messageObj.receiverId,
     messageObj.campaignId,
     messageObj.status,
   ]);

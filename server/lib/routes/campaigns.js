@@ -150,9 +150,10 @@ router.post("/:campaignId/messages", (req, res) => {
   const messageObj = {
     ...req.body,
     campaignId,
-    status: "accepted",
+    status: "unread",
   };
 
+  console.log("messageObj", messageObj);
   campaignsController
     .createCampaignMessage(messageObj)
     .then((data) => {
