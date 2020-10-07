@@ -61,7 +61,10 @@ VALUES
 
   ('Diego', 'Dandy', 7, 'Dress Well, Live Well | Menswear Inspiration', 'https://dandyinthebronx.com/wp-content/uploads/2019/03/F3B41903-B5F7-49B6-B2CF-0E8A761DD770-1024x683.jpeg', 'Block', 'Bronx', 'Bronx', 'USA', 'https://www.instagram.com/dandyinthebronx/?utm_source=ig_embed', 42000, '', 0,'', 0),
 
-  ('Will', 'Johnson', 8, 'Will Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 120000000, 'https://www.facebook.com/DwayneJohnson/', 10,'https://www.youtube.com/user/therock', 0);
+  ('Will', 'Johnson', 8, 'Will Johnson, also known by his ring name the Rock, is an American-Canadian actor, producer, businessman, retired professional wrestler, and former American football and Canadian football player.', 'https://images.unsplash.com/photo-1503443207922-dff7d543fd0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60', 'haha street', 'Hayward', 'California', 'United States of America', 'https://www.instagram.com/therock/?hl=en', 120000000, 'https://www.facebook.com/DwayneJohnson/', 10,'https://www.youtube.com/user/therock', 0),
+
+  ('Jaclyn', 'Hill', 2, 'Dress Well, Live Well | Womenswear Inspiration', 'https://yt3.ggpht.com/a/AATXAJzqLrZvTDlD5jYnYr0GI3OMbJgb0oS22ZZhA1C3rA=s88-c-k-c0x00ffffff-no-rj', 'Black', 'Brun', 'Bronx', 'USA', 'https://www.instagram.com/dandyinthebronx/?utm_source=ig_embed', 420000, '', 0,'', 0);
+
 
 
 
