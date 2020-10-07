@@ -44,6 +44,7 @@ export default function Messages(props) {
 
   const messageList = messageData.map((el) => {
     console.log(
+      el,
       "map message: ",
       el.id === props.user.userId,
       el.id,
@@ -53,7 +54,7 @@ export default function Messages(props) {
       <MessageItem
         key={el.id}
         name={el.name}
-        isSender={el.id === props.user.userId}
+        isSender={el.senderId === props.user.userId}
         content={el.content}
         date={el.created_at}
       />

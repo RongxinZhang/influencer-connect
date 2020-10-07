@@ -9,18 +9,7 @@ import "./Tasks.scss";
 export default function Tasks(props) {
   // const [name, setName] = useState("");
   const [currentCampaign, setcurrentCampaign] = useState(null);
-  const [users, setUsers] = useState(null);
-  const [user, setUser] = useState();
-
-  // const [messages, setMessages] = useState(null);
-
-  useEffect(() => {
-    const tempUser = { userId: 2, name: "rongxin" };
-
-    setUser(() => {
-      return tempUser;
-    });
-  }, []);
+  // const [user, setUser] = useState();
 
   // all state is kept here.
   // Module: styled-componenets inside the componenet file.
@@ -37,7 +26,7 @@ export default function Tasks(props) {
       <CampaignList onClick={handleClickCurrentCampaign} />
       {currentCampaign && <CheckList currentCampaignId={currentCampaign} />}
       {currentCampaign && (
-        <MessageList campaignId={currentCampaign} user={user} />
+        <MessageList campaignId={currentCampaign} user={props.user} />
       )}
     </section>
   );

@@ -6,11 +6,20 @@ const login = function (userObj) {
   return axios
     .post(`${BASE_URL}/users/login`, userObj)
     .then((res) => {
-      console.log(res);
       if (res.status === 200 && res.data.data) {
-        localStorage.setItem("user", JSON.stringify(res.data.data));
-        console.log("IN");
-        return res.data.data;
+        const user = res.data.data;
+        // IMPORTANT: Store JWT to localstorage
+
+        const resObj = {
+          name: `${user.first_name} ${user.last_name}`,
+          userId: user.userId,
+          email: user.email,
+          jwtToken: user.jwtToken,
+        };
+
+        localStorage.setItem("user", JSON.stringify(resObj));
+
+        return resObj;
       }
     })
     .catch((err) => {

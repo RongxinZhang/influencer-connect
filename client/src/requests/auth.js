@@ -3,9 +3,9 @@ const authHeader = function () {
 
   if (user && user.jwtToken) {
     // for Node.js Express back-end
-    return user.jwtToken;
+    return { "x-access-token": user.jwtToken };
   } else {
-    return "";
+    return {};
   }
 };
 

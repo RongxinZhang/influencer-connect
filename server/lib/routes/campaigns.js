@@ -6,7 +6,7 @@ const campaignController = require("../controllers/campaignsController");
 /* Get all users for all campaigns */
 router.get("/", (req, res) => {
   // NOTE: This should be replaced with the req.user object from the request
-  const userObj = { userId: 2 };
+  const userObj = { userId: req.userId };
   campaignController
     .getCampaigns(userObj)
     .then((data) => {
@@ -19,9 +19,9 @@ router.get("/", (req, res) => {
 
 router.get("/allUsers", (req, res) => {
   // NOTE: This should be replaced with the req.user object from the request
-  const userObj = { userId: 2 };
+  const userObj = { userId: req.userId };
 
-  console.log("HEADEER", req);
+  console.log("User", userObj);
 
   campaignController
     .getAllUsers(userObj)

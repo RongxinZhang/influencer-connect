@@ -6,11 +6,11 @@ import { authHeader } from "./auth";
 const BASE_URL = "http://localhost:3000";
 
 // Set JWT Token in all request header
-axios.defaults.headers.common["x-access-token"] = authHeader();
+// axios.defaults.headers.common["x-access-token"] = authHeader();
 
 const getCampaignsAllUsers = function (campaignId) {
   return axios
-    .get(`${BASE_URL}/campaigns/allUsers`)
+    .get(`${BASE_URL}/campaigns/allUsers`, { headers: authHeader() })
     .then((res) => {
       const resObj = res.data.data.map((el) => {
         return {
@@ -35,7 +35,7 @@ const getCampaignsAllUsers = function (campaignId) {
 
 const getCampaigns = function () {
   return axios
-    .get(`${BASE_URL}/campaigns`)
+    .get(`${BASE_URL}/campaigns`, { headers: authHeader() })
     .then((res) => {
       const resObj = res.data.data.map((el) => {
         console.log("NOW", el);
@@ -54,7 +54,7 @@ const getCampaigns = function () {
 
 const getCampaignsTasks = function (campaignId) {
   return axios
-    .get(`${BASE_URL}/campaigns/${campaignId}/tasks`)
+    .get(`${BASE_URL}/campaigns/${campaignId}/tasks`, { headers: authHeader() })
     .then((res) => {
       // NOTE: Do processing here
       const resObj = res.data.data.map((el) => {
@@ -75,7 +75,8 @@ const updateCampaignTask = function (inputObj) {
   return axios
     .post(
       `${BASE_URL}/campaigns/${inputObj.campaignId}/tasks/${inputObj.taskId}`,
-      { status: inputObj.status }
+      { status: inputObj.status },
+      { headers: authHeader() }
     )
     .then((res) => {
       // NOTE: Do processing here
@@ -95,7 +96,9 @@ const updateCampaignTask = function (inputObj) {
 
 const getCampaignMessages = function (campaignId) {
   return axios
-    .get(`${BASE_URL}/campaigns/${campaignId}/messages`)
+    .get(`${BASE_URL}/campaigns/${campaignId}/messages`, {
+      headers: authHeader(),
+    })
     .then((res) => {
       const resObj = res.data.data.map((el) => {
         return {
@@ -115,7 +118,11 @@ const getCampaignMessages = function (campaignId) {
 };
 
 const createCampaignMessage = function (campaignId, messageObj) {
-  return axios.post(`${BASE_URL}/campaigns/${campaignId}/messages`, messageObj);
+  return axios.post(
+    `${BASE_URL}/campaigns/${campaignId}/messages`,
+    messageObj,
+    { headers: authHeader() }
+  );
 };
 
 export {

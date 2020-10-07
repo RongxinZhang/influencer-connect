@@ -1,13 +1,13 @@
 INSERT INTO users
   (first_name, last_name, email, password, phone)
 VALUES
-  ('Balky', 'TEST', 'balkaranjaswal@gmail.com', 'password', '4031231234'),
-  ('Rongxin', 'Zhang', 'RongxinZhang@gmail.com', 'password', '6041231234'),
-  ('Favour', 'Ogboruche', 'fogboruche@yahoo.com', 'password', '4035675678'),
-  ('John', 'Bazinga', 'JohnBazinga@yahoo.com', 'password', '1233211234'),
-  ('Hercules', 'Alcaeus', 'hercPower@gmail.com', 'password', '6756784035'),
+  ('Balky', 'TEST', 'balkaranjaswal@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '4031231234'),
+  ('Rongxin', 'Zhang', 'RongxinZhang@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '6041231234'),
+  ('Favour', 'Ogboruche', 'fogboruche@yahoo.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '4035675678'),
+  ('John', 'Bazinga', 'JohnBazinga@yahoo.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '1233211234'),
+  ('Hercules', 'Alcaeus', 'hercPower@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '6756784035'),
   ('Mario', 'Brother', 'MarioRules@mushroomkingdom.com', 'princess', '7454328765'),
-  ('Ducky', 'goldsmith', 'duckyDuck@gmail.com', 'password', '4056567837'),
+  ('Ducky', 'goldsmith', 'duckyDuck@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '4056567837'),
   ('Yeti', 'Snowball', 'yetiinthemountain@gmail.com', 'cold', '4678053567');
 
 
