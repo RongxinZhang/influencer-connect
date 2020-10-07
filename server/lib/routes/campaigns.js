@@ -154,6 +154,7 @@ router.post("/:campaignId/messages", (req, res) => {
   };
 
   console.log("messageObj", messageObj);
+
   campaignsController
     .createCampaignMessage(messageObj)
     .then((data) => {

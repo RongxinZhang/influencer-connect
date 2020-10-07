@@ -11,51 +11,16 @@ export default function Tasks(props) {
   const [currentCampaign, setcurrentCampaign] = useState(null);
   const [users, setUsers] = useState(null);
   const [user, setUser] = useState();
-  
+
   const [messages, setMessages] = useState(null);
 
   useEffect(() => {
-    getCampaignsAllUsers().then((campaigns) => {
+    const tempUser = { userId: 2, name: "rongxin" };
 
-      console.log(campaigns);
-
-      const messages = {};
-      const tempUsers = {}
-
-      const names = campaigns.map((person) => {
-        console.log("this is person: ", person);
-        messages[person.campaignId] = [];
-        tempUsers[person.name] = person.campaignId;
-      });
-      tempUsers['bulky'] = 99;
-      tempUsers['rongxin'] = 98;
-      setMessages(messages);
-      setUsers(tempUsers);
+    setUser(() => {
+      return tempUser;
     });
   }, []);
-
-
-  const login = function(event) {
-    event.preventDefault();
-    if (Object.keys(users).includes(event.target.elements.username.value)){
-      console.log("user exisits")
-      setUser({
-        name: event.target.elements.username.value,
-        id: users[event.target.elements.username.value]
-      })
-    } else {
-      console.log("user doesn't exist")
-    }
-    console.log("Users: ",users);
-    console.log("Username: ",event.target.elements.username.value);
-  }
-
-  const logout = function() {
-    setUser(null);
-  }
-
-
-
 
   // all state is kept here.
   // Module: styled-componenets inside the componenet file.
@@ -66,29 +31,26 @@ export default function Tasks(props) {
   };
 
   // const tasks = [...props.days]
-  if (user) {
-    return (
-      <section id="campaign-tasks">
-        <CampaignList onClick={handleClickCurrentCampaign} setName={setName}/>
-        {currentCampaign && <CheckList currentCampaignId={currentCampaign} />}
-        {currentCampaign && <MessageList campaignId={currentCampaign} name={user.name} setMessages={setMessages} />}
-        <button onClick={()=>logout()}>Logout</button>
-      </section>
-    );
-  } else {
-    return (
-      <div>
-        <h1>Whos There ?</h1>
-        <form onSubmit={login}>
-          <label>
-            Username
-          </label>
-          <input name="username"/>
-          <input type="submit" />
-        </form>
-      </div>
-    )
-
-  }
-  
+  // if (user) {
+  return (
+    <section id="campaign-tasks">
+      <CampaignList onClick={handleClickCurrentCampaign} />
+      {currentCampaign && <CheckList currentCampaignId={currentCampaign} />}
+      {currentCampaign && (
+        <MessageList campaignId={currentCampaign} user={user} />
+      )}
+    </section>
+  );
+  // } else {
+  //   return (
+  //     <div>
+  //       <h1>Whos There ?</h1>
+  //       <form onSubmit={login}>
+  //         <label>Username</label>
+  //         <input name="username" />
+  //         <input type="submit" />
+  //       </form>
+  //     </div>
+  //   );
+  // }
 }

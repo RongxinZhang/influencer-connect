@@ -7,9 +7,9 @@ const MessageItem = function (props) {
     <main>
       <li className="message-list-item" data-message-id={props.campaignId}>
         <div className="message_list_item_header">
-          <div>{props.name || "balky"}</div>
+          <div>{props.name}</div>
           <div className="message_list_item_date">
-            <Moment format="MMM DD, YYYY">{Date(props.content)}</Moment>
+            <Moment format="MMM DD, YYYY">{Date(props.date)}</Moment>
           </div>
         </div>
         <div>{props.content}</div>

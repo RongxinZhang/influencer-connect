@@ -1,27 +1,21 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
-import { getCampaignMessages, getCampaignsAllUsers } from "../../../requests/campaigns";
+import {
+  getCampaignMessages,
+  getCampaignsAllUsers,
+} from "../../../requests/campaigns";
 import MessageItem from "./MessageItem";
-
 
 import "./MessageList.scss";
 
 export default function Messages(props) {
-
-  console.log("this is campaign id: ", props.campaignId);
-
-
   const [text, setText] = useState("");
   const [error, setError] = useState("");
   const [messageData, setMessageData] = useState([]);
-  // const [sample, setSample] = useState([]);
 
   useEffect(() => {
     getCampaignMessages(props.campaignId).then((data) => {
-      console.log("this is data: ", data);
-      const campaignMessages = data.filter((message) => message.campaign_id === props.campaignId);
-      console.log("this is campaignMessages: ", campaignMessages);
-      setMessageData(campaignMessages);
+      setMessageData(data);
     });
   }, [props.campaignId]);
 
@@ -31,27 +25,26 @@ export default function Messages(props) {
       setError("Text cannot be blank");
       return;
     }
+
     const newMessage = {
-      name: props.name,
-      date: Date(Date.now()),
-      content: text
-    }
-    
+      senderId: props.user.userId,
+      date: Date.now(),
+      content: text,
+    };
+
     //Do a post request to messages url localhost:3006/campaigns/:campaignId/messages
     //TO SAVE THE MESSAGES
     const url = `/campaigns/${props.campaignId}/messages`;
-    const promise = Axios
-    .post(url, newMessage)
-    .then(() => {
+    const promise = Axios.post(url, newMessage).then(() => {
+      newMessage.name = props.user.name;
       setMessageData([...messageData, newMessage]);
       setText("");
       setError("");
-      })
+    });
     return promise;
-  }
+  };
 
-
-  console.log("this is messageData: ", messageData);
+  // console.log("this is messageData: ", messageData);
 
   const messageList = messageData.map((message) => {
     console.log("map message: ", message);
@@ -64,7 +57,6 @@ export default function Messages(props) {
       />
     );
   });
-      
 
   return (
     <div id="message_list_container">

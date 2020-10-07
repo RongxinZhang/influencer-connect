@@ -93,7 +93,16 @@ const getCampaignMessages = function (campaignId) {
   return axios
     .get(`${BASE_URL}/campaigns/${campaignId}/messages`)
     .then((res) => {
-      return res.data.data;
+      const resObj = res.data.data.map((el) => {
+        return {
+          content: el.content,
+          status: el.status,
+          senderId: el.sender_id,
+          name: `${el.first_name} ${el.last_name}`,
+          date: el.created_at,
+        };
+      });
+      return resObj;
     })
     .catch((err) => {
       return err;
