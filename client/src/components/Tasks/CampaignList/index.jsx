@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCampaignsAllUsers } from "../../../requests/campaigns";
+import { Redirect } from "react-router-dom";
 import CampaignItem from "./CampaignItem";
 import CampaignFilter from "./CampaignFilter";
 
@@ -13,7 +14,7 @@ export default function Tasks(props) {
       setCampaigns(() => {
         return campaigns;
       });
-      if (campaigns) {
+      if (campaigns && campaigns[0]) {
         props.onClick(campaigns[0].campaignId);
       }
     });

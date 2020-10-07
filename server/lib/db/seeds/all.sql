@@ -1,13 +1,13 @@
 INSERT INTO users
   (first_name, last_name, email, password, phone)
 VALUES
-  ('Balky', 'TEST', 'balkaranjaswal@gmail.com', 'password', '4031231234'),
-  ('Rongxin', 'Zhang', 'RongxinZhang@gmail.com', 'password', '6041231234'),
-  ('Favour', 'Ogboruche', 'fogboruche@yahoo.com', 'password', '4035675678'),
-  ('John', 'Bazinga', 'JohnBazinga@yahoo.com', 'password', '1233211234'),
-  ('Hercules', 'Alcaeus', 'hercPower@gmail.com', 'password', '6756784035'),
+  ('Balky', 'TEST', 'balkaranjaswal@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '4031231234'),
+  ('Rongxin', 'Zhang', 'RongxinZhang@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '6041231234'),
+  ('Favour', 'Ogboruche', 'fogboruche@yahoo.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '4035675678'),
+  ('John', 'Bazinga', 'JohnBazinga@yahoo.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '1233211234'),
+  ('Hercules', 'Alcaeus', 'hercPower@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '6756784035'),
   ('Mario', 'Brother', 'MarioRules@mushroomkingdom.com', 'princess', '7454328765'),
-  ('Ducky', 'goldsmith', 'duckyDuck@gmail.com', 'password', '4056567837'),
+  ('Ducky', 'goldsmith', 'duckyDuck@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '4056567837'),
   ('Yeti', 'Snowball', 'yetiinthemountain@gmail.com', 'cold', '4678053567');
 
 
@@ -80,14 +80,14 @@ VALUES
   (5, 'influencer', 'on going', 'Campaign 5: Square Enix Task Description', '2020-10-28', '2020-09-27');
 
 INSERT INTO messages
-  (content, sender_id, receiver_id, campaign_id, status)
+  (content, sender_id, campaign_id, status)
 VALUES 
-  ('First Test Message', 1, 2, 1, 'accepted'),
-  ('Second Seed Test Message', 3, 4, 2, 'accepted'),
-  ('Third Seed Test Message', 5, 6, 3, 'accepted'),
-  ('Fourth Seed Test Message', 1, 2, 4, 'accepted'),
-  ('Fifth Seed Test Message', 3, 4, 5, 'accepted'),
-  ('Sixth Seed Test Message', 2, 3, 5, 'accepted');
+  ('First Test Message', 1, 1, 'accepted'),
+  ('Second Seed Test Message', 3, 2, 'accepted'),
+  ('Third Seed Test Message', 5, 3, 'accepted'),
+  ('Fourth Seed Test Message', 1, 4, 'accepted'),
+  ('Fifth Seed Test Message', 3, 5, 'accepted'),
+  ('Sixth Seed Test Message', 2, 5, 'accepted');
 
 INSERT INTO categories
   (name, description)

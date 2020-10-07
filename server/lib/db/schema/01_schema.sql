@@ -125,8 +125,7 @@ CREATE TABLE messages (
   id SERIAL PRIMARY KEY NOT NULL,
   content VARCHAR(255) NOT NULL,
   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   campaign_id INTEGER REFERENCES campaigns(id) ON DELETE CASCADE,
-  status VARCHAR(255) NOT NULL,
+  status VARCHAR(255),
   created_at TIMESTAMP DEFAULT NOW()
 );

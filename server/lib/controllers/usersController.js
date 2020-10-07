@@ -3,12 +3,30 @@ const db = require("../db");
 const checkUser = function (userObj) {
   const queryString1 = `SELECT email FROM users WHERE email =$1;`;
 
-  return db.query(queryString1, [userObj.email]).then((data) => {
-    if (data.rowCount > 0) {
-      return true;
-    }
-    return false;
-  });
+  return db
+    .query(queryString1, [userObj.email])
+    .then((data) => {
+      if (data.rowCount > 0) {
+        return true;
+      }
+      return false;
+    })
+    .catch((err) => {
+      return err;
+    });
+};
+
+const getUser = function (userObj) {
+  const queryString1 = `SELECT * FROM users WHERE email =$1;`;
+  console.log("OBJ", userObj);
+  return db
+    .query(queryString1, [userObj.email])
+    .then((data) => {
+      return data.rows;
+    })
+    .catch((err) => {
+      return err;
+    });
 };
 
 /**
@@ -154,6 +172,7 @@ const createBrandManager = function (profileObj) {
 
 module.exports = {
   checkUser,
+  getUser,
   register,
   checkInfluencerProfile,
   createInfluencerProfile,
