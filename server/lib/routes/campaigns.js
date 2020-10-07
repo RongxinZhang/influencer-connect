@@ -20,6 +20,9 @@ router.get("/", (req, res) => {
 router.get("/allUsers", (req, res) => {
   // NOTE: This should be replaced with the req.user object from the request
   const userObj = { userId: 2 };
+
+  console.log("HEADEER", req);
+
   campaignController
     .getAllUsers(userObj)
     .then((data) => {

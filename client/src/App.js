@@ -12,23 +12,15 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      {/* HEADER */}
-      <Route exact path="/tasks/update">
+      {/* <Route exact path="/tasks/update">
         <UpdateTasks />
-      </Route>
+      </Route> */}
       <Route path="/tasks">
         <Tasks />
       </Route>
       <Route path="/login">
         <Login />
       </Route>
-      <Route path="/chat">
-        <Chat />
-      </Route>
-      <Route path="/join">
-        <Join />
-      </Route>
-      {/* FOOTER */}
     </Router>
   );
 }

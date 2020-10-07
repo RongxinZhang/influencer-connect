@@ -1,8 +1,12 @@
 import axios from "axios";
 import { nFormatter, getDaysDifference } from "../helpers/formatters";
+import { authHeader } from "./auth";
 
 // NOTE: must add "http" in front of URL
 const BASE_URL = "http://localhost:3000";
+
+// Set JWT Token in all request header
+axios.defaults.headers.common["x-access-token"] = authHeader();
 
 const getCampaignsAllUsers = function (campaignId) {
   return axios

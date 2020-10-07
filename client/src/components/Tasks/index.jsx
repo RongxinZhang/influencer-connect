@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import CampaignList from "./CampaignList";
 import MessageList from "./MessageList";
 import CheckList from "./CheckList";
-import { getCampaignsAllUsers } from "../../requests/campaigns";
+// import { getCampaignsAllUsers } from "../../requests/campaigns";
 
 import "./Tasks.scss";
 
 export default function Tasks(props) {
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
   const [currentCampaign, setcurrentCampaign] = useState(null);
   const [users, setUsers] = useState(null);
   const [user, setUser] = useState();
 
-  const [messages, setMessages] = useState(null);
+  // const [messages, setMessages] = useState(null);
 
   useEffect(() => {
     const tempUser = { userId: 2, name: "rongxin" };
