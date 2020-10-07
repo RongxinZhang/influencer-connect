@@ -1,15 +1,15 @@
 INSERT INTO users
   (first_name, last_name, email, password, phone)
 VALUES
-  ('James', 'Charles', 'business@spinandco.com', 'password', '4031231234'), /*1*/
-  ('Jaclyn', 'Hill', 'jaclyn@jaclynhillcosmetics', 'password', '6041231234'), /*2*/
-  ('Massy', 'Arias', 'ContactMassyArias@gmail.com', 'password', '4035675678'),/*3*/
-  ('Erin', 'Ireland', 'erinireland@yahoo.com', 'password', '1233211234'),/*4*/
-  ('Eva', 'Kosmas', 'evakosmas@yahoo.com', 'password', '1233211234'),/*5*/
-  ('Janise', 'Burrafato', 'janiseB@yahoo.com', 'password', '7454328765'),/*6*/
-  ('Diego', 'Dandy', 'diegodandy@gmail.com', 'password', '6756784035'),/*7*/
-  ('Will', 'Johnson', 'willjohnson@gmail.com', 'password', '4056567837'),/*8*/
-  ('Dennis', 'Prescott', 'dennisp@gmail.com', 'password', '6756784035');/*9*/
+  ('James', 'Charles', 'business@spinandco.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '4031231234'), /*1*/
+  ('Jaclyn', 'Hill', 'jaclyn@jaclynhillcosmetics', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '6041231234'), /*2*/
+  ('Massy', 'Arias', 'ContactMassyArias@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '4035675678'),/*3*/
+  ('Erin', 'Ireland', 'erinireland@yahoo.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '1233211234'),/*4*/
+  ('Eva', 'Kosmas', 'evakosmas@yahoo.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '1233211234'),/*5*/
+  ('Janise', 'Burrafato', 'janiseB@yahoo.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '7454328765'),/*6*/
+  ('Diego', 'Dandy', 'diegodandy@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '6756784035'),/*7*/
+  ('Will', 'Johnson', 'willjohnson@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '4056567837'),/*8*/
+  ('Dennis', 'Prescott', 'dennisp@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', '6756784035');/*9*/
 
 
 INSERT INTO brands
