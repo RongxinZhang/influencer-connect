@@ -95,6 +95,7 @@ const getCampaignMessages = function (campaignId) {
     .then((res) => {
       const resObj = res.data.data.map((el) => {
         return {
+          id: el.id,
           content: el.content,
           status: el.status,
           senderId: el.sender_id,

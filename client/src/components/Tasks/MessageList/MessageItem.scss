@@ -1,10 +1,14 @@
 @import "../../../styles/mixins.scss";
 
-.message-list-item {
+.message_list_item {
   padding: 15px;
   margin-bottom: 15px;
-  background: #f1f1f1;
+  background: #f2fbc8;
   @include border-radius(2px);
+
+  &--is-sender {
+    background: #f1f1f1;
+  }
 
   .message_list_item_header {
     display: flex;
