@@ -52,7 +52,7 @@ VALUES
 
   ('Massy', 'Arias', 3, 'Massiel “Massy” Indhira Arias is the exuberant Certified Personal Trainer, formerly known as Mankofit, who is changing lives and inspiring a new generation of trainers.', 'https://www.massyarias.com/wp-content/uploads/2019/11/massy-arias.jpg', 'Atlanta', 'Atlanta', 'Georgia', 'USA', 'https://www.instagram.com/massy.arias/?utm_source=ig_embed', 923, 'https://www.facebook.com/manko.fit/', 673000, 'https://www.youtube.com/channel/UCFar6t6OF-q2Y6rBuoDhpOg' , 27000000),
 
-  ('Erin', 'Ireland', 4, 'It’s no secret I’ve always had high standards when it comes to flavour. Same goes with exercise. I like to stay fit and also show the world the way to do that.', 'https://www.instagram.com/erinireland/?hl=en', 'Industrial Ave', 'Vancouver', 'BC', 'Canada', 'https://www.instagram.com/erinireland/?hl=en', 221000, 'https://www.facebook.com/erinYVR/', 9500,'', 0),
+  ('Erin', 'Ireland', 4, 'It’s no secret I’ve always had high standards when it comes to flavour. Same goes with exercise. I like to stay fit and also show the world the way to do that.', 'https://tolivefor.ca/wp-content/uploads/sites/2/2020/09/4e2199e1f6699dd325931dc550d3ae14-1-819x1024.jpg', 'Industrial Ave', 'Vancouver', 'BC', 'Canada', 'https://www.instagram.com/erinireland/?hl=en', 221000, 'https://www.facebook.com/erinYVR/', 9500,'', 0),
 
   ('Eva', 'Kosmas', 5, 'Creative • E-Courses • Gardener • Educator
 ↞ Living seasonally in the PNW ↠', 'https://d15mvavv27jnvy.cloudfront.net/vggbv/f147dc6e57c194d371f72552794867f4.jpg', 'Uptown', 'Atlanta', 'Atlanta', 'USA', 'https://www.instagram.com/evakosmasflores/', 229000, 'https://www.facebook.com/evakosmasflores', 230,'', 0),
@@ -68,7 +68,7 @@ VALUES
 INSERT INTO campaign_details
   (name, brand_id, product_description, product_value, commission_amount, images_url, affiliate_website, example_posts, post_requirements, category, city, country, target_age_range, target_genders)
 VALUES
-  ('Morphe Brush', 1, 'These brushes are gonna be your BFFs with their luxurious natural and synthetic bristles and ultra-glam rose gold finish.', 40, 2, 'https://cdn.shopify.com/s/files/1/0016/9282/7706/products/Rose_Baes_PDP_1.jpg?v=1574667627', 'https://ca.morphe.com/products/rose-baes-brush-collection?variant', 'https://ca.morphe.com/products/rose-baes-brush-collection?variant', 'https://ca.morphe.com/', 'Beauty', 'Los Angeles', 'USA', 18, 'females'),
+  ('Morphe Brushes', 1, 'These brushes are gonna be your BFFs with their luxurious natural and synthetic bristles and ultra-glam rose gold finish.', 40, 2, 'https://cdn.shopify.com/s/files/1/0016/9282/7706/products/Rose_Baes_PDP_1.jpg?v=1574667627', 'https://ca.morphe.com/products/rose-baes-brush-collection?variant', 'https://ca.morphe.com/products/rose-baes-brush-collection?variant', 'https://ca.morphe.com/', 'Beauty', 'Los Angeles', 'USA', 18, 'females'),
 
   ('Coconut Guide', 2, 'This program and every MA Warrior program is designed to teach you how to be healthy and reach your goals in a sustainable way. ', 120, 12, 'https://www.massyarias.com/wp-content/uploads/2020/09/iphone5.jpg', 'https://www.massyarias.com/coconuts/', 'https://www.massyarias.com/coconuts/', 'https://www.massyarias.com/coconuts/', 'Health', 'Georgia', 'USA', 20, 'All'),
 
@@ -80,7 +80,7 @@ VALUES
 
   ('Coca-Cola Brand', 6, 'Coca-Cola is evolving its business strategy to become a total beverage company by giving people more of the drinks they want – including low and no-sugar options across a wide array of categories – in more packages sold in more locations.', 100, 20, 'https://www.coca-colacompany.com/content/dam/journey/us/en/brands/coca-cola/CokesWayForward.jpg', 'https://d2xcq4qphg1ge9.cloudfront.net/assets/507696/3751397/original_PlatedLenox_hero_test.jpg', 'https://d2xcq4qphg1ge9.cloudfront.net/assets/507696/3751397/original_PlatedLenox_hero_test.jpg', 'https://d2xcq4qphg1ge9.cloudfront.net/assets/507696/3751397/original_PlatedLenox_hero_test.jpg', 'Food', 'Kansas', 'USA', 10, 'All'),
 
-  ('Mcdonalds Food', 7, 'Get all your McDonald’s favorites delivered right to your doorstep with McDelivery® on Uber Eats or DoorDash and get paid as well', 10, 1, 'https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/images/One_Pub_Desktop_McDelivery_1168x520.jpg?$Publication_Two_Column_Desktop$', 'https://www.mcdonalds.com/us/en-us.html', 'https://www.mcdonalds.com/us/en-us.html', 'https://www.mcdonalds.com/us/en-us.html', 'Food', 'All over the world', 'All countries', 3, 'All'),
+  ('McDonalds Food', 7, 'Get all your McDonald’s favorites delivered right to your doorstep with McDelivery® on Uber Eats or DoorDash and get paid as well', 10, 1, 'https://www.mcdonalds.com/is/image/content/dam/usa/nfl/assets/images/One_Pub_Desktop_McDelivery_1168x520.jpg?$Publication_Two_Column_Desktop$', 'https://www.mcdonalds.com/us/en-us.html', 'https://www.mcdonalds.com/us/en-us.html', 'https://www.mcdonalds.com/us/en-us.html', 'Food', 'All over the world', 'All countries', 3, 'All'),
 
 
   ('OVO Sound Music', 8, 'product_description', 10, 1, 'https://ovosound.lnk.to/DemTimes', 'https://www.ovosound.com/music', 'https://www.ovosound.com/music', 'https://www.ovosound.com/music', 'Music', 'Don', 'Russia', 18, 'All'),
@@ -109,13 +109,32 @@ VALUES
   (3, 3, 'Accepted'), /*Erin accepts Plated Lenox.........................................................11*/
   (3, 5, 'Accepted'), /*Erin accepts Nike shoes...........................................................12*/
   (3, 6, 'Accepted'), /*Erin accepts cocacola.............................................................13*/
-  (7, 2, 'Accepted'), /*Diego accepts coconut-guide.......................................................14*/
-  (7, 3, 'Accepted'), /*Diego accepts Plated Lenox........................................................15*/
-  (7, 4, 'Accepted'), /*Diego accepts coors beer..........................................................16*/
-  (7, 5, 'Accepted'), /*Diego accepts Nike shoes..........................................................17*/
-  (7, 6, 'Accepted'), /*Diego accepts cocacola............................................................18*/
-  (7, 7, 'Accepted'), /*Diego accepts Macdonald...........................................................19*/
-  (7, 10, 'Accepted'); /*Diego accepts Neutrogena.........................................................20*/
+  (6, 2, 'Accepted'), /*Diego accepts coconut-guide.......................................................14*/
+  (6, 3, 'Accepted'), /*Diego accepts Plated Lenox........................................................15*/
+  (6, 4, 'Accepted'), /*Diego accepts coors beer..........................................................16*/
+  (6, 5, 'Accepted'), /*Diego accepts Nike shoes..........................................................16*/
+  (6, 6, 'Accepted'), /*Diego accepts cocacola............................................................18*/
+  (6, 7, 'Accepted'), /*Diego accepts Macdonald...........................................................19*/
+  (6, 10, 'Accepted'), /*Diego accepts Neutrogena.........................................................20*/
+  (3, 4, 'Accepted'), /*Erin accepts coors light beer.....................................................21*/
+  (3, 7, 'Accepted'), /*Erin accepts McDonalds............................................................22*/
+  (3, 10, 'Accepted'), /*Erin accepts Neutrogena..........................................................23*/
+  (4, 1, 'Accepted'), /*Eva accepts Morphe Brush..........................................................24*/
+  (4, 2, 'Accepted'), /*Eva accepts Coconut-guide.........................................................25*/
+  (4, 3, 'Accepted'), /*Eva accepts Plated Lenox..........................................................26*/
+  (4, 4, 'Accepted'), /*Eva accepts Coors Beer............................................................27*/
+  (4, 5, 'Accepted'), /*Eva accepts Nike shoes............................................................28*/
+  (4, 6, 'Accepted'), /*Eva accepts cocacola..............................................................29*/
+  (4, 7, 'Accepted'), /*Eva accepts Macdonald.............................................................30*/
+  (4, 10, 'Accepted'), /*Eva accepts Neutrogena...........................................................31*/
+  (5, 1, 'Accepted'), /*Janise accepts Morphe Brush.......................................................32*/
+  (5, 2, 'Accepted'), /*Janise accepts Coconut-guide......................................................33*/
+  (5, 3, 'Accepted'), /*Janise accepts Plated Lenox.......................................................34*/
+  (5, 4, 'Accepted'), /*Janise accepts Coors Beer.........................................................35*/
+  (5, 5, 'Accepted'), /*Janise accepts Nike shoes.........................................................36*/
+  (5, 6, 'Accepted'), /*Janise accepts cocacola...........................................................37*/
+  (5, 7, 'Accepted'), /*Janise accepts Macdonald..........................................................38*/
+  (5, 10, 'Accepted'); /*Janise accepts Neutrogena........................................................39*/
 
 
 INSERT INTO tasks
@@ -149,6 +168,10 @@ VALUES
   (3, 'influencer', 'on going', 'Plated Lenox: Contact the local campaign manager', '2020-10-18', '2020-09-27'),
   (3, 'influencer', 'on going', 'Plated Lenox: Complete Plated Lenox form', '2020-10-21', '2020-09-27'),
   (3, 'influencer', 'on going', 'Plated Lenox: Confirm my Address', '2020-10-25', '2020-09-27'),
+  (4, 'influencer', 'completed', 'Coors Beer: Send address', '2020-10-08', '2020-09-27'),
+  (4, 'influencer', 'completed', 'Coors Beer: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (4, 'influencer', 'on going', 'Coors Beer: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (4, 'influencer', 'on going', 'Coors Beer: Review', '2020-10-28', '2020-09-27'),
   (5, 'influencer', 'on going', 'Nike Shoes: Ask for color options', '2020-10-28', '2020-09-27'),
   (5, 'influencer', 'on going', 'Nike Shoes: Send address', '2020-10-28', '2020-09-27'),
   (5, 'influencer', 'on going', 'Nike Shoes: Review', '2020-10-28', '2020-09-27'),
@@ -156,12 +179,16 @@ VALUES
   (6, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
   (6, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
   (6, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
+  (7, 'influencer', 'completed', 'McDonalds Food: Send address', '2020-10-08', '2020-09-27'),
+  (7, 'influencer', 'completed', 'McDonalds Food: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (10, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (10, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
   /* Diego as an influencer */
   (2, 'influencer', 'on going', 'Coconut Guide: Send Address', '2020-10-16', '2020-09-26'),
   (2, 'influencer', 'on going', 'Coconut Guide: Contact Massy', '2020-10-20', '2020-09-26'),
   (2, 'influencer', 'on going', 'Coconut Guide: Send review link', '2020-10-30', '2020-09-26'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Send my Address to the Brand', '2020-10-28', '2020-09-26'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
+  (3, 'influencer', 'completed', 'Plated Lenox: Send my Address to the Brand', '2020-10-28', '2020-09-26'),
+  (3, 'influencer', 'completed', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
   (3, 'influencer', 'on going', 'Plated Lenox: Request for another product', '2020-11-28', '2020-09-26'),
   (3, 'influencer', 'on going', 'Plated Lenox: Contact Brand for more information', '2020-11-20', '2020-09-27'),
   (3, 'influencer', 'on going', 'Plated Lenox: Review both products', '2020-11-18', '2020-09-27'),
@@ -174,23 +201,98 @@ VALUES
   (6, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
   (6, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
   (6, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
-  (7, 'influencer', 'on going', 'MacDonald: Send Adress', '2020-10-28', '2020-09-27'),
-  (7, 'influencer', 'on going', 'MacDonald: Contact Local Store', '2020-10-08', '2020-09-27'),
-  (7, 'influencer', 'on going', 'MacDonald: Request Voucher', '2020-10-18', '2020-09-27'),
-  (7, 'influencer', 'on going', 'MacDonald: Review', '2020-11-20', '2020-09-27'),
-  (10, 'influencer', 'on going', 'Neutrogena: Reject conditions', '2020-10-28', '2020-09-27');
+  (7, 'influencer', 'on going', 'McDonalds Food: Send Adress', '2020-10-28', '2020-09-27'),
+  (7, 'influencer', 'on going', 'McDonalds Food: Contact Local Store', '2020-10-08', '2020-09-27'),
+  (7, 'influencer', 'on going', 'McDonalds Food: Request Voucher', '2020-10-18', '2020-09-27'),
+  (7, 'influencer', 'on going', 'McDonalds Food: Review', '2020-11-20', '2020-09-27'),
+  (10, 'influencer', 'on going', 'Neutrogena: Reject conditions', '2020-10-28', '2020-09-27'),
+  /* Eva as an influencer */
+  (1, 'influencer', 'completed', 'Morphe Brushes: Ask for Clarification', '2020-10-16', '2020-09-26'),
+  (1, 'influencer', 'completed', 'Morphe Brushes: Request for Product', '2020-10-20', '2020-09-26'),
+  (1, 'influencer', 'on going', 'Morphe Brushes: Confirm product received', '2020-10-30', '2020-09-26'),
+  (2, 'influencer', 'on going', 'Coconut Guide: Send Address to Massy', '2020-10-16', '2020-09-26'),
+  (2, 'influencer', 'on going', 'Coconut Guide: Request for Video', '2020-10-20', '2020-09-26'),
+  (2, 'influencer', 'on going', 'Coconut Guide: Send review link', '2020-10-30', '2020-09-26'),
+  (3, 'influencer', 'completed', 'Plated Lenox: Send my Address', '2020-10-28', '2020-09-26'),
+  (3, 'influencer', 'completed', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
+  (3, 'influencer', 'on going', 'Plated Lenox: Contact Brand for more information', '2020-11-20', '2020-09-27'),
+  (3, 'influencer', 'on going', 'Plated Lenox: Review product', '2020-11-18', '2020-09-27'),
+  (3, 'influencer', 'on going', 'Plated Lenox: Send Link to Brand', '2020-11-21', '2020-09-27'),
+  (3, 'influencer', 'on going', 'Plated Lenox: Go to the local branch', '2020-10-28', '2020-09-27'),
+  (4, 'influencer', 'completed', 'Coors Beer: Send my address', '2020-10-08', '2020-09-27'),
+  (4, 'influencer', 'completed', 'Coors Beer: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (4, 'influencer', 'on going', 'Coors Beer: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (4, 'influencer', 'on going', 'Coors Beer: Review', '2020-10-28', '2020-09-27'),
+  (5, 'influencer', 'completed', 'Nike Shoes: Ask for the product', '2020-10-28', '2020-09-27'),
+  (5, 'influencer', 'on going', 'Nike Shoes: Send Shipping Address', '2020-10-28', '2020-09-27'),
+  (5, 'influencer', 'on going', 'Nike Shoes: Review', '2020-10-28', '2020-09-27'),
+  (6, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
+  (6, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (6, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (6, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
+  (7, 'influencer', 'completed', 'McDonalds Food: Send Adress', '2020-10-28', '2020-09-27'),
+  (7, 'influencer', 'completed', 'McDonalds Food: Contact Local Store', '2020-10-08', '2020-09-27'),
+  (7, 'influencer', 'completed', 'McDonalds Food: Request Voucher', '2020-10-18', '2020-09-27'),
+  (7, 'influencer', 'completed', 'McDonalds Food: Review', '2020-11-20', '2020-09-27'),
+  (10, 'influencer', 'on going', 'Neutrogena: Accept latest request', '2020-10-28', '2020-09-27'),
+  /* Janise as an influencer */
+  (1, 'influencer', 'on going', 'Morphe Brushes: Send Address', '2020-10-16', '2020-09-26'),
+  (1, 'influencer', 'on going', 'Morphe Brushes: Contact Brand Manager', '2020-10-20', '2020-09-26'),
+  (1, 'influencer', 'on going', 'Morphe Brushes: Send review link', '2020-10-30', '2020-09-26'),
+  (2, 'influencer', 'on going', 'Coconut Guide: Send Address', '2020-10-16', '2020-09-26'),
+  (2, 'influencer', 'on going', 'Coconut Guide: Contact Massy', '2020-10-20', '2020-09-26'),
+  (2, 'influencer', 'on going', 'Coconut Guide: Review', '2020-10-30', '2020-09-26'),
+  (3, 'influencer', 'completed', 'Plated Lenox: Send my Address', '2020-10-28', '2020-09-26'),
+  (3, 'influencer', 'completed', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
+  (3, 'influencer', 'on going', 'Plated Lenox: Complete the questionaire', '2020-11-28', '2020-09-26'),
+  (3, 'influencer', 'on going', 'Plated Lenox: Contact Brand', '2020-11-20', '2020-09-27'),
+  (3, 'influencer', 'on going', 'Plated Lenox: Review', '2020-11-18', '2020-09-27'),
+  (3, 'influencer', 'on going', 'Plated Lenox: Send Link to Brand', '2020-11-21', '2020-09-27'),
+  (3, 'influencer', 'on going', 'Plated Lenox: Get more products', '2020-10-28', '2020-09-27'),
+  (4, 'influencer', 'completed', 'Coors Beer: Send Address', '2020-10-08', '2020-09-27'),
+  (4, 'influencer', 'completed', 'Coors Beer: Complete online form', '2020-10-18', '2020-09-27'),
+  (4, 'influencer', 'on going', 'Coors Beer: Attend online meeting', '2020-10-20', '2020-09-27'),
+  (4, 'influencer', 'on going', 'Coors Beer: Inform of my disatisfaction', '2020-10-28', '2020-09-27'),
+  (5, 'influencer', 'completed', 'Nike Shoes: Send Address', '2020-10-28', '2020-09-27'),
+  (5, 'influencer', 'completed', 'Nike Shoes: Change the order quantity', '2020-10-28', '2020-09-27'),
+  (5, 'influencer', 'completed', 'Nike Shoes: Review and send link', '2020-10-28', '2020-09-27'),
+  (6, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
+  (6, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (6, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (6, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
+  (7, 'influencer', 'on going', 'McDonalds Food: Send Adress', '2020-10-28', '2020-09-27'),
+  (7, 'influencer', 'on going', 'McDonalds Food: Contact Local Store', '2020-10-08', '2020-09-27'),
+  (7, 'influencer', 'on going', 'McDonalds Food: Request Voucher', '2020-10-18', '2020-09-27'),
+  (7, 'influencer', 'on going', 'McDonalds Food: Review', '2020-11-20', '2020-09-27'),
+  (10, 'influencer', 'on going', 'Neutrogena: AcceptS conditions', '2020-10-28', '2020-09-27');
 
 INSERT INTO messages
   (content, sender_id, receiver_id, campaign_id, status)
 VALUES 
-  ('First Test Message', 1, 2, 1, 'accepted'), /*James sends message to Jaclyn*/
-  ('Second Seed Test Message', 2, 1, 1, 'accepted'),/*Jaclyn responds*/
-  ('Third Seed Test Message', 1, 2, 1, 'accepted'),/*James sends message2 to Jaclyn*/
-  ('Fourth Seed Test Message', 2, 1, 1, 'accepted'),/*Jaclyn responds message2*/
-  ('Fifth Seed Test Message', 3, 4, 2, 'accepted'),/*Massa contacts Erin*/
-  ('Sixth Seed Test Message', 4, 3, 2, 'accepted'), /*Erin responds*/
-  ('seventh Test Message', 4, 3, 2, 'accepted'), /*Erin asks questions about the brand*/
-  ('Eight Seed Test Message', 3, 4, 2, 'accepted');/*Massa responds to Erin*/
+  ('Just wondering if my address was received?', 1, 2, 1, 'accepted'), /*James sends message to Jaclyn*/
+  ('Yes we did James', 2, 1, 1, 'accepted'),/*Jaclyn responds*/
+  ('Hey! form completed', 1, 2, 1, 'accepted'),/*James sends message2 to Jaclyn*/
+  ('Thank you. Product has been posted', 2, 1, 1, 'accepted'),/*Jaclyn responds message2*/
+  ('Please can you provide more info', 3, 4, 2, 'accepted'),/*Massa contacts Erin*/
+  ('Check your inbox', 4, 3, 2, 'accepted'), /*Erin responds*/
+  ('Saw your email, thanks!', 4, 3, 2, 'accepted'), /*Erin asks questions about the brand*/
+  ('You are welcome!', 3, 4, 2, 'accepted'),/*Massa responds to Erin*/
+  ('Hi, just sent my application', 7, 2, 1, 'accepted'), /*Diego sends message to Jaclyn*/
+  ('Ok we will review', 2, 7, 1, 'accepted'),/*Jaclyn responds*/
+  ('Hey! has the package been sent?', 5, 2, 1, 'accepted'),/*Eva sends message to Jaclyn*/
+  ('Yes, check your email for tracking', 2, 5, 1, 'accepted'),/*Jaclyn responds message*/
+  ('Please can you provide more information', 6, 2, 1, 'accepted'),/*Janise contacts Jaclyn*/
+  ('Check you inbox', 2, 6, 1, 'accepted'), /*Jaclyn responds*/
+  ('Thanks!', 6, 2, 1, 'accepted'), /*Janise asks questions about the brand*/
+  ('You are welcome!', 2, 6, 1, 'accepted'),/*Jaclyn responds to Janise the second time*/
+  ('Hi, wheres the link?', 5, 2, 2, 'accepted'), /*Eva sends message to Jaclyn*/
+  ('Check your email', 2, 5, 2, 'accepted'),/*Jaclyn responds*/
+  ('Received, Thanks', 5, 2, 2, 'accepted'),/*Eva sends message2 to Jaclyn*/
+  ('Thank you. Enjoy the workout!', 2, 5, 2, 'accepted'),/*Jaclyn responds message2*/
+  ('Please what are the steps?', 3, 7, 2, 'accepted'),/*Diego contacts Massa*/
+  ('check you inbox', 7, 3, 2, 'accepted'), /*Massa responds*/
+  ('Received the video, thanks!', 6, 3, 2, 'accepted'), /*Janise asks questions about the brand*/
+  ('You are welcome!', 3, 6, 2, 'accepted');/*Massa responds to Janise*/
 
 INSERT INTO categories
   (name, description)
