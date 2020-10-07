@@ -1,8 +1,8 @@
-import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import {
   getCampaignMessages,
-  getCampaignsAllUsers,
+  createCampaignMessage,
+  // getCampaignsAllUsers,
 } from "../../../requests/campaigns";
 import MessageItem from "./MessageItem";
 
@@ -32,16 +32,12 @@ export default function Messages(props) {
       content: text,
     };
 
-    //Do a post request to messages url localhost:3006/campaigns/:campaignId/messages
-    //TO SAVE THE MESSAGES
-    const url = `/campaigns/${props.campaignId}/messages`;
-    const promise = Axios.post(url, newMessage).then(() => {
+    createCampaignMessage(props.campaignId, newMessage).then(() => {
       newMessage.name = props.user.name;
       setMessageData([...messageData, newMessage]);
       setText("");
       setError("");
     });
-    return promise;
   };
 
   // console.log("this is messageData: ", messageData);
@@ -76,7 +72,7 @@ export default function Messages(props) {
         </section>
 
         <section className="message-buttons">
-          <button className="message-send-button" onClick={() => send()}>
+          <button className="message-send-button" onClick={send}>
             Send
           </button>
         </section>

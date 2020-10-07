@@ -109,10 +109,15 @@ const getCampaignMessages = function (campaignId) {
     });
 };
 
+const createCampaignMessage = function (campaignId, messageObj) {
+  return axios.post(`${BASE_URL}/campaigns/${campaignId}/messages`, messageObj);
+};
+
 export {
   getCampaignsAllUsers,
   getCampaigns,
   getCampaignsTasks,
   updateCampaignTask,
   getCampaignMessages,
+  createCampaignMessage,
 };
