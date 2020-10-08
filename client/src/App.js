@@ -8,28 +8,29 @@ import Login from "./components/Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
 
     if (storedUser) {
-      setUser(() => {
-        return JSON.parse(storedUser);
-      });
+      setUser(() => JSON.parse(storedUser));
     }
   }, []);
 
+  const handleLogout = function () {
+    localStorage.removeItem("user");
+    setUser(() => {});
+  };
+
   const updateUser = function (userObj) {
-    setUser(() => {
-      return userObj;
-    });
+    setUser(() => userObj);
   };
 
   return (
     <Router>
       <Route path="/tasks">
-        <Tasks user={user} />
+        <Tasks user={user} handleLogout={handleLogout} />
       </Route>
       <Route path="/login">
         <Login updateUser={updateUser} />

@@ -1,0 +1,20 @@
+.login_btn {
+  display: block;
+  padding-top: 15%;
+
+  &--brand,
+  &--influencer {
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 0;
+  }
+
+  &--brand {
+    background: #333333;
+    color: white;
+  }
+}

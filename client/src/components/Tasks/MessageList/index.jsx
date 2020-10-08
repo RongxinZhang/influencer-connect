@@ -42,24 +42,21 @@ export default function Messages(props) {
 
   // console.log("this is messageData: ", messageData);
 
-  const messageList = messageData.map((el) => {
-    console.log(
-      el,
-      "map message: ",
-      el.id === props.user.userId,
-      el.id,
-      props.user.userId
-    );
-    return (
-      <MessageItem
-        key={el.id}
-        name={el.name}
-        isSender={el.senderId === props.user.userId}
-        content={el.content}
-        date={el.created_at}
-      />
-    );
-  });
+  let messageList = [];
+
+  if (messageData.length > 0) {
+    messageList = messageData.map((el) => {
+      return (
+        <MessageItem
+          key={el.id}
+          name={el.name}
+          isSender={el.senderId === props.user.userId}
+          content={el.content}
+          date={el.created_at}
+        />
+      );
+    });
+  }
 
   return (
     <div id="message_list_container">

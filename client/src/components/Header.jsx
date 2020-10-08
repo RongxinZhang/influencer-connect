@@ -12,11 +12,10 @@ const Header = function (props) {
   //   }
   // }, []);
 
-  // const updateUser = function (userObj) {
-  //   setUser(() => {
-  //     return userObj;
-  //   });
-  // };
+  const logout = function (userObj) {
+    props.handleLogout();
+    window.location = "/login";
+  };
 
   return (
     <section>
@@ -36,7 +35,7 @@ const Header = function (props) {
           </p>
         </div>
         <div classNames="header_buttons">
-          <button>logout</button>
+          <button onClick={logout}>logout</button>
           <button>setting</button>
         </div>
       </header>

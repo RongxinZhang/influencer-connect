@@ -1,5 +1,6 @@
 import React from "react";
 import { login } from "../requests/users";
+import "./Login.scss";
 
 const Login = function (props) {
   const setUserToBrand = () => {
@@ -16,9 +17,11 @@ const Login = function (props) {
   };
 
   return (
-    <div>
-      <button onClick={setUserToBrand}>Login as Brand</button>
-      {/* <button onClick={setUserToInfluencer}>Login as Influencer</button> */}
+    <div className="login_btn">
+      <button className="login_btn--brand" onClick={setUserToBrand}>
+        Login as Brand
+      </button>
+      <button className="login_btn--influencer"> Login as Influencer</button>
     </div>
   );
 };

@@ -21,7 +21,7 @@ export default function Tasks(props) {
         onClick={handleClickCurrentCampaignId}
       />
       <div className="header_container">
-        <Header user={props.user} />
+        <Header user={props.user} handleLogout={props.handleLogout} />
         <div className="checklist_message_container">
           {currentCampaignId && (
             <CheckList
