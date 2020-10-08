@@ -31,7 +31,7 @@ const Header = function (props) {
             }}
           ></div>
           <p>
-            Nike Brand Manager: <span>{props.user && props.user.name}</span>
+            Morphe Brushes: <span>{props.user && props.user.name}</span>
           </p>
         </div>
         <div classNames="header_buttons">

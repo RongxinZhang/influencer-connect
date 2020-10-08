@@ -297,7 +297,7 @@ VALUES
   ('Just wondering if my address was received?', 1,1, 'accepted'), /*James sends message to Jaclyn*/
   ('Yes we did James, just confirming it is 500 Lot Ave LA?', 2, 1, 'accepted'),/*Jaclyn responds*/
   ('Hey! form completed. Heres the link to my instatgram page https://ca.morphe.com/products/rose-baes-brush-collection?variant', 1, 1, 'accepted'),/*James sends message2 to Jaclyn*/
-  ('Thank you. Product has been posted, Check your email for tracking information', 2, 1, 'accepted'),/*Jaclyn responds message2*/
+  ('Thank you. Product has been shippped, Check your email for tracking information', 2, 1, 'accepted'),/*Jaclyn responds message2*/
   ('Please can you provide more information. Thank you!', 3, 40, 'accepted'),/*Massa contacts Jaclyn*/
   ('Check your inbox. Let me know if you have more questions. I ll be happy to provide more details about myself', 2, 40, 'accepted'), /*Jaclyn responds*/
   ('Saw your email, thanks!', 4, 10, 'accepted'), /*Erin asks questions about the brand*/
