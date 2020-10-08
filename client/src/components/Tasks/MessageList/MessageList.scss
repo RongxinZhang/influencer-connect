@@ -3,7 +3,7 @@
 
 #message_list_container {
   background: rgb(246, 248, 249);
-  padding: 15px;
+  padding: 15px 15px 15px 7px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,9 @@
   }
 
   h3 {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #555;
   }
 
   .message_list_input {

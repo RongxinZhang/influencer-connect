@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getCampaignsAllUsers } from "../../../requests/campaigns";
-import { Redirect } from "react-router-dom";
 import CampaignItem from "./CampaignItem";
 import CampaignFilter from "./CampaignFilter";
 

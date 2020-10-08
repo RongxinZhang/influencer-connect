@@ -1,4 +1,32 @@
+@import "../styles/mixins.scss";
+
 header {
   display: block;
+  height: 80px;
   background: white;
+  @include box-shadow(0, 1px, 4px, rgba(21, 27, 38, 0.08));
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header_user_info {
+    display: flex;
+    align-items: center;
+    div {
+      width: 30px;
+      height: 30px;
+      border-radius: 500px;
+      margin-right: 15px;
+      // border: 1px solid black;
+    }
+    p {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+  }
+
+  button {
+    margin-right: 10px;
+  }
 }
