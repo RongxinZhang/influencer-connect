@@ -8,20 +8,23 @@ import CheckList from "./CheckList";
 import "./Tasks.scss";
 
 export default function Tasks(props) {
-  const [currentCampaign, setcurrentCampaign] = useState(null);
+  const [currentCampaignId, setcurrentCampaignId] = useState(null);
 
-  const handleClickCurrentCampaign = function (campaignId) {
-    setcurrentCampaign(campaignId);
+  const handleClickCurrentCampaignId = function (campaignId) {
+    setcurrentCampaignId(campaignId);
   };
 
   return (
     <section id="campaign-tasks">
-      <CampaignList onClick={handleClickCurrentCampaign} />
-      {currentCampaign && (
-        <CheckList currentCampaignId={currentCampaign} user={props.user} />
+      <CampaignList
+        currentCampaignId={currentCampaignId}
+        onClick={handleClickCurrentCampaignId}
+      />
+      {currentCampaignId && (
+        <CheckList currentCampaignId={currentCampaignId} user={props.user} />
       )}
-      {currentCampaign && (
-        <MessageList campaignId={currentCampaign} user={props.user} />
+      {currentCampaignId && (
+        <MessageList campaignId={currentCampaignId} user={props.user} />
       )}
     </section>
   );

@@ -40,7 +40,6 @@ export default function CheckList(props) {
   };
 
   const taskList = tasks.map((el) => {
-    console.log(el);
     if (el.userType === props.user.userType) {
       return (
         <CheckListItem
