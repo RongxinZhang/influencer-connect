@@ -15,7 +15,7 @@ export default function Messages(props) {
 
   useEffect(() => {
     getCampaignMessages(props.campaignId).then((data) => {
-      setMessageData(data);
+      setMessageData(() => data);
     });
   }, [props.campaignId]);
 
