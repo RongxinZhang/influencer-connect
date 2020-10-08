@@ -6,7 +6,7 @@ const campaignController = require("../controllers/campaignsController");
 /* Get all users for all campaigns */
 router.get("/", (req, res) => {
   // NOTE: This should be replaced with the req.user object from the request
-  const userObj = { userId: 2 };
+  const userObj = { userId: req.userId };
   campaignController
     .getCampaigns(userObj)
     .then((data) => {
@@ -19,7 +19,10 @@ router.get("/", (req, res) => {
 
 router.get("/allUsers", (req, res) => {
   // NOTE: This should be replaced with the req.user object from the request
-  const userObj = { userId: 2 };
+  const userObj = { userId: req.userId };
+
+  console.log("User", userObj);
+
   campaignController
     .getAllUsers(userObj)
     .then((data) => {
@@ -147,11 +150,13 @@ router.get("/:campaignId/messages", (req, res) => {
 /* Create Message */
 router.post("/:campaignId/messages", (req, res) => {
   const campaignId = Number(req.params.campaignId);
-
   const messageObj = {
     ...req.body,
     campaignId,
+    status: "unread",
   };
+
+  console.log("messageObj", messageObj);
 
   campaignsController
     .createCampaignMessage(messageObj)

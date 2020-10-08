@@ -1,4 +1,56 @@
-#message-list {
-  background: #909090;
-  flex-grow: 2;
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+#message_list_container {
+  background: rgb(246, 248, 249);
+  padding: 15px 15px 15px 7px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+  height: calc(100% + 19px);
+
+  #message-list {
+    // IMPORTANT: The following 4 lines keeps the height flex and scrolls
+    flex-basis: auto;
+    overflow-y: scroll;
+    min-height: 1px;
+    flex: 1;
+
+    background: white;
+    padding: 5px;
+    @include box-shadow(0, 1px, 4px, rgba(21, 27, 38, 0.08));
+    @include border-radius(3px);
+  }
+
+  h3 {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #555;
+  }
+
+  .message_list_input {
+    @include box-shadow(0, -1px, 3px, rgba(21, 27, 38, 0.15));
+    @include border-radius(3px);
+
+    // IMPORTANT: Floats the item to the bottom
+    margin-top: auto;
+
+    background: #f1f1f1;
+    padding: 15px;
+
+    textarea {
+      @include border-radius(3px);
+      width: 100%;
+      border: 1px solid black;
+      padding: 10px;
+      font-family: $font-family;
+    }
+
+    button {
+      display: block;
+      margin-left: auto;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getCampaigns } from "../../../requests/campaigns";
 import "./CampaignFilter.scss";
-import classNames from "classnames/bind";
+// import classNames from "classnames/bind";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
@@ -29,7 +29,7 @@ const CampaignFilter = function (props) {
       <Dropdown
         options={options}
         onChange={handleFilterChange}
-        placeholder="Filter by campaign stage"
+        placeholder="Filter: by stage"
       />
     </div>
   );

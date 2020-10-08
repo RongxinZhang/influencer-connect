@@ -14,8 +14,9 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT  NULL,
   password VARCHAR(255) NOT NULL,
+  user_type VARCHAR(255),
   phone VARCHAR,
   created_at TIMESTAMP DEFAULT NOW()
 );
@@ -125,8 +126,7 @@ CREATE TABLE messages (
   id SERIAL PRIMARY KEY NOT NULL,
   content VARCHAR(255) NOT NULL,
   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  receiver_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   campaign_id INTEGER REFERENCES campaigns(id) ON DELETE CASCADE,
-  status VARCHAR(255) NOT NULL,
+  status VARCHAR(255),
   created_at TIMESTAMP DEFAULT NOW()
 );

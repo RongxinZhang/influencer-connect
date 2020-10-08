@@ -13,7 +13,7 @@ export default function Tasks(props) {
       setCampaigns(() => {
         return campaigns;
       });
-      if (campaigns) {
+      if (campaigns && campaigns[0]) {
         props.onClick(campaigns[0].campaignId);
       }
     });
