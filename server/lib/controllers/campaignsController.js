@@ -166,7 +166,7 @@ const createTask = function (userObject) {
 
 const getCampaignMessages = function (messageObj) {
   let querryString = `
-    SELECT messages.*, users.*
+    SELECT messages.*, users.first_name, users.last_name
     FROM messages
     INNER JOIN users ON users.id = messages.sender_id
     WHERE messages.campaign_id = $1

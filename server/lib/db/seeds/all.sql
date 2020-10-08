@@ -298,26 +298,26 @@ VALUES
   ('Yes we did James, just confirming it is 500 Lot Ave LA?', 2, 1, 'accepted'),/*Jaclyn responds*/
   ('Hey! form completed. Heres the link to my instatgram page https://ca.morphe.com/products/rose-baes-brush-collection?variant', 1, 1, 'accepted'),/*James sends message2 to Jaclyn*/
   ('Thank you. Product has been posted, Check your email for tracking information', 2, 1, 'accepted'),/*Jaclyn responds message2*/
-  ('Please can you provide more information. Thank you!', 3, 2, 'accepted'),/*Massa contacts Erin*/
-  ('Check your inbox. Let me know if you have more questions. I ll be happy to provide more details about myself', 4, 2, 'accepted'), /*Erin responds*/
-  ('Saw your email, thanks!', 4, 2, 'accepted'), /*Erin asks questions about the brand*/
-  ('You are welcome!', 3, 2, 'accepted'),/*Massa responds to Erin*/
-  ('Hi, just sent my application. How long does the process take?', 7, 1, 'accepted'), /*Diego sends message to Jaclyn*/
-  ('Thank you for sending in your application. We will review and get back to you. Meanwhile you can explore more opportunities at our website on https://ca.morphe.com/ ', 2, 1, 'accepted'),/*Jaclyn responds*/
-  ('Hey! has the package been sent?', 5, 1, 'accepted'),/*Eva sends message to Jaclyn*/
-  ('Yes, your product has been posted. Check your email for tracking information', 2, 1, 'accepted'),/*Jaclyn responds message*/
-  ('Please can you provide more information', 6, 1, 'accepted'),/*Janise contacts Jaclyn*/
-  ('Check you inbox', 2, 1, 'accepted'), /*Jaclyn responds*/
-  ('Thanks!', 6, 1, 'accepted'), /*Janise asks questions about the brand*/
-  ('You are welcome!', 2, 1, 'accepted'),/*Jaclyn responds to Janise the second time*/
-  ('Hi, wheres the link?', 5, 2, 'accepted'), /*Eva sends message to Jaclyn*/
-  ('Thank you. Product has been posted, Check your email for tracking information', 2,2, 'accepted'),/*Jaclyn responds*/
-  ('Received, Thanks', 5, 2, 'accepted'),/*Eva sends message2 to Jaclyn*/
-  ('Thank you. Enjoy the workout!', 2, 2, 'accepted'),/*Jaclyn responds message2*/
-  ('Please what are the steps?', 3, 2, 'accepted'),/*Diego contacts Massa*/
-  ('check you inbox', 7, 2, 'accepted'), /*Massa responds*/
-  ('Received the video, thanks!', 6, 2, 'accepted'), /*Janise asks questions about the brand*/
-  ('You are welcome!', 3, 2, 'accepted');/*Massa responds to Janise*/
+  ('Please can you provide more information. Thank you!', 3, 40, 'accepted'),/*Massa contacts Jaclyn*/
+  ('Check your inbox. Let me know if you have more questions. I ll be happy to provide more details about myself', 2, 40, 'accepted'), /*Jaclyn responds*/
+  ('Saw your email, thanks!', 4, 10, 'accepted'), /*Erin asks questions about the brand*/
+  ('You are welcome!', 2, 10, 'accepted'),/*Jaclyn responds to Erin*/
+  ('Hi, just sent my application. How long does the process take?', 7, 41, 'accepted'), /*Diego sends message to Jaclyn*/
+  ('Thank you for sending in your application. We will review and get back to you. Meanwhile you can explore more opportunities at our website on https://ca.morphe.com/ ', 2, 41, 'accepted'),/*Jaclyn responds*/
+  ('Hey! has the package been sent?', 5, 24, 'accepted'),/*Eva sends message to Jaclyn*/
+  ('Yes, your product has been posted. Check your email for tracking information', 2, 24, 'accepted'),/*Jaclyn responds message*/
+  ('Please can you provide more information', 6, 32, 'accepted'),/*Janise contacts Jaclyn*/
+  ('Check your inbox', 2, 32, 'accepted'), /*Jaclyn responds*/
+  ('Thanks!', 6, 32, 'accepted'), /*Janise asks questions about the brand*/
+  ('You are welcome!', 2, 32, 'accepted'),/*Jaclyn responds to Janise the second time*/
+  ('Hi, wheres the link?', 5, 24, 'accepted'), /*Eva sends message to Jaclyn*/
+  ('Thank you. Product has been posted, Check your email for tracking information', 2,24, 'accepted'),/*Jaclyn responds*/
+  ('Received, Thanks', 5, 24, 'accepted'),/*Eva sends message2 to Jaclyn*/
+  ('Thank you. Enjoy the workout!', 2, 24, 'accepted'),/*Jaclyn responds message2*/
+  ('Please what are the steps?', 7, 41, 'accepted'),/*Diego contacts Jaclyn*/
+  ('check your inbox', 8, 42, 'accepted'), /*Will contacts Jaclyn*/
+  ('Received the video, thanks!', 2, 42, 'accepted'), /*Jaclyn answers*/
+  ('You are welcome!', 8, 42, 'accepted');/*Will responds to message2*/
 
 INSERT INTO categories
   (name, description)
