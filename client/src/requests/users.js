@@ -12,9 +12,7 @@ const login = function (userObj) {
 
         const resObj = {
           name: `${user.first_name} ${user.last_name}`,
-          userId: user.userId,
-          email: user.email,
-          jwtToken: user.jwtToken,
+          ...user,
         };
 
         localStorage.setItem("user", JSON.stringify(resObj));
