@@ -1,45 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CampaignList from "./CampaignList";
 import MessageList from "./MessageList";
 import CheckList from "./CheckList";
+import Header from "../Header";
 // import { getCampaignsAllUsers } from "../../requests/campaigns";
 
 import "./Tasks.scss";
 
 export default function Tasks(props) {
-  // const [name, setName] = useState("");
-  const [currentCampaign, setcurrentCampaign] = useState(null);
-  // const [user, setUser] = useState();
+  const [currentCampaignId, setcurrentCampaignId] = useState(null);
 
-  // all state is kept here.
-  // Module: styled-componenets inside the componenet file.
-  // Everything is kept inside component
-
-  const handleClickCurrentCampaign = function (campaignId) {
-    setcurrentCampaign(campaignId);
+  const handleClickCurrentCampaignId = function (campaignId) {
+    setcurrentCampaignId(campaignId);
   };
 
-  // const tasks = [...props.days]
-  // if (user) {
   return (
     <section id="campaign-tasks">
-      <CampaignList onClick={handleClickCurrentCampaign} />
-      {currentCampaign && <CheckList currentCampaignId={currentCampaign} />}
-      {currentCampaign && (
-        <MessageList campaignId={currentCampaign} user={props.user} />
-      )}
+      <CampaignList
+        currentCampaignId={currentCampaignId}
+        onClick={handleClickCurrentCampaignId}
+      />
+      <div className="header_container">
+        <Header user={props.user} />
+        <div className="checklist_message_container">
+          {currentCampaignId && (
+            <CheckList
+              currentCampaignId={currentCampaignId}
+              user={props.user}
+            />
+          )}
+          {currentCampaignId && (
+            <MessageList campaignId={currentCampaignId} user={props.user} />
+          )}
+        </div>
+      </div>
     </section>
   );
-  // } else {
-  //   return (
-  //     <div>
-  //       <h1>Whos There ?</h1>
-  //       <form onSubmit={login}>
-  //         <label>Username</label>
-  //         <input name="username" />
-  //         <input type="submit" />
-  //       </form>
-  //     </div>
-  //   );
-  // }
 }

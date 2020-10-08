@@ -62,6 +62,7 @@ const getCampaignsTasks = function (campaignId) {
           description: el.description,
           status: el.status,
           taskId: el.id,
+          userType: el.user_type,
           daysLeft: getDaysDifference(el.due_date),
         };
       });

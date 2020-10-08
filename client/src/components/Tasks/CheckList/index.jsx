@@ -40,13 +40,16 @@ export default function CheckList(props) {
   };
 
   const taskList = tasks.map((el) => {
-    return (
-      <CheckListItem
-        {...el}
-        handleTaskUpdate={handleTaskUpdate}
-        key={el.taskId}
-      />
-    );
+    if (el.userType === props.user.userType) {
+      return (
+        <CheckListItem
+          {...el}
+          handleTaskUpdate={handleTaskUpdate}
+          key={el.taskId}
+        />
+      );
+    }
+    return null;
   });
 
   return (

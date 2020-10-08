@@ -53,7 +53,7 @@ router.post("/login", (req, res) => {
 
       if (bcryptjs.compareSync(password, passwordHash)) {
         var jwtToken = jwt.sign(
-          { userId: data[0].id },
+          { userId: data[0].id, userType: data[0].user_type },
           process.env.JWT_SECRET,
           {
             expiresIn: ONE_DAY * 30, // 30 days hours
@@ -68,6 +68,7 @@ router.post("/login", (req, res) => {
             first_name: data[0].first_name,
             last_name: data[0].last_name,
             email: data[0].email,
+            userType: data[0].user_type,
             jwtToken: jwtToken,
           },
         });
@@ -86,12 +87,12 @@ router.post("/:userId/profile", async (req, res) => {
   const userType = req.body.userType;
 
   const profileObj = {
-    ...req.body,
     userId,
+    ...req.body,
   };
 
   delete profileObj.userType;
-
+  // console.log("USER TYPE", userType);
   if (userType === "influencer") {
     const profileExist = await usersController.checkInfluencerProfile(
       profileObj
@@ -101,20 +102,39 @@ router.post("/:userId/profile", async (req, res) => {
       return res.send("profileExist");
     }
 
+    // This is passed to to the response
+    // after use is updated
+    let userProfileData = {};
+
+    // 1. Create influencer profile
     usersController
       .createInfluencerProfile(profileObj)
       .then((data) => {
-        return res.send(data.rows[0]);
+        userProfileData = data;
+
+        if (data.rowCount > 0) {
+          // 2. Update user profile
+          return usersController.updateUser({
+            userType: "influencer",
+            id: userId,
+          });
+        } else {
+          throw new Error("user profile not created");
+        }
+      })
+      .then((data) => {
+        if (data.rowCount > 0) {
+          return res.send(userProfileData.rows[0]);
+        } else {
+          throw new Error("user not updated");
+        }
       })
       .catch((err) => {
         console.log(err);
         return res.status(500).json({ error: err.message });
       });
-  }
-
-  if (userType === "brand") {
+  } else if (userType === "brand") {
     const profileExist = await usersController.checkBrandProfile(profileObj);
-    console.log("brandExist", profileExist);
 
     if (profileExist) {
       return res.send("profileExist");
@@ -122,11 +142,13 @@ router.post("/:userId/profile", async (req, res) => {
 
     let responseData = {};
 
+    // 1. Create brand profile
     usersController
       .createBrandProfile(profileObj)
       .then((data) => {
         // Create brand
         responseData.profile = data.rows;
+        // 2. Create brand manager
         return usersController.createBrandManager({
           userId,
           brandId: data.rows[0].id,
@@ -134,20 +156,29 @@ router.post("/:userId/profile", async (req, res) => {
         });
       })
       .then((data) => {
-        // console.log("HERE", data).rows;
-        responseData.manager = data.rows;
+        if (data.rowCount > 0) {
+          // 3. Updat user profile
+          return usersController.updateUser({
+            userType: "brand",
+            id: userId,
+          });
+        } else {
+          throw new Error("user profile not created");
+        }
+      })
+      .then((data) => {
         if (data.rowCount > 0) {
           return res.send({ status: 200, data: responseData });
+        } else {
+          throw new Error("User not added to brand");
         }
-        throw new Error("User not added to brand");
       })
       .catch((err) => {
         return res.status(500).json({ error: err.message });
       });
-    return;
+  } else {
+    return res.status(500).json({ error: "wrong user type" });
   }
-  console.log("userType", userType);
-  return res.status(500).json({ error: "wrong user type" });
 });
 
 // router.post("/login", (req, res) => {});
