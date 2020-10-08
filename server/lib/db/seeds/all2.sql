@@ -115,7 +115,7 @@ VALUES
   (6, 2, 'Accepted'), /*Diego accepts coconut-guide.......................................................14*/
   (6, 3, 'Accepted'), /*Diego accepts Plated Lenox........................................................15*/
   (6, 4, 'Accepted'), /*Diego accepts coors beer..........................................................16*/
-  (6, 5, 'Accepted'), /*Diego accepts Nike shoes..........................................................16*/
+  (6, 5, 'Accepted'), /*Diego accepts Nike shoes..........................................................17*/
   (6, 6, 'Accepted'), /*Diego accepts cocacola............................................................18*/
   (6, 7, 'Accepted'), /*Diego accepts Macdonald...........................................................19*/
   (6, 10, 'Accepted'), /*Diego accepts Neutrogena.........................................................20*/
@@ -137,25 +137,26 @@ VALUES
   (5, 5, 'Accepted'), /*Janise accepts Nike shoes.........................................................36*/
   (5, 6, 'Accepted'), /*Janise accepts cocacola...........................................................37*/
   (5, 7, 'Accepted'), /*Janise accepts Macdonald..........................................................38*/
-  (5, 10, 'Accepted'), /*Janise accepts Neutrogena.........................................................39*/
+  (5, 10, 'Accepted'), /*Janise accepts Neutrogena........................................................39*/
   (2, 1, 'Accepted'), /*Massy accepts Morphe Brushes......................................................40*/
-  (6, 1, 'Accepted'), /*Diego accepts Morphe Brushes......................................................38*/
-  (7, 1, 'Accepted'); /*Will accepts Morphe Brushes.......................................................39*/
+  (6, 1, 'Accepted'), /*Diego accepts Morphe Brushes......................................................41*/
+  (7, 1, 'Accepted'); /*Will accepts Morphe Brushes.......................................................42*/
 
 
 INSERT INTO tasks
   (campaign_id, user_type, status, description, due_date, created_date)
 VALUES
-  (1, 'brand', 'on going', 'Morphe Brushes: Communicate clearly expectations', '2020-10-28', '2020-09-26'),
-  (1, 'brand', 'on going', 'Morphe Brushes: Get Influencer Address', '2020-10-28', '2020-09-26'),
-  (1, 'brand', 'on going', 'Morphe Brushes: Post the product', '2020-10-28', '2020-09-26'),
-  (1, 'brand', 'on going', 'Morphe Brushes: Inform Influencer about postage details', '2020-10-28', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Send my Address to the Brand', '2020-10-28', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Confirm Product received', '2020-10-28', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Review the product on my channel', '2020-10-28', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Send the review link to the Brand', '2020-10-28', '2020-09-26'),
-  (1, 'brand', 'on going', 'Morphe Brushes: Follow up with the Influencer', '2020-10-28', '2020-09-26'),
-  (1, 'brand', 'on going', 'Morphe Brushes: Review Infulencer posts', '2020-10-28', '2020-09-26'),
+  /*James as an influencer */
+  (1, 'brand', 'on going', 'Communicatee clearly expectations', '2020-10-28', '2020-09-26'),
+  (1, 'brand', 'on going', 'Get Influencer Address', '2020-10-28', '2020-09-26'),
+  (1, 'brand', 'on going', 'Post the product', '2020-10-28', '2020-09-26'),
+  (1, 'brand', 'on going', 'Inform Influencer about postage details', '2020-10-28', '2020-09-26'),
+  (1, 'influencer', 'on going', 'Send my Address to the Brand', '2020-10-28', '2020-09-26'),
+  (1, 'influencer', 'on going', 'Confirm Product received', '2020-10-28', '2020-09-26'),
+  (1, 'influencer', 'on going', 'Review the product on my channel', '2020-10-28', '2020-09-26'),
+  (1, 'influencer', 'on going', 'Send the review link to the Brand', '2020-10-28', '2020-09-26'),
+  (1, 'brand', 'on going', 'Follow up with the Influencer', '2020-10-28', '2020-09-26'),
+  (1, 'brand', 'on going', 'Review Infulencer posts', '2020-10-28', '2020-09-26'),
   /* Massy functions as an influencer and as a brand manager and Erin as influencer*/
   (2, 'influencer', 'on going', 'Coconut Guide: Review the product on my channel', '2020-10-15', '2020-09-26'),
   (2, 'brand', 'on going', 'Coconut Guide: Look for Influencers', '2020-10-15', '2020-09-26'),
@@ -166,133 +167,151 @@ VALUES
   (2, 'influencer', 'on going', 'Coconut Guide: Provide more Information', '2020-10-15', '2020-09-26'),
   (2, 'influencer', 'on going', 'Coconut Guide: Request for a Sample', '2020-10-15', '2020-09-26'),
   /* Erin as Influencer*/
-  (2, 'influencer', 'on going', 'Coconut Guide: Send message for status', '2020-10-15', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Send my Address to the Brand', '2020-10-28', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Confirm Product recieved', '2020-10-28', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Review product', '2020-10-28', '2020-09-26'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Request for Vouchers', '2020-10-20', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Contact the local campaign manager', '2020-10-18', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Complete Plated Lenox form', '2020-10-21', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Confirm my Address', '2020-10-25', '2020-09-27'),
-  (4, 'influencer', 'completed', 'Coors Beer: Send address', '2020-10-08', '2020-09-27'),
-  (4, 'influencer', 'completed', 'Coors Beer: Collect card from the dealer', '2020-10-18', '2020-09-27'),
-  (4, 'influencer', 'on going', 'Coors Beer: Follow up on contact details', '2020-10-20', '2020-09-27'),
-  (4, 'influencer', 'on going', 'Coors Beer: Review', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'on going', 'Nike Shoes: Ask for color options', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'on going', 'Nike Shoes: Send address', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'on going', 'Nike Shoes: Review', '2020-10-28', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
-  (7, 'influencer', 'completed', 'McDonalds Food: Send address', '2020-10-08', '2020-09-27'),
-  (7, 'influencer', 'completed', 'McDonalds Food: Collect card from the dealer', '2020-10-18', '2020-09-27'),
-  (10, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
-  (10, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
+  (3, 'influencer', 'on going', 'Coconut Guide: Send message for status', '2020-10-15', '2020-09-26'),
+  (10, 'influencer', 'completed', 'Send my Address to the Brand', '2020-10-28', '2020-09-26'),
+  (10, 'influencer', 'on going', 'Confirm Product recieved', '2020-10-28', '2020-09-26'),
+  (10, 'influencer', 'on going', 'Review product', '2020-10-28', '2020-09-26'),
+  (11, 'influencer', 'on going', 'Plated Lenox: Request for Vouchers', '2020-10-20', '2020-09-27'),
+  (11, 'influencer', 'on going', 'Plated Lenox: Contact the local campaign manager', '2020-10-18', '2020-09-27'),
+  (11, 'influencer', 'on going', 'Plated Lenox: Complete Plated Lenox form', '2020-10-21', '2020-09-27'),
+  (11, 'influencer', 'on going', 'Plated Lenox: Confirm my Address', '2020-10-25', '2020-09-27'),
+  (21, 'influencer', 'completed', 'Coors Beer: Send address', '2020-10-08', '2020-09-27'),
+  (21, 'influencer', 'completed', 'Coors Beer: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (21, 'influencer', 'on going', 'Coors Beer: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (21, 'influencer', 'on going', 'Coors Beer: Review', '2020-10-28', '2020-09-27'),
+  (12, 'influencer', 'on going', 'Nike Shoes: Ask for color options', '2020-10-28', '2020-09-27'),
+  (12, 'influencer', 'on going', 'Nike Shoes: Send address', '2020-10-28', '2020-09-27'),
+  (12, 'influencer', 'on going', 'Nike Shoes: Review', '2020-10-28', '2020-09-27'),
+  (13, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
+  (13, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (13, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (13, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
+  (22, 'influencer', 'completed', 'McDonalds Food: Send address', '2020-10-08', '2020-09-27'),
+  (22, 'influencer', 'completed', 'McDonalds Food: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (13, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (13, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
   /* Diego as an influencer */
-  (2, 'influencer', 'on going', 'Coconut Guide: Send Address', '2020-10-16', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Coconut Guide: Contact Massy', '2020-10-20', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Coconut Guide: Send review link', '2020-10-30', '2020-09-26'),
-  (3, 'influencer', 'completed', 'Plated Lenox: Send my Address to the Brand', '2020-10-28', '2020-09-26'),
-  (3, 'influencer', 'completed', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Request for another product', '2020-11-28', '2020-09-26'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Contact Brand for more information', '2020-11-20', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Review both products', '2020-11-18', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Send Link to Brand', '2020-11-21', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Contact brand manager', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'on going', 'Nike Shoes: Ask Question', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'on going', 'Nike Shoes: Send Shipping Address', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'on going', 'Nike Shoes: Review', '2020-10-28', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
-  (7, 'influencer', 'on going', 'McDonalds Food: Send Adress', '2020-10-28', '2020-09-27'),
-  (7, 'influencer', 'on going', 'McDonalds Food: Contact Local Store', '2020-10-08', '2020-09-27'),
-  (7, 'influencer', 'on going', 'McDonalds Food: Request Voucher', '2020-10-18', '2020-09-27'),
-  (7, 'influencer', 'on going', 'McDonalds Food: Review', '2020-11-20', '2020-09-27'),
-  (10, 'influencer', 'on going', 'Neutrogena: Reject conditions', '2020-10-28', '2020-09-27'),
+  (14, 'influencer', 'on going', 'Coconut Guide: Send Address', '2020-10-16', '2020-09-26'),
+  (14, 'influencer', 'on going', 'Coconut Guide: Contact Massy', '2020-10-20', '2020-09-26'),
+  (14, 'influencer', 'on going', 'Coconut Guide: Send review link', '2020-10-30', '2020-09-26'),
+  (15, 'influencer', 'completed', 'Plated Lenox: Send my Address to the Brand', '2020-10-28', '2020-09-26'),
+  (15, 'influencer', 'completed', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
+  (15, 'influencer', 'on going', 'Plated Lenox: Request for another product', '2020-11-28', '2020-09-26'),
+  (15, 'influencer', 'on going', 'Plated Lenox: Contact Brand for more information', '2020-11-20', '2020-09-27'),
+  (15, 'influencer', 'on going', 'Plated Lenox: Review both products', '2020-11-18', '2020-09-27'),
+  (15, 'influencer', 'on going', 'Plated Lenox: Send Link to Brand', '2020-11-21', '2020-09-27'),
+  (15, 'influencer', 'on going', 'Plated Lenox: Contact brand manager', '2020-10-28', '2020-09-27'),
+  (17, 'influencer', 'on going', 'Nike Shoes: Ask Question', '2020-10-28', '2020-09-27'),
+  (17, 'influencer', 'on going', 'Nike Shoes: Send Shipping Address', '2020-10-28', '2020-09-27'),
+  (17, 'influencer', 'on going', 'Nike Shoes: Review', '2020-10-28', '2020-09-27'),
+  (18, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
+  (18, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (18, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (18, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
+  (19, 'influencer', 'on going', 'McDonalds Food: Send Adress', '2020-10-28', '2020-09-21'),
+  (19, 'influencer', 'on going', 'McDonalds Food: Contact Local Store', '2020-10-08', '2020-09-21'),
+  (19, 'influencer', 'on going', 'McDonalds Food: Request Voucher', '2020-10-18', '2020-09-21'),
+  (19, 'influencer', 'on going', 'McDonalds Food: Review', '2020-11-20', '2020-09-27'),
+  (20, 'influencer', 'on going', 'Neutrogena: Reject conditions', '2020-10-28', '2020-09-27'),
   /* Eva as an influencer */
-  (1, 'influencer', 'completed', 'Morphe Brushes: Ask for Clarification', '2020-10-16', '2020-09-26'),
-  (1, 'influencer', 'completed', 'Morphe Brushes: Request for Product', '2020-10-20', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Confirm product received', '2020-10-30', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Coconut Guide: Send Address to Massy', '2020-10-16', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Coconut Guide: Request for Video', '2020-10-20', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Coconut Guide: Send review link', '2020-10-30', '2020-09-26'),
-  (3, 'influencer', 'completed', 'Plated Lenox: Send my Address', '2020-10-28', '2020-09-26'),
-  (3, 'influencer', 'completed', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Contact Brand for more information', '2020-11-20', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Review product', '2020-11-18', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Send Link to Brand', '2020-11-21', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Go to the local branch', '2020-10-28', '2020-09-27'),
-  (4, 'influencer', 'completed', 'Coors Beer: Send my address', '2020-10-08', '2020-09-27'),
-  (4, 'influencer', 'completed', 'Coors Beer: Collect card from the dealer', '2020-10-18', '2020-09-27'),
-  (4, 'influencer', 'on going', 'Coors Beer: Follow up on contact details', '2020-10-20', '2020-09-27'),
-  (4, 'influencer', 'on going', 'Coors Beer: Review', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'completed', 'Nike Shoes: Ask for the product', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'on going', 'Nike Shoes: Send Shipping Address', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'on going', 'Nike Shoes: Review', '2020-10-28', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
-  (7, 'influencer', 'completed', 'McDonalds Food: Send Adress', '2020-10-28', '2020-09-27'),
-  (7, 'influencer', 'completed', 'McDonalds Food: Contact Local Store', '2020-10-08', '2020-09-27'),
-  (7, 'influencer', 'completed', 'McDonalds Food: Request Voucher', '2020-10-18', '2020-09-27'),
-  (7, 'influencer', 'completed', 'McDonalds Food: Review', '2020-11-20', '2020-09-27'),
-  (10, 'influencer', 'on going', 'Neutrogena: Accept latest request', '2020-10-28', '2020-09-27'),
+  (24, 'influencer', 'completed', 'Ask for Clarification', '2020-10-16', '2020-09-26'),
+  (24, 'influencer', 'completed', 'Request for Product', '2020-10-20', '2020-09-26'),
+  (24, 'influencer', 'on going', 'Confirm product received', '2020-10-30', '2020-09-26'),
+  (25, 'influencer', 'on going', 'Coconut Guide: Send Address to Massy', '2020-10-16', '2020-09-26'),
+  (25, 'influencer', 'on going', 'Coconut Guide: Request for Video', '2020-10-20', '2020-09-26'),
+  (25, 'influencer', 'on going', 'Coconut Guide: Send review link', '2020-10-30', '2020-09-26'),
+  (26, 'influencer', 'completed', 'Plated Lenox: Send my Address', '2020-10-28', '2020-09-26'),
+  (26, 'influencer', 'completed', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
+  (26, 'influencer', 'on going', 'Plated Lenox: Contact Brand for more information', '2020-11-20', '2020-09-27'),
+  (26, 'influencer', 'on going', 'Plated Lenox: Review product', '2020-11-18', '2020-09-27'),
+  (26, 'influencer', 'on going', 'Plated Lenox: Send Link to Brand', '2020-11-21', '2020-09-27'),
+  (26, 'influencer', 'on going', 'Plated Lenox: Go to the local branch', '2020-10-28', '2020-09-27'),
+  (27, 'influencer', 'completed', 'Coors Beer: Send my address', '2020-10-08', '2020-09-27'),
+  (27, 'influencer', 'completed', 'Coors Beer: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (27, 'influencer', 'on going', 'Coors Beer: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (27, 'influencer', 'on going', 'Coors Beer: Review', '2020-10-28', '2020-09-27'),
+  (28, 'influencer', 'completed', 'Nike Shoes: Ask for the product', '2020-10-28', '2020-09-27'),
+  (28, 'influencer', 'on going', 'Nike Shoes: Send Shipping Address', '2020-10-28', '2020-09-27'),
+  (28, 'influencer', 'on going', 'Nike Shoes: Review', '2020-10-28', '2020-09-27'),
+  (29, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
+  (29, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (29, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (29, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
+  (30, 'influencer', 'completed', 'McDonalds Food: Send Adress', '2020-10-28', '2020-09-27'),
+  (30, 'influencer', 'completed', 'McDonalds Food: Contact Local Store', '2020-10-08', '2020-09-27'),
+  (30, 'influencer', 'completed', 'McDonalds Food: Request Voucher', '2020-10-18', '2020-09-27'),
+  (30, 'influencer', 'completed', 'McDonalds Food: Review', '2020-11-20', '2020-09-27'),
+  (31, 'influencer', 'on going', 'Neutrogena: Accept latest request', '2020-10-28', '2020-09-27'),
   /* Janise as an influencer */
-  (1, 'influencer', 'on going', 'Morphe Brushes: Send Address', '2020-10-16', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Contact Brand Manager', '2020-10-20', '2020-09-26'),
-  (1, 'influencer', 'on going', 'Morphe Brushes: Send review link', '2020-10-30', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Coconut Guide: Send Address', '2020-10-16', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Coconut Guide: Contact Massy', '2020-10-20', '2020-09-26'),
-  (2, 'influencer', 'on going', 'Coconut Guide: Review', '2020-10-30', '2020-09-26'),
-  (3, 'influencer', 'completed', 'Plated Lenox: Send my Address', '2020-10-28', '2020-09-26'),
-  (3, 'influencer', 'completed', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Complete the questionaire', '2020-11-28', '2020-09-26'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Contact Brand', '2020-11-20', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Review', '2020-11-18', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Send Link to Brand', '2020-11-21', '2020-09-27'),
-  (3, 'influencer', 'on going', 'Plated Lenox: Get more products', '2020-10-28', '2020-09-27'),
-  (4, 'influencer', 'completed', 'Coors Beer: Send Address', '2020-10-08', '2020-09-27'),
-  (4, 'influencer', 'completed', 'Coors Beer: Complete online form', '2020-10-18', '2020-09-27'),
-  (4, 'influencer', 'on going', 'Coors Beer: Attend online meeting', '2020-10-20', '2020-09-27'),
-  (4, 'influencer', 'on going', 'Coors Beer: Inform of my disatisfaction', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'completed', 'Nike Shoes: Send Address', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'completed', 'Nike Shoes: Change the order quantity', '2020-10-28', '2020-09-27'),
-  (5, 'influencer', 'completed', 'Nike Shoes: Review and send link', '2020-10-28', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
-  (6, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
-  (7, 'influencer', 'on going', 'McDonalds Food: Send Adress', '2020-10-28', '2020-09-27'),
-  (7, 'influencer', 'on going', 'McDonalds Food: Contact Local Store', '2020-10-08', '2020-09-27'),
-  (7, 'influencer', 'on going', 'McDonalds Food: Request Voucher', '2020-10-18', '2020-09-27'),
-  (7, 'influencer', 'on going', 'McDonalds Food: Review', '2020-11-20', '2020-09-27'),
-  (10, 'influencer', 'on going', 'Neutrogena: AcceptS conditions', '2020-10-28', '2020-09-27');
+  (32, 'influencer', 'on going', 'Send Address', '2020-10-16', '2020-09-26'),
+  (32, 'influencer', 'on going', 'Contact Brand Manager', '2020-10-20', '2020-09-26'),
+  (32, 'influencer', 'on going', 'Send review link', '2020-10-30', '2020-09-26'),
+  (33, 'influencer', 'on going', 'Coconut Guide: Send Address', '2020-10-16', '2020-09-26'),
+  (33, 'influencer', 'on going', 'Coconut Guide: Contact Massy', '2020-10-20', '2020-09-26'),
+  (33, 'influencer', 'on going', 'Coconut Guide: Review', '2020-10-30', '2020-09-26'),
+  (34, 'influencer', 'completed', 'Plated Lenox: Send my Address', '2020-10-28', '2020-09-26'),
+  (34, 'influencer', 'completed', 'Plated Lenox: Confirm Product recieved', '2020-11-28', '2020-09-26'),
+  (34, 'influencer', 'on going', 'Plated Lenox: Complete the questionaire', '2020-11-28', '2020-09-26'),
+  (34, 'influencer', 'on going', 'Plated Lenox: Contact Brand', '2020-11-20', '2020-09-27'),
+  (34, 'influencer', 'on going', 'Plated Lenox: Review', '2020-11-18', '2020-09-27'),
+  (34, 'influencer', 'on going', 'Plated Lenox: Send Link to Brand', '2020-11-21', '2020-09-27'),
+  (34, 'influencer', 'on going', 'Plated Lenox: Get more products', '2020-10-28', '2020-09-27'),
+  (35, 'influencer', 'completed', 'Coors Beer: Send Address', '2020-10-08', '2020-09-27'),
+  (35, 'influencer', 'completed', 'Coors Beer: Complete online form', '2020-10-18', '2020-09-27'),
+  (35, 'influencer', 'on going', 'Coors Beer: Attend online meeting', '2020-10-20', '2020-09-27'),
+  (35, 'influencer', 'on going', 'Coors Beer: Inform of my disatisfaction', '2020-10-28', '2020-09-27'),
+  (36, 'influencer', 'completed', 'Nike Shoes: Send Address', '2020-10-28', '2020-09-27'),
+  (36, 'influencer', 'completed', 'Nike Shoes: Change the order quantity', '2020-10-28', '2020-09-27'),
+  (36, 'influencer', 'completed', 'Nike Shoes: Review and send link', '2020-10-28', '2020-09-27'),
+  (37, 'influencer', 'on going', 'Coca-Cola Brand: Send address', '2020-10-08', '2020-09-27'),
+  (37, 'influencer', 'on going', 'Coca-Cola Brand: Collect card from the dealer', '2020-10-18', '2020-09-27'),
+  (37, 'influencer', 'on going', 'Coca-Cola Brand: Follow up on contact details', '2020-10-20', '2020-09-27'),
+  (37, 'influencer', 'on going', 'Coca-Cola Brand: Review', '2020-10-28', '2020-09-27'),
+  (38, 'influencer', 'on going', 'McDonalds Food: Send Adress', '2020-10-28', '2020-09-27'),
+  (38, 'influencer', 'on going', 'McDonalds Food: Contact Local Store', '2020-10-08', '2020-09-27'),
+  (38, 'influencer', 'on going', 'McDonalds Food: Request Voucher', '2020-10-18', '2020-09-27'),
+  (38, 'influencer', 'on going', 'McDonalds Food: Review', '2020-11-20', '2020-09-27'),
+  (39, 'influencer', 'on going', 'Neutrogena: AcceptS conditions', '2020-10-28', '2020-09-27'),
+  /* Massy as an influencer */
+  (40, 'influencer', 'completed', 'Respond to email', '2020-10-28', '2020-09-27'),
+  (40, 'influencer', 'on going', 'Confirm my address with the brand', '2020-10-08', '2020-09-27'),
+  (40, 'influencer', 'on going', 'Request for the link to send the review', '2020-10-18', '2020-09-27'),
+  (40, 'influencer', 'on going', 'Review', '2020-11-20', '2020-09-27'),
+  (41, 'influencer', 'completed', 'Send my address to the brand', '2020-10-28', '2020-09-27'),
+  /* Diego as an influencer */
+  (41, 'influencer', 'completed', 'Respond to the email dated 29th of September', '2020-10-28', '2020-09-27'),
+  (41, 'influencer', 'completed', 'Confirm product received', '2020-10-08', '2020-09-27'),
+  (41, 'influencer', 'on going', 'Schedule a social media content about the product', '2020-10-18', '2020-09-27'),
+  (41, 'influencer', 'on going', 'Contact the brand manager', '2020-11-20', '2020-09-27'),
+  (41, 'influencer', 'on going', 'Confirm payment received', '2020-11-28', '2020-09-27'),
+  /* Will as an influencer */
+  (42, 'influencer', 'completed', 'Check my email for any updates about next steps', '2020-10-28', '2020-09-27'),
+  (42, 'influencer', 'on going', 'Confirm the completed form was received', '2020-10-08', '2020-09-30'),
+  (42, 'influencer', 'on going', 'Confirm product was received', '2020-10-18', '2020-09-27'),
+  (42, 'influencer', 'on going', 'Review the product on my channel', '2020-10-20', '2020-09-27'),
+  (42, 'influencer', 'on going', 'Send the review link to the brand', '2020-10-28', '2020-09-27');
 
 INSERT INTO messages
   (content, sender_id, receiver_id, campaign_id, status)
 VALUES 
   ('Just wondering if my address was received?', 1, 2, 1, 'accepted'), /*James sends message to Jaclyn*/
-  ('Yes we did James', 2, 1, 1, 'accepted'),/*Jaclyn responds*/
-  ('Hey! form completed', 1, 2, 1, 'accepted'),/*James sends message2 to Jaclyn*/
-  ('Thank you. Product has been posted', 2, 1, 1, 'accepted'),/*Jaclyn responds message2*/
-  ('Please can you provide more info', 3, 4, 2, 'accepted'),/*Massa contacts Erin*/
-  ('Check your inbox', 4, 3, 2, 'accepted'), /*Erin responds*/
+  ('Yes we did James, just confirming it is 500 Lot Ave LA?', 2, 1, 1, 'accepted'),/*Jaclyn responds*/
+  ('Hey! form completed. Heres the link to my instatgram page https://ca.morphe.com/products/rose-baes-brush-collection?variant', 1, 2, 1, 'accepted'),/*James sends message2 to Jaclyn*/
+  ('Thank you. Product has been posted, Check your email for tracking information', 2, 1, 1, 'accepted'),/*Jaclyn responds message2*/
+  ('Please can you provide more information. Thank you!', 3, 4, 2, 'accepted'),/*Massa contacts Erin*/
+  ('Check your inbox. Let me know if you have more questions. I ll be happy to provide more details about myself', 4, 3, 2, 'accepted'), /*Erin responds*/
   ('Saw your email, thanks!', 4, 3, 2, 'accepted'), /*Erin asks questions about the brand*/
   ('You are welcome!', 3, 4, 2, 'accepted'),/*Massa responds to Erin*/
-  ('Hi, just sent my application', 7, 2, 1, 'accepted'), /*Diego sends message to Jaclyn*/
-  ('Ok we will review', 2, 7, 1, 'accepted'),/*Jaclyn responds*/
+  ('Hi, just sent my application. How long does the process take?', 7, 2, 1, 'accepted'), /*Diego sends message to Jaclyn*/
+  ('Thank you for sending in your application. We will review and get back to you. Meanwhile you can explore more opportunities at our website on https://ca.morphe.com/ ', 2, 7, 1, 'accepted'),/*Jaclyn responds*/
   ('Hey! has the package been sent?', 5, 2, 1, 'accepted'),/*Eva sends message to Jaclyn*/
-  ('Yes, check your email for tracking', 2, 5, 1, 'accepted'),/*Jaclyn responds message*/
+  ('Yes, your product has been posted. Check your email for tracking information', 2, 5, 1, 'accepted'),/*Jaclyn responds message*/
   ('Please can you provide more information', 6, 2, 1, 'accepted'),/*Janise contacts Jaclyn*/
   ('Check you inbox', 2, 6, 1, 'accepted'), /*Jaclyn responds*/
   ('Thanks!', 6, 2, 1, 'accepted'), /*Janise asks questions about the brand*/
   ('You are welcome!', 2, 6, 1, 'accepted'),/*Jaclyn responds to Janise the second time*/
   ('Hi, wheres the link?', 5, 2, 2, 'accepted'), /*Eva sends message to Jaclyn*/
-  ('Check your email', 2, 5, 2, 'accepted'),/*Jaclyn responds*/
+  ('Thank you. Product has been posted, Check your email for tracking information', 2, 5, 2, 'accepted'),/*Jaclyn responds*/
   ('Received, Thanks', 5, 2, 2, 'accepted'),/*Eva sends message2 to Jaclyn*/
   ('Thank you. Enjoy the workout!', 2, 5, 2, 'accepted'),/*Jaclyn responds message2*/
   ('Please what are the steps?', 3, 7, 2, 'accepted'),/*Diego contacts Massa*/
