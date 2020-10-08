@@ -5,7 +5,7 @@ const Login = function (props) {
   const setUserToBrand = () => {
     // TEMP BRAND USERS
     login({
-      email: "RongxinZhang@gmail.com",
+      email: "jaclyn@jaclynhillcosmetics",
       password: "password",
     })
       .then((data) => {

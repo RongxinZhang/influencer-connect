@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CampaignList from "./CampaignList";
 import MessageList from "./MessageList";
 import CheckList from "./CheckList";
+import Header from "../Header";
 // import { getCampaignsAllUsers } from "../../requests/campaigns";
 
 import "./Tasks.scss";
@@ -24,6 +25,7 @@ export default function Tasks(props) {
   return (
     <section id="campaign-tasks">
       <CampaignList onClick={handleClickCurrentCampaign} />
+      <Header></Header>
       {currentCampaign && <CheckList currentCampaignId={currentCampaign} />}
       {currentCampaign && (
         <MessageList campaignId={currentCampaign} user={props.user} />

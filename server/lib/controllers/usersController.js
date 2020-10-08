@@ -18,10 +18,10 @@ const checkUser = function (userObj) {
 
 const getUser = function (userObj) {
   const queryString1 = `SELECT * FROM users WHERE email =$1;`;
-  console.log("OBJ", userObj);
   return db
     .query(queryString1, [userObj.email])
     .then((data) => {
+      console.log("OBJ", data);
       return data.rows;
     })
     .catch((err) => {
@@ -49,6 +49,45 @@ const register = function (userObj) {
   ];
 
   return db.query(queryString2, inputValue);
+};
+
+const camelToSnake = function (string) {
+  return string
+    .replace(/[\w]([A-Z])/g, function (m) {
+      return m[0] + "_" + m[1];
+    })
+    .toLowerCase();
+};
+
+const updateQueryBuilder = function (obj, whereCondition, exclude) {
+  let query = [];
+  let index = 1;
+
+  var set = [];
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key) && obj[key] && !exclude.includes(key)) {
+      set.push(`${camelToSnake(key)} = $${index}`);
+      index++;
+    }
+  }
+  query.push(set.join(", "));
+
+  query.push(`WHERE ${whereCondition} = $${index}`);
+  return query.join(" ");
+};
+
+/**
+ *  Update a user
+ * @param {object} db
+ * @param {object} userObj
+ */
+const updateUser = function (userObj) {
+  const querryString = `
+    UPDATE users SET ${updateQueryBuilder(userObj, "id", ["id"])}
+    RETURNING *;
+    `;
+  const columnVals = Object.keys(userObj).map((key) => userObj[key]);
+  return db.query(querryString, columnVals);
 };
 
 /**
@@ -103,18 +142,15 @@ const createInfluencerProfile = function (profileObj) {
 
 const checkBrandProfile = function (profileObj) {
   const queryString1 = `SELECT name FROM brands WHERE name like $1;`;
-  console.log(profileObj);
   return db
     .query(queryString1, [`%${profileObj.name}%`])
     .then((data) => {
-      console.log(data);
       if (data.rowCount > 0) {
         return true;
       }
       return false;
     })
     .catch((err) => {
-      console.log("HNEW", err);
       return false;
     });
 };
@@ -173,6 +209,7 @@ const createBrandManager = function (profileObj) {
 module.exports = {
   checkUser,
   getUser,
+  updateUser,
   register,
   checkInfluencerProfile,
   createInfluencerProfile,
