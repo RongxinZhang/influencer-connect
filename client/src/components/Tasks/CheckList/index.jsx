@@ -30,6 +30,7 @@ export default function CheckList(props) {
         setTasks((prev) => {
           return prev.map((el) => {
             // console.log("HERER", el);
+            // console.log("NEW", el.taskId, res[0].taskId);
             if (el.taskId === res[0].taskId) {
               return res[0];
             }
@@ -55,7 +56,7 @@ export default function CheckList(props) {
 
   return (
     <section id="checklist-list">
-      <h3>Tasks you need to complete:</h3>
+      <h3>You need to:</h3>
       <div className="check-list-container">
         <ul>{taskList}</ul>
       </div>
