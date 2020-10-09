@@ -119,11 +119,13 @@ const getCampaignMessages = function (campaignId) {
 };
 
 const createCampaignMessage = function (campaignId, messageObj) {
-  return axios.post(
-    `${BASE_URL}/campaigns/${campaignId}/messages`,
-    messageObj,
-    { headers: authHeader() }
-  );
+  return axios
+    .post(`${BASE_URL}/campaigns/${campaignId}/messages`, messageObj, {
+      headers: authHeader(),
+    })
+    .then((res) => {
+      return res.data.data;
+    });
 };
 
 export {
