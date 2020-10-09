@@ -38,7 +38,6 @@ const getCampaigns = function () {
     .get(`${BASE_URL}/campaigns`, { headers: authHeader() })
     .then((res) => {
       const resObj = res.data.data.map((el) => {
-        console.log("NOW", el);
         return {
           name: el.name,
           id: el.id,
@@ -86,6 +85,7 @@ const updateCampaignTask = function (inputObj) {
           description: el.description,
           status: el.status,
           taskId: el.id,
+          userType: el.user_type,
           daysLeft: getDaysDifference(el.due_date),
         };
       });
@@ -119,11 +119,13 @@ const getCampaignMessages = function (campaignId) {
 };
 
 const createCampaignMessage = function (campaignId, messageObj) {
-  return axios.post(
-    `${BASE_URL}/campaigns/${campaignId}/messages`,
-    messageObj,
-    { headers: authHeader() }
-  );
+  return axios
+    .post(`${BASE_URL}/campaigns/${campaignId}/messages`, messageObj, {
+      headers: authHeader(),
+    })
+    .then((res) => {
+      return res.data.data;
+    });
 };
 
 export {

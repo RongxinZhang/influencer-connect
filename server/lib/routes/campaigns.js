@@ -21,8 +21,6 @@ router.get("/allUsers", (req, res) => {
   // NOTE: This should be replaced with the req.user object from the request
   const userObj = { userId: req.userId };
 
-  console.log("User", userObj);
-
   campaignController
     .getAllUsers(userObj)
     .then((data) => {
@@ -156,11 +154,10 @@ router.post("/:campaignId/messages", (req, res) => {
     status: "unread",
   };
 
-  console.log("messageObj", messageObj);
-
   campaignsController
     .createCampaignMessage(messageObj)
     .then((data) => {
+      console.log("data", data.rows);
       res.json({ success: 200, data: data.rows });
     })
     .catch((err) => {

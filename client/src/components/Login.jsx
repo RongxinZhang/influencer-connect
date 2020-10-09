@@ -1,8 +1,11 @@
 import React from "react";
 import { login } from "../requests/users";
 import "./Login.scss";
+import { useHistory } from "react-router-dom";
 
 const Login = function (props) {
+  const history = useHistory();
+
   const setUserToBrand = () => {
     // TEMP BRAND USERS
     login({
@@ -11,7 +14,8 @@ const Login = function (props) {
     })
       .then((data) => {
         props.updateUser(data);
-        window.location = "/tasks";
+        history.push("/tasks");
+        // window.location = "/tasks";
       })
       .catch((err) => {});
   };

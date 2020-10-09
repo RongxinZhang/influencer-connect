@@ -32,9 +32,13 @@ export default function Messages(props) {
       content: text,
     };
 
-    createCampaignMessage(props.campaignId, newMessage).then(() => {
-      newMessage.name = props.user.name;
-      setMessageData([...messageData, newMessage]);
+    createCampaignMessage(props.campaignId, newMessage).then((data) => {
+      const createdMessage = {
+        ...data[0],
+        senderId: newMessage.senderId,
+        name: props.user.name,
+      };
+      setMessageData([...messageData, createdMessage]);
       setText("");
       setError("");
     });

@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+// import { useHistory } from "react-router-dom";
 import "./Header.scss";
 
 const Header = function (props) {
-  // useEffect(() => {
-  //   const storedUser = localStorage.getItem("user");
-
-  //   if (storedUser) {
-  //     setUser(() => {
-  //       return JSON.parse(storedUser);
-  //     });
-  //   }
-  // }, []);
-
   const logout = function (userObj) {
     props.handleLogout();
     window.location = "/login";
@@ -34,7 +25,7 @@ const Header = function (props) {
             Morphe Brushes: <span>{props.user && props.user.name}</span>
           </p>
         </div>
-        <div classNames="header_buttons">
+        <div className="header_buttons">
           <button onClick={logout}>logout</button>
           <button>setting</button>
         </div>
