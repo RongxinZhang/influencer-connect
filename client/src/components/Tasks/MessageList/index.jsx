@@ -35,7 +35,6 @@ export default function Messages(props) {
     createCampaignMessage(props.campaignId, newMessage).then((data) => {
       const createdMessage = {
         ...data[0],
-        senderId: newMessage.senderId,
         name: props.user.name,
       };
       setMessageData([...messageData, createdMessage]);

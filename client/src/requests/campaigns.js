@@ -124,7 +124,16 @@ const createCampaignMessage = function (campaignId, messageObj) {
       headers: authHeader(),
     })
     .then((res) => {
-      return res.data.data;
+      const resObj = res.data.data.map((el) => {
+        return {
+          id: el.id,
+          content: el.content,
+          status: el.status,
+          senderId: el.sender_id,
+          date: el.created_at,
+        };
+      });
+      return resObj;
     });
 };
 
