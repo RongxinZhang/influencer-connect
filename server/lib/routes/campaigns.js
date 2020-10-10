@@ -157,7 +157,6 @@ router.post("/:campaignId/messages", (req, res) => {
   campaignsController
     .createCampaignMessage(messageObj)
     .then((data) => {
-      console.log("data", data.rows);
       res.json({ success: 200, data: data.rows });
     })
     .catch((err) => {

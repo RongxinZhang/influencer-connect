@@ -21,7 +21,6 @@ const login = function (userObj) {
       }
     })
     .catch((err) => {
-      console.log(err);
       return err;
     });
 };

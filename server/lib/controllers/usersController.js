@@ -21,7 +21,6 @@ const getUser = function (userObj) {
   return db
     .query(queryString1, [userObj.email])
     .then((data) => {
-      console.log("OBJ", data);
       return data.rows;
     })
     .catch((err) => {
@@ -94,7 +93,6 @@ const updateUser = function (userObj) {
  * Influencers
  */
 const checkInfluencerProfile = async function (profileObj) {
-  console.log(typeof profileObj.userId, profileObj.userId);
   const queryString1 = `SELECT id FROM influencers WHERE user_id = $1;`;
 
   try {
@@ -109,7 +107,6 @@ const checkInfluencerProfile = async function (profileObj) {
 };
 
 const createInfluencerProfile = function (profileObj) {
-  console.log(profileObj);
   const queryString = `
   INSERT INTO influencers
   (first_name, last_name, user_id, description, profile_url, street, 

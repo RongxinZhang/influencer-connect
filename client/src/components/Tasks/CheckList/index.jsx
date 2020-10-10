@@ -29,8 +29,6 @@ export default function CheckList(props) {
         // UPDATE: previous task with returned and updated task
         setTasks((prev) => {
           return prev.map((el) => {
-            // console.log("HERER", el);
-            // console.log("NEW", el.taskId, res[0].taskId);
             if (el.taskId === res[0].taskId) {
               return res[0];
             }
