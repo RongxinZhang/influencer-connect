@@ -43,8 +43,6 @@ export default function Messages(props) {
     });
   };
 
-  // console.log("this is messageData: ", messageData);
-
   let messageList = [];
 
   if (messageData.length > 0) {

@@ -126,13 +126,11 @@ const updateQueryBuilder = function (obj, whereCondition, exclude) {
 
 // Update Tasks
 const updateTask = function (taskObj) {
-  // console.log(updateQueryBuilder(taskObj, "id", ["taskId"]));
   const querryString = `
     UPDATE tasks SET ${updateQueryBuilder(taskObj, "id", ["taskId"])}
     RETURNING *;
     `;
   const columnVals = Object.keys(taskObj).map((key) => taskObj[key]);
-  // console.log(columnVals);
   return db.query(querryString, columnVals);
 };
 

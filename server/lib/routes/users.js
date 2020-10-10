@@ -17,8 +17,6 @@ router.post("/register", async (req, res) => {
 
   const userExist = await usersController.checkUser(userObj);
 
-  // console.log(userObj);
-
   if (userExist) {
     return res.send("UserExist");
   }
@@ -59,7 +57,6 @@ router.post("/login", (req, res) => {
             expiresIn: ONE_DAY * 30, // 30 days hours
           }
         );
-        console.log("LOGGED IN");
 
         return res.json({
           status: 200,
@@ -92,7 +89,6 @@ router.post("/:userId/profile", async (req, res) => {
   };
 
   delete profileObj.userType;
-  // console.log("USER TYPE", userType);
   if (userType === "influencer") {
     const profileExist = await usersController.checkInfluencerProfile(
       profileObj
@@ -130,7 +126,6 @@ router.post("/:userId/profile", async (req, res) => {
         }
       })
       .catch((err) => {
-        console.log(err);
         return res.status(500).json({ error: err.message });
       });
   } else if (userType === "brand") {

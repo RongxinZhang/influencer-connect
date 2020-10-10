@@ -9,9 +9,7 @@ const CampaignFilter = function (props) {
   const [options, setOptions] = useState([]);
   // const defaultOption = options[0];
 
-  const handleFilterChange = function (selection) {
-    console.log("selection", selection);
-  };
+  const handleFilterChange = function (selection) {};
 
   useEffect(() => {
     getCampaigns().then((data) => {
