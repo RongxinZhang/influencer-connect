@@ -9,6 +9,7 @@ import "./Tasks.scss";
 
 export default function Tasks(props) {
   const [currentCampaignId, setcurrentCampaignId] = useState(null);
+  const user = { id: 1, firstName: "rongxin", lastName: "bob" };
 
   const handleClickCurrentCampaignId = function (campaignId) {
     setcurrentCampaignId(campaignId);
@@ -21,20 +22,15 @@ export default function Tasks(props) {
         onClick={handleClickCurrentCampaignId}
       />
       <div className="header_container">
-        {" "}
         {/* styling only */}
-        <Header user={props.user} handleLogout={props.handleLogout} />
+        <Header user={user} handleLogout={props.handleLogout} />
         <div className="checklist_message_container">
-          {" "}
           {/* styling only*/}
           {currentCampaignId && (
-            <CheckList
-              currentCampaignId={currentCampaignId}
-              user={props.user}
-            />
+            <CheckList currentCampaignId={currentCampaignId} user={user} />
           )}
           {currentCampaignId && (
-            <MessageList campaignId={currentCampaignId} user={props.user} />
+            <MessageList campaignId={currentCampaignId} user={user} />
           )}
         </div>
       </div>

@@ -23,18 +23,18 @@ function App() {
     setUser(() => {});
   };
 
-  const updateUser = function (userObj) {
-    setUser(() => userObj);
-  };
+  // const updateUser = function (userObj) {
+  //   setUser(() => userObj);
+  // };
 
   return (
     <Router>
       <Route path="/tasks">
         <Tasks user={user} handleLogout={handleLogout} />
       </Route>
-      <Route path="/login">
+      {/* <Route path="/login">
         <Login updateUser={updateUser} />
-      </Route>
+      </Route> */}
     </Router>
   );
 }

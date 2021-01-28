@@ -15,6 +15,7 @@ export default function Messages(props) {
 
   useEffect(() => {
     getCampaignMessages(props.campaignId).then((data) => {
+      console.log("HERE", data);
       setMessageData(() => data);
     });
   }, [props.campaignId]);
@@ -27,8 +28,7 @@ export default function Messages(props) {
     }
 
     const newMessage = {
-      senderId: props.user.userId,
-      date: Date.now(),
+      status: "unreade",
       content: text,
     };
 

@@ -1,10 +1,10 @@
-import axios from "axios";
+import { axios } from "./axios";
 
-const BASE_URL = "http://localhost:3000";
+// const BASE_URL = "http://localhost:3000";
 
 const login = function (userObj) {
   return axios
-    .post(`${BASE_URL}/users/login`, userObj)
+    .post(`/users/login`, userObj)
     .then((res) => {
       if (res.status === 200 && res.data.data) {
         const user = res.data.data;

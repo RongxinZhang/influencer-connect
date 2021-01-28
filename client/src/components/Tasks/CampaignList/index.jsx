@@ -17,9 +17,11 @@ export default function Tasks(props) {
         props.onClick(campaigns[0].campaignId);
       }
     });
+    // eslint-disable-next-line
   }, []);
 
   const handleClick = function (campaignId) {
+    console.log(campaignId);
     props.onClick(campaignId);
   };
 

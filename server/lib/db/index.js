@@ -17,6 +17,9 @@ const pool = new Pool(connectionConfig);
 
 pool
   .connect()
+  .then((res) => {
+    if (res.database) console.log(`connected to ${res.database}`);
+  })
   .catch((e) => console.log(`Error connecting to Postgres server:\n${e}`));
 
 /**

@@ -10,6 +10,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+    "camelcase-keys": "^6.2.2",
     "classnames": "^2.2.6",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
@@ -22,14 +23,14 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3009 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:3006",
   "eslintConfig": {
     "extends": "react-app"
   },

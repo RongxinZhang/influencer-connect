@@ -3,7 +3,7 @@ const authHeader = function () {
 
   if (user && user.jwtToken) {
     // for Node.js Express back-end
-    return { "x-access-token": user.jwtToken };
+    return { authentication: user.jwtToken };
   } else {
     return {};
   }

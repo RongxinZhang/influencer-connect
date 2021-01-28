@@ -1,28 +1,27 @@
-import axios from "axios";
+import { axios } from "./axios";
 import { nFormatter, getDaysDifference } from "../helpers/formatters";
 import { authHeader } from "./auth";
+const camelcaseKeys = require("camelcase-keys");
 
 // NOTE: must add "http" in front of URL
-const BASE_URL = "http://localhost:3000";
+// const BASE_URL = "http://localhost:3006";
 
 // Set JWT Token in all request header
 // axios.defaults.headers.common["x-access-token"] = authHeader();
 
 const getCampaignsAllUsers = function (campaignId) {
+  const listingHash = "corcus-incasfas-W3yD0Jdy6R";
   return axios
-    .get(`${BASE_URL}/campaigns/allUsers`, { headers: authHeader() })
+    .get(`/api/companies/${listingHash}/applications`)
     .then((res) => {
-      const resObj = res.data.data.map((el) => {
+      const resObj = res.data.creators.map((el) => {
+        console.log(el);
         return {
-          name: `${el.first_name} ${el.last_name}`,
-          followerCount: nFormatter(
-            Number(el.instagram_followers) +
-              Number(el.facebook_followers) +
-              Number(el.youtube_followers)
-          ),
-          profilePicture: el.profile_url,
-          campaignId: el.campaign_id,
-          currentCampaign: el.campaign_name,
+          name: el.name,
+          followerCount: nFormatter(Number(el.social_media[0].reach)),
+          profilePicture: el.profile_photo,
+          campaignId: el.application.id,
+          appliedDate: el.application.createdAt,
         };
       });
       return resObj;
@@ -35,7 +34,7 @@ const getCampaignsAllUsers = function (campaignId) {
 
 const getCampaigns = function () {
   return axios
-    .get(`${BASE_URL}/campaigns`, { headers: authHeader() })
+    .get(`/campaigns`, { headers: authHeader() })
     .then((res) => {
       const resObj = res.data.data.map((el) => {
         return {
@@ -53,7 +52,7 @@ const getCampaigns = function () {
 
 const getCampaignsTasks = function (campaignId) {
   return axios
-    .get(`${BASE_URL}/campaigns/${campaignId}/tasks`, { headers: authHeader() })
+    .get(`/campaigns/${campaignId}/tasks`, { headers: authHeader() })
     .then((res) => {
       // NOTE: Do processing here
       const resObj = res.data.data.map((el) => {
@@ -74,7 +73,7 @@ const getCampaignsTasks = function (campaignId) {
 const updateCampaignTask = function (inputObj) {
   return axios
     .post(
-      `${BASE_URL}/campaigns/${inputObj.campaignId}/tasks/${inputObj.taskId}`,
+      `/campaigns/${inputObj.campaignId}/tasks/${inputObj.taskId}`,
       { status: inputObj.status },
       { headers: authHeader() }
     )
@@ -97,17 +96,17 @@ const updateCampaignTask = function (inputObj) {
 
 const getCampaignMessages = function (campaignId) {
   return axios
-    .get(`${BASE_URL}/campaigns/${campaignId}/messages`, {
+    .get(`/api/applications/${campaignId}/messages`, {
       headers: authHeader(),
     })
     .then((res) => {
-      const resObj = res.data.data.map((el) => {
+      console.log(res);
+      const resObj = res.data.map((el) => {
         return {
           id: el.id,
           content: el.content,
-          status: el.status,
           senderId: el.sender_id,
-          name: `${el.first_name} ${el.last_name}`,
+          name: `TO BE EDITED`,
           date: el.created_at,
         };
       });
@@ -120,20 +119,22 @@ const getCampaignMessages = function (campaignId) {
 
 const createCampaignMessage = function (campaignId, messageObj) {
   return axios
-    .post(`${BASE_URL}/campaigns/${campaignId}/messages`, messageObj, {
+    .post(`/api/applications/${campaignId}/messages`, messageObj, {
       headers: authHeader(),
     })
     .then((res) => {
-      const resObj = res.data.data.map((el) => {
-        return {
-          id: el.id,
-          content: el.content,
-          status: el.status,
-          senderId: el.sender_id,
-          date: el.created_at,
-        };
-      });
-      return resObj;
+      const msg = res.data;
+
+      return [
+        {
+          id: msg.public_id,
+          content: msg.content,
+          status: msg.status,
+          senderId: msg.sender_id,
+          name: `TO BE EDITED`,
+          date: msg.createdAt,
+        },
+      ];
     });
 };
 
