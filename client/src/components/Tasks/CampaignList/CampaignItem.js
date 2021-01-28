@@ -1,4 +1,5 @@
 import React from "react";
+import Moment from "react-moment";
 import "./CampaignItem.scss";
 import classNames from "classnames/bind";
 
@@ -29,7 +30,7 @@ const CampaignItem = function (props) {
           <span>{props.followerCount}</span>
         </div>
         <div className="campaign-list-campagin-name">
-          {props.currentCampaign}
+          <Moment fromNow>{props.appliedDate}</Moment>
         </div>
         {/* <div>{props.currentTask}</div> */}
       </section>

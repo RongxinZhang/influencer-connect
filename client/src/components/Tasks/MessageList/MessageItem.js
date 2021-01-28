@@ -14,7 +14,7 @@ const MessageItem = function (props) {
         <div className="message_list_item_header">
           <div>{props.name}</div>
           <div className="message_list_item_date">
-            <Moment format="MMM DD, YYYY">{props.date}</Moment>
+            <Moment fromNow>{props.date}</Moment>
           </div>
         </div>
         <div>{props.content}</div>
