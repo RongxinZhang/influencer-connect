@@ -26,9 +26,9 @@ export default function Tasks(props) {
         <Header user={user} handleLogout={props.handleLogout} />
         <div className="checklist_message_container">
           {/* styling only*/}
-          {currentCampaignId && (
+          {/* {currentCampaignId && (
             <CheckList currentCampaignId={currentCampaignId} user={user} />
-          )}
+          )} */}
           {currentCampaignId && (
             <MessageList campaignId={currentCampaignId} user={user} />
           )}

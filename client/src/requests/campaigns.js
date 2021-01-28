@@ -106,7 +106,7 @@ const getCampaignMessages = function (campaignId) {
           id: el.id,
           content: el.content,
           senderId: el.sender_id,
-          name: `TO BE EDITED`,
+          name: `${el.sender.first_name} ${el.sender.last_name}`,
           date: el.created_at,
         };
       });
@@ -124,7 +124,6 @@ const createCampaignMessage = function (campaignId, messageObj) {
     })
     .then((res) => {
       const msg = res.data;
-
       return [
         {
           id: msg.public_id,
