@@ -10,22 +10,22 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   const [user, setUser] = useState({});
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
+  // useEffect(() => {
+  //   const storedUser = localStorage.getItem("user");
 
-    if (storedUser) {
-      setUser(() => JSON.parse(storedUser));
-    }
-  }, []);
+  //   if (storedUser) {
+  //     setUser(() => JSON.parse(storedUser));
+  //   }
+  // }, []);
 
   const handleLogout = function () {
     localStorage.removeItem("user");
     setUser(() => {});
   };
 
-  // const updateUser = function (userObj) {
-  //   setUser(() => userObj);
-  // };
+  const updateUser = function (userObj) {
+    setUser(() => userObj);
+  };
 
   return (
     <Router>

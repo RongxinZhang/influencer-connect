@@ -2,8 +2,8 @@
 @import "../../../styles/variables.scss";
 
 #message_list_container {
-  background: rgb(246, 248, 249);
-  padding: 15px 15px 15px 7px;
+  // background: rgb(246, 248, 249);
+  padding: 5px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -40,17 +40,35 @@
     background: #f1f1f1;
     padding: 15px;
 
-    textarea {
-      @include border-radius(3px);
-      width: 100%;
-      border: 1px solid black;
-      padding: 10px;
-      font-family: $font-family;
-    }
+    section {
+      position: relative;
 
-    button {
-      display: block;
-      margin-left: auto;
+      textarea {
+        @include border-radius(3px);
+        width: 100%;
+        border: 1px solid black;
+        padding: 10px;
+        font-family: $font-family;
+        font-size: 15px;
+        box-sizing: border-box;
+      }
+
+      .message-send-button {
+        position: absolute;
+        bottom: 12px;
+        right: 5px;
+        padding: 8px 10px;
+        background-color: #b0e263;
+        @include border-radius(3px);
+        border: none;
+        font-weight: 700;
+        font-size: 13px;
+        cursor: pointer;
+      }
+    }
+    .message-error {
+      color: red;
+      font-weight: 700;
     }
   }
 }

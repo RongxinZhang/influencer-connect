@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   getCampaignsTasks,
   updateCampaignTask,
-} from "../../../requests/campaigns";
+} from "../../../requests/applications";
 import CheckListItem from "./CheckListItem";
 import "./CheckList.scss";
 

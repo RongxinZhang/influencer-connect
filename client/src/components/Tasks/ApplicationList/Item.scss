@@ -7,54 +7,41 @@
   margin-bottom: 10px;
   padding: 10px 10px;
   // border-bottom: 1px dotted rgb(199, 199, 199);
-  border-left: 3px solid rgb(22, 27, 37);
+  border-left: 3px solid #36253a;
   display: flex;
   cursor: pointer;
 
   &:hover {
     color: white;
-    background: #25292f;
-    border-left: 3px solid white;
   }
 
   .campaign-list-picture {
     margin-right: 10px;
     flex-basis: 50px;
     min-width: 50px;
-    // border: 1px solid black;
     div {
       height: 50px;
-      border: 2px solid #333c4e;
-      @include border-radius(50%);
+      border: 2px solid #1d283e;
+      @include border-radius(18%);
     }
   }
 
   .campaign-list-user {
-    // border: 1px solid black;
     width: 100%;
     .campaign-list-user-name {
       display: flex;
       margin-right: 10px;
-      font-weight: 600;
+      font-weight: 800;
       justify-content: space-between;
-      span {
-        float: right;
-        font-weight: 300;
-        font-size: 0.8em;
-      }
-    }
-
-    .campaign-list-campagin-name {
-      font-size: 0.8em;
     }
   }
 }
 
 .campaign-list-item--selected {
   color: white;
-  background: rgb(59, 64, 72);
+  background: #281b2b;
   border-left: 3px solid white;
-  .campaign-list-picture div {
-    border: 2px solid #405173;
-  }
+  // .campaign-list-picture div {
+  //   border: 2px solid #405173;
+  // }
 }

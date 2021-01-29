@@ -1,4 +1,6 @@
 import React from "react";
+import { Fragment } from "react";
+import { Link } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 import "./Header.scss";
 
@@ -9,28 +11,30 @@ const Header = function (props) {
   };
 
   return (
-    <section>
+    <Fragment>
       <header>
         <div className="header_user_info">
           <div
             style={{
-              backgroundImage:
-                "url(https://sheleadsafrica.org/wp-content/uploads/2018/09/IMG_5870-copy-1024x683.jpg)",
+              backgroundImage: `url(${props.application.profilePicture})`,
               backgroundSize: "cover",
               backgroundPosition: "center center",
               backgroundRepeat: "no-repeat",
             }}
           ></div>
-          <p>
-            Morphe Brushes: <span>{props.user && props.user.name}</span>
-          </p>
+          <p>{props.application.name}</p>
         </div>
         <div className="header_buttons">
-          <button onClick={logout}>logout</button>
-          <button>setting</button>
+          <Link
+            to={props.application.mediaKitLink}
+            target="_blank"
+            className="button"
+          >
+            View MediaKit
+          </Link>
         </div>
       </header>
-    </section>
+    </Fragment>
   );
 };
 

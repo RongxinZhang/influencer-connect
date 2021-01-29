@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
-  getCampaignMessages,
-  createCampaignMessage,
+  getApplicationMessages,
+  createApplicationMessage,
   // getCampaignsAllUsers,
-} from "../../../requests/campaigns";
+} from "../../../requests/applications";
 import MessageItem from "./MessageItem";
 
 import "./MessageList.scss";
@@ -13,47 +13,52 @@ export default function Messages(props) {
   const [error, setError] = useState("");
   const [messageData, setMessageData] = useState([]);
 
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = (animated = true) => {
+    if (animated) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    } else {
+      messagesEndRef.current.scrollIntoView();
+    }
+  };
+
   useEffect(() => {
-    getCampaignMessages(props.campaignId).then((data) => {
-      console.log("HERE", data);
+    getApplicationMessages(props.application.id).then((data) => {
       setMessageData(() => data);
+      scrollToBottom(false);
     });
-  }, [props.campaignId]);
+  }, [props.application]);
 
   //Send Button Function
   const send = function () {
     if (text === "") {
-      setError("Text cannot be blank");
+      setError("Message can't be empty");
       return;
     }
 
-    const newMessage = {
-      status: "unreade",
-      content: text,
-    };
+    const newMessage = { content: text };
 
-    createCampaignMessage(props.campaignId, newMessage).then((data) => {
-      const createdMessage = {
-        ...data[0],
-        name: props.user.name,
-      };
-      setMessageData([...messageData, createdMessage]);
+    createApplicationMessage(props.application.id, newMessage).then((data) => {
+      setMessageData((prevState) => [...prevState, data[0]]);
       setText("");
       setError("");
+      scrollToBottom();
     });
   };
 
+  // Build message list
   let messageList = [];
-
   if (messageData.length > 0) {
     messageList = messageData.map((el) => {
       return (
         <MessageItem
+          id={el.id}
           key={el.id}
           name={el.name}
           isSender={el.senderId === props.user.userId}
           content={el.content}
-          date={el.created_at}
+          createdAt={el.createdAt}
         />
       );
     });
@@ -61,27 +66,29 @@ export default function Messages(props) {
 
   return (
     <div id="message_list_container">
-      <h3>Messages:</h3>
+      {/* <h3>Messages:</h3> */}
       <section id="message-list">
         <ul>{messageList}</ul>
+        <div ref={messagesEndRef}></div> {/* Scroll ref */}
       </section>
-
       <div className="message_list_input">
         <section>
           <textarea
             type="text"
-            placeholder="Enter Text Here"
+            placeholder="Check up on your creator :)"
+            rows={3}
             value={text}
             onChange={(event) => setText(event.target.value)}
+            className="message-input"
           ></textarea>
-        </section>
-
-        <section className="message-buttons">
           <button className="message-send-button" onClick={send}>
             Send
           </button>
         </section>
-        <section>{error}</section>
+
+        {/* <section className="message-buttons">
+        </section> */}
+        <section className="message-error">{error}</section>
       </div>
     </div>
   );

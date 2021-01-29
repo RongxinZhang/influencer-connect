@@ -1,6 +1,6 @@
 import React from "react";
 import Moment from "react-moment";
-import "./CampaignItem.scss";
+import "./Item.scss";
 import classNames from "classnames/bind";
 
 const CampaignItem = function (props) {
@@ -11,13 +11,13 @@ const CampaignItem = function (props) {
   return (
     <li
       className={campaignClass}
-      onClick={() => props.onClick(props.campaignId)}
-      data-campaign-id={props.campaignId}
+      onClick={() => props.onClick(props.application)}
+      data-campaign-id={props.application.id}
     >
       <section className="campaign-list-picture">
         <div
           style={{
-            backgroundImage: "url(" + props.profilePicture + ")",
+            backgroundImage: "url(" + props.application.profilePicture + ")",
             backgroundSize: "cover",
             backgroundPosition: "center center",
             backgroundRepeat: "no-repeat",
@@ -25,14 +25,10 @@ const CampaignItem = function (props) {
         ></div>
       </section>
       <section className="campaign-list-user">
-        <div className="campaign-list-user-name">
-          {props.name}
-          <span>{props.followerCount}</span>
-        </div>
+        <div className="campaign-list-user-name">{props.application.name}</div>
         <div className="campaign-list-campagin-name">
-          <Moment fromNow>{props.appliedDate}</Moment>
+          <Moment fromNow>{props.application.appliedDate}</Moment>
         </div>
-        {/* <div>{props.currentTask}</div> */}
       </section>
     </li>
   );

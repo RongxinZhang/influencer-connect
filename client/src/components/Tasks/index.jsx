@@ -1,37 +1,40 @@
 import React, { useState } from "react";
-import CampaignList from "./CampaignList";
+import ApplicationList from "./ApplicationList";
 import MessageList from "./MessageList";
 import CheckList from "./CheckList";
-import Header from "../Header";
+import Header from "./Header/Header";
 // import { getCampaignsAllUsers } from "../../requests/campaigns";
 
 import "./Tasks.scss";
 
 export default function Tasks(props) {
-  const [currentCampaignId, setcurrentCampaignId] = useState(null);
+  const [currentApplication, setCurrentApplication] = useState({});
   const user = { id: 1, firstName: "rongxin", lastName: "bob" };
 
-  const handleClickCurrentCampaignId = function (campaignId) {
-    setcurrentCampaignId(campaignId);
+  const handleClickCurrentApplication = function (application) {
+    setCurrentApplication(() => application);
   };
 
   return (
     <section id="campaign-tasks">
-      <CampaignList
-        currentCampaignId={currentCampaignId}
-        onClick={handleClickCurrentCampaignId}
+      <ApplicationList
+        currentApplication={currentApplication}
+        onClick={handleClickCurrentApplication}
       />
       <div className="header_container">
         {/* styling only */}
-        <Header user={user} handleLogout={props.handleLogout} />
+        <Header application={currentApplication} />
         <div className="checklist_message_container">
           {/* styling only*/}
-          {/* {currentCampaignId && (
-            <CheckList currentCampaignId={currentCampaignId} user={user} />
-          )} */}
-          {currentCampaignId && (
-            <MessageList campaignId={currentCampaignId} user={user} />
+          {currentApplication && currentApplication.id && (
+            <MessageList application={currentApplication} user={user} />
           )}
+          {/* {currentApplication && currentApplication.id && (
+            <Profile application={currentApplication} user={user} />
+          )} */}
+          {/* {currentApplication && currentApplication.id && (
+            <CheckList currentCampaignId={currentApplication.id} user={user} />
+          )} */}
         </div>
       </div>
     </section>

@@ -10,11 +10,12 @@ const MessageItem = function (props) {
 
   return (
     <main>
-      <li className={messageClass} data-message-id={props.campaignId}>
+      <li className={messageClass} data-message-id={props.id}>
         <div className="message_list_item_header">
+          <span className="profile_icon"></span>
           <div>{props.name}</div>
           <div className="message_list_item_date">
-            <Moment fromNow>{props.date}</Moment>
+            <Moment fromNow>{props.createdAt}</Moment>
           </div>
         </div>
         <div>{props.content}</div>

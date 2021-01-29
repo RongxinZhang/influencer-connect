@@ -9,19 +9,23 @@ const camelcaseKeys = require("camelcase-keys");
 // Set JWT Token in all request header
 // axios.defaults.headers.common["x-access-token"] = authHeader();
 
-const getCampaignsAllUsers = function (campaignId) {
-  const listingHash = "corcus-incasfas-W3yD0Jdy6R";
+const getCampaignsAllUsers = function (listingHash) {
+  // TODO: REMOVE
+  listingHash = "corcus-incasfas-W3yD0Jdy6R";
+
   return axios
     .get(`/api/companies/${listingHash}/applications`)
     .then((res) => {
       const resObj = res.data.creators.map((el) => {
-        console.log(el);
+        console.log("HERER", el);
         return {
           name: el.name,
           followerCount: nFormatter(Number(el.social_media[0].reach)),
           profilePicture: el.profile_photo,
-          campaignId: el.application.id,
+          id: el.application.id,
           appliedDate: el.application.createdAt,
+          mediaKitLink: "localhost:3006" + el.mediakit,
+          // mediaKitLink: el.mediakit,
         };
       });
       return resObj;
@@ -94,20 +98,19 @@ const updateCampaignTask = function (inputObj) {
     .catch((err) => {});
 };
 
-const getCampaignMessages = function (campaignId) {
+const getApplicationMessages = function (campaignId) {
   return axios
     .get(`/api/applications/${campaignId}/messages`, {
       headers: authHeader(),
     })
     .then((res) => {
-      console.log(res);
       const resObj = res.data.map((el) => {
         return {
-          id: el.id,
+          id: el.public_id,
           content: el.content,
           senderId: el.sender_id,
           name: `${el.sender.first_name} ${el.sender.last_name}`,
-          date: el.created_at,
+          createdAt: el.createdAt,
         };
       });
       return resObj;
@@ -117,7 +120,7 @@ const getCampaignMessages = function (campaignId) {
     });
 };
 
-const createCampaignMessage = function (campaignId, messageObj) {
+const createApplicationMessage = function (campaignId, messageObj) {
   return axios
     .post(`/api/applications/${campaignId}/messages`, messageObj, {
       headers: authHeader(),
@@ -130,8 +133,8 @@ const createCampaignMessage = function (campaignId, messageObj) {
           content: msg.content,
           status: msg.status,
           senderId: msg.sender_id,
-          name: `TO BE EDITED`,
-          date: msg.createdAt,
+          name: `${msg.sender.firstName} ${msg.sender.lastName}`,
+          createdAt: msg.createdAt,
         },
       ];
     });
@@ -142,6 +145,6 @@ export {
   getCampaigns,
   getCampaignsTasks,
   updateCampaignTask,
-  getCampaignMessages,
-  createCampaignMessage,
+  getApplicationMessages,
+  createApplicationMessage,
 };

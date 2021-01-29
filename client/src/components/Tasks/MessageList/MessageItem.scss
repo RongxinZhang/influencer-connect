@@ -1,23 +1,39 @@
 @import "../../../styles/mixins.scss";
 
 .message_list_item {
-  padding: 15px;
-  margin-bottom: 15px;
-  background: #f2fbc8;
-  @include border-radius(2px);
+  padding: 15px 0px;
+  margin: 0px 15px;
+  color: #333;
+  // border-bottom: 1px solid #dedede;
+  // background: #f2fbc8;
+
+  .profile_icon {
+    height: 10px;
+    width: 10px;
+    background: #d3ec73;
+    display: inline-block;
+    @include border-radius(3px);
+    margin-right: 5px;
+  }
 
   &--is-sender {
-    background: #f1f1f1;
+    // background: #f1f1f1;
+    .profile_icon {
+      background: #cacaca;
+    }
   }
 
   .message_list_item_header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    font-weight: 600;
+    align-items: center;
+    // justify-content: space-between;
+    font-weight: 800;
+    margin-bottom: 2px;
 
     .message_list_item_date {
-      font-size: 0.8em;
+      margin-left: 10px;
+      font-size: 0.9em;
       font-weight: 300;
     }
   }

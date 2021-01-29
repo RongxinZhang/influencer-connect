@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getCampaigns } from "../../../requests/campaigns";
-import "./CampaignFilter.scss";
+import "./Filter.scss";
 // import classNames from "classnames/bind";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
