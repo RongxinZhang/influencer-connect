@@ -17,6 +17,10 @@ export default function Messages(props) {
 
   const messagesEndRef = useRef(null);
 
+  /**
+   * Scroll of ref
+   * @param {Boolean} animated
+   */
   const scrollToBottom = (animated = true) => {
     if (animated) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -24,31 +28,47 @@ export default function Messages(props) {
       messagesEndRef.current.scrollIntoView();
     }
   };
-
+  /**
+   * Update socket room
+   * Get all messages
+   */
   useEffect(() => {
     const socket = socketIOClient(ENDPOINT);
-    socket.on("newMessage", (data) => {
-      const newMsg = {
-        id: data.public_id,
-        content: data.content,
-        status: data.status,
-        senderId: data.sender_id,
-        name: `${data.sender.firstName} ${data.sender.lastName}`,
-        createdAt: data.createdAt,
-      };
-      console.log(newMsg);
-      setMessageData((prevState) => [...prevState, newMsg]);
-      setText("");
-      setError("");
-      scrollToBottom();
-    });
-  }, []);
 
-  useEffect(() => {
+    socket.on("connect", () => {
+      // Leave old rooms
+      socket.emit("leave-room", { applicationId: props.application.id });
+      socket.off("new-message");
+      // Join new room
+      socket.emit("join-room", { applicationId: props.application.id });
+      socket.on("new-message", (data) => {
+        // Append message to state
+        setMessageData((prevState) => [
+          ...prevState,
+          {
+            id: data.public_id,
+            content: data.content,
+            status: data.status,
+            senderId: data.sender_id,
+            name: `${data.sender.firstName} ${data.sender.lastName}`,
+            createdAt: data.createdAt,
+          },
+        ]);
+
+        setText("");
+        setError("");
+        scrollToBottom();
+      });
+    });
+
+    // Get latest messages
     getApplicationMessages(props.application.id).then((data) => {
       setMessageData(() => data);
       scrollToBottom(false);
     });
+
+    // Disconnect when component "unmounts"
+    return () => socket.disconnect();
   }, [props.application]);
 
   //Send Button Function
