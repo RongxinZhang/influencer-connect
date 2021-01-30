@@ -26,7 +26,6 @@ export default function Tasks(props) {
   };
 
   const applicationList = applications.map((application) => {
-    console.log("JERE:,", application);
     if (application) {
       return (
         <ApplicationItem

@@ -5,8 +5,10 @@ import {
   // getCampaignsAllUsers,
 } from "../../../requests/applications";
 import MessageItem from "./MessageItem";
-
 import "./MessageList.scss";
+
+import socketIOClient from "socket.io-client";
+const ENDPOINT = "http://127.0.0.1:3006";
 
 export default function Messages(props) {
   const [text, setText] = useState("");
@@ -22,6 +24,25 @@ export default function Messages(props) {
       messagesEndRef.current.scrollIntoView();
     }
   };
+
+  useEffect(() => {
+    const socket = socketIOClient(ENDPOINT);
+    socket.on("newMessage", (data) => {
+      const newMsg = {
+        id: data.public_id,
+        content: data.content,
+        status: data.status,
+        senderId: data.sender_id,
+        name: `${data.sender.firstName} ${data.sender.lastName}`,
+        createdAt: data.createdAt,
+      };
+      console.log(newMsg);
+      setMessageData((prevState) => [...prevState, newMsg]);
+      setText("");
+      setError("");
+      scrollToBottom();
+    });
+  }, []);
 
   useEffect(() => {
     getApplicationMessages(props.application.id).then((data) => {
@@ -40,10 +61,7 @@ export default function Messages(props) {
     const newMessage = { content: text };
 
     createApplicationMessage(props.application.id, newMessage).then((data) => {
-      setMessageData((prevState) => [...prevState, data[0]]);
-      setText("");
-      setError("");
-      scrollToBottom();
+      if (!data) console.log("message did not save");
     });
   };
 

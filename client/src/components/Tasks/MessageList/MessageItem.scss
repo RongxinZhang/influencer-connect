@@ -17,10 +17,13 @@
   }
 
   &--is-sender {
-    // background: #f1f1f1;
     .profile_icon {
       background: #cacaca;
     }
+  }
+
+  .message_content {
+    margin-left: 16px;
   }
 
   .message_list_item_header {

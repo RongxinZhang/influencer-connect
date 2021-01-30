@@ -18,7 +18,7 @@ const MessageItem = function (props) {
             <Moment fromNow>{props.createdAt}</Moment>
           </div>
         </div>
-        <div>{props.content}</div>
+        <div className="message_content">{props.content}</div>
       </li>
     </main>
   );

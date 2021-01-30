@@ -5,9 +5,12 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 
 const Header = function (props) {
-  const logout = function (userObj) {
-    props.handleLogout();
-    window.location = "/login";
+  const handleApprove = () => {
+    console.log("approve");
+  };
+
+  const handleViewChange = (view) => {
+    console.log("viewChange");
   };
 
   return (
@@ -24,15 +27,12 @@ const Header = function (props) {
           ></div>
           <p>{props.application.name}</p>
         </div>
-        <div className="header_buttons">
-          <Link
-            to={props.application.mediaKitLink}
-            target="_blank"
-            className="button"
-          >
-            View MediaKit
-          </Link>
-        </div>
+        <button className="button--approve" onClick={handleApprove}>
+          Approve: <span>3 days left</span>
+        </button>
+        <button className="button--mediakit" onClick={handleViewChange}>
+          Show MediaKit
+        </button>
       </header>
     </Fragment>
   );
