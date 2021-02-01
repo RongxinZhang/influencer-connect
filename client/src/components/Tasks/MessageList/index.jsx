@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import {
   getApplicationMessages,
   createApplicationMessage,
-  updateMessageRead,
+  updateMessageReadReceipt,
 } from "../../../requests/applications";
 import MessageItem from "./MessageItem";
 import "./MessageList.scss";
