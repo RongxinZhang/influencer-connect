@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import {
   getApplicationMessages,
   createApplicationMessage,
-  // getCampaignsAllUsers,
+  updateMessageRead,
 } from "../../../requests/applications";
 import MessageItem from "./MessageItem";
 import "./MessageList.scss";
@@ -58,6 +58,8 @@ export default function Messages(props) {
         setText("");
         setError("");
         scrollToBottom();
+        // Read message
+        updateMessageReadReceipt(props.application.id, data.public_id);
       });
     });
 

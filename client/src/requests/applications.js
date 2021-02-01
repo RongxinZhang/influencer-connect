@@ -17,7 +17,6 @@ const getCampaignsAllUsers = function (listingHash) {
     .get(`/api/companies/${listingHash}/applications`)
     .then((res) => {
       const resObj = res.data.creators.map((el) => {
-        console.log("HERER", el);
         return {
           name: el.name,
           followerCount: nFormatter(Number(el.social_media[0].reach)),
@@ -140,6 +139,14 @@ const createApplicationMessage = function (campaignId, messageObj) {
     });
 };
 
+const updateMessageReadReceipt = function (campaignId, messageId) {
+  return axios
+    .put(`/api/applications/${campaignId}/messages/${messageId}`, {
+      headers: authHeader(),
+    })
+    .then((res) => {});
+};
+
 export {
   getCampaignsAllUsers,
   getCampaigns,
@@ -147,4 +154,5 @@ export {
   updateCampaignTask,
   getApplicationMessages,
   createApplicationMessage,
+  updateMessageReadReceipt,
 };
