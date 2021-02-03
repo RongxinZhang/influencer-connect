@@ -29,12 +29,12 @@ function App() {
 
   return (
     <Router>
-      <Route path="/tasks">
-        <Tasks user={user} handleLogout={handleLogout} />
+      <Route exact path="/applications">
+        <Tasks user={user} />
       </Route>
-      {/* <Route path="/login">
-        <Login updateUser={updateUser} />
-      </Route> */}
+      <Route path="/applications/:applicationUUID">
+        <Tasks user={user} />
+      </Route>
     </Router>
   );
 }
